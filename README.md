@@ -29,5 +29,5 @@ Android Device
 ### Preview
 
 <p align="center">
-<img src="Image/Wifi_Car_Image.png" width="600" height="320" >
+<img src="Image/Wifi_Car_Image.png" width="400" height="280" >
 </p>
