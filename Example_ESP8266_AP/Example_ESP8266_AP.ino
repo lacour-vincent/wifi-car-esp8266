@@ -1,6 +1,6 @@
 /**
-  @file    Test_ESP8266_AP.ino
-  @brief   Test AP (Access Point) mode using WebServer with ESP8266 module.
+  @file    Example_ESP8266_AP.ino
+  @brief   Example AP (Access Point) mode using WebServer with ESP8266 module.
   @author  LACOUR Vincent
   @date    2018-01
 */

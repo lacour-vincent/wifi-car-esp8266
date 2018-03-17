@@ -1,6 +1,6 @@
 /**
-  @file    Test_ESP8266_STA.ino
-  @brief   Test STA (Station) mode using WebServer with ESP8266 module.
+  @file    Example_ESP8266_STA.ino
+  @brief   Example STA (Station) mode using WebServer with ESP8266 module.
   @author  LACOUR Vincent
   @date    2018-01
 */
