@@ -1,0 +1,13 @@
+{
+  "name": "server-express",
+  "author": "lacour-vincent",
+  "version": "1.0.0",
+  "description": "Express web-server to check the client API calls",
+  "license": "MIT",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
