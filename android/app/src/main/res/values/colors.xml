@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+
+    <color name="colorPrimary">#002b36</color>
+    <color name="colorPrimaryDark">#37474F</color>
+    <color name="colorAccent">#2aa198</color>
+
+    <color name="ColorGraySettingsBackground">#073642</color>
+    <color name="ColorGraySettingsToolbar">#002b36</color>
+    <color name="ColorSettingsTitle">#f4f4f4</color>
+    <color name="ColorSettingsResume">#839496</color>
+
+    <color name="ColorTextButton">#e07556</color>
+    <color name="ColorTextAccelerometer">#9C3C53</color>
+    <color name="ColorTextVoice">#402344</color>
+
 </resources>

@@ -1,3 +1,138 @@
 <resources>
-    <string name="app_name">WifiCarESP8266</string>
+
+    <!-- Strings related to App -->
+    <string name="app_name">Wifi RC Car ESP8266</string>
+
+    <!-- Strings related to Welcome Activity -->
+
+    <string name="menu_1">Button</string>
+    <string name="menu_2">Accelerometer</string>
+    <string name="menu_3">Voice</string>
+
+    <string name="doubleBackToExit">Press the return button again to exit.</string>
+
+    <string name="errorWifiTitle">Wifi disabled</string>
+    <string name="errorWifiText">Please activate the wifi to connect to the car.</string>
+
+    <string name="ratingTitle">Rate the application</string>
+    <string name="ratingText">If you want to support our work, you can rate the application favorably on the Google PlayStore. To get there :</string>
+    <string name="ratingPositive">Open PlayStore</string>
+    <string name="ratingNegative">Later</string>
+
+    <!-- Strings related to Settings -->
+    <string name="titleToolbarSettings">Settings</string>
+    <string name="settingSection_1">Server setting</string>
+    <string name="settingSection_2">Commands</string>
+
+    <string name="settingIP_title">IP Address</string>
+    <string name="settingIP_summary">Enter your IP Address</string>
+    <string name="settingIP_title_dialog">Your IP Address</string>
+    <string name="settingIP_text_dialog">Enter your IP Address</string>
+
+    <string name="settingPort_title">Port</string>
+    <string name="settingPort_summary">Enter the port of your server</string>
+    <string name="settingPort_title_dialog">The server port</string>
+    <string name="settingPort_text_dialog">Enter the port of your server</string>
+
+    <string name="settingForward_title">Moving forward</string>
+    <string name="settingForward_summary">Enter the command to move forward</string>
+    <string name="settingForward_title_dialog">Command to move forward</string>
+    <string name="settingForward_text_dialog">Enter the command to move forward</string>
+
+    <string name="settingBackward_title">Moving backward</string>
+    <string name="settingBackward_summary">Enter the command to move backward</string>
+    <string name="settingBackward_title_dialog">Command to move backward</string>
+    <string name="settingBackward_text_dialog">Enter the command to move backward</string>
+
+    <string name="settingTurnRight_title">Turn right</string>
+    <string name="settingTurnRight_summary">Enter the command to turn right</string>
+    <string name="settingTurnRight_title_dialog">Command to turn right</string>
+    <string name="settingTurnRight_text_dialog">Enter the command to turn right</string>
+
+    <string name="settingTurnLeft_title">Turn left</string>
+    <string name="settingTurnLeft_summary">Enter the command to turn left</string>
+    <string name="settingTurnLeft_title_dialog">Command to turn left</string>
+    <string name="settingTurnLeft_text_dialog">Enter the command to turn left</string>
+
+    <string name="settingStop_title">Stop</string>
+    <string name="settingStop_summary">Enter the command to stop</string>
+    <string name="settingStop_title_dialog">Command to stop</string>
+    <string name="settingStop_text_dialog">Enter the command to stop</string>
+
+    <string name="settingSection_3">Voice Command Keywords</string>
+
+    <string name="settingLanguage_title">Keyword language</string>
+    <string name="settingLanguage_summary">Select the language of the keywords</string>
+    <string name="settingLanguage_title_dialog">Select your language</string>
+
+    <string name="settingForwardVoice_title">Moving forward</string>
+    <string name="settingForwardVoice_summary">Enter the keyword to move forward</string>
+    <string name="settingForwardVoice_title_dialog">Keyword to move forward</string>
+    <string name="settingForwardVoice_text_dialog">Enter the keyword to move forward</string>
+
+    <string name="settingBackwardVoice_title">Moving backward</string>
+    <string name="settingBackwardVoice_summary">Enter the keyword to move backward</string>
+    <string name="settingBackwardVoice_title_dialog">Keyword to move backward</string>
+    <string name="settingBackwardVoice_text_dialog">Enter the keyword to move backward</string>
+
+    <string name="settingTurnRightVoice_title">Turn right</string>
+    <string name="settingTurnRightVoice_summary">Enter the keyword to turn right</string>
+    <string name="settingTurnRightVoice_title_dialog">Keyword to turn right</string>
+    <string name="settingTurnRightVoice_text_dialog">Enter the keyword to turn right</string>
+
+    <string name="settingTurnLeftVoice_title">Turn left</string>
+    <string name="settingTurnLeftVoice_summary">Enter the keyword to turn left</string>
+    <string name="settingTurnLeftVoice_title_dialog">Keyword to turn left</string>
+    <string name="settingTurnLeftVoice_text_dialog">Enter the keyword to turn left</string>
+
+    <string name="settingTextSourceCode">The source code of my Wifi Car is available here :\n\n https://github.com/lacour-vincent/wifi-car-esp8266 \n\n
+    The default commands sent are:\n
+           • http://IP:Port/?State=F\n
+           • http://IP:Port/?State=B\n
+           • http://IP:Port/?State=R\n
+           • http://IP:Port/?State=L\n
+           • http://IP:Port/?State=S\n
+           • http://IP:Port/?State=ON\n
+           • http://IP:Port/?State=OFFn
+    </string>
+
+    <!-- Strings related to Control Button Activity -->
+    <string name="titleToolbarControlButton">Buttons</string>
+    <string name="helpButtonTitle">Information</string>
+    <string name="helpButtonText">Keep pressing a button to send the command.\n\nThe \"Stop\" command is sent when you release the button.</string>
+
+    <!-- Strings related to Control Accelerometer Activity -->
+    <string name="titleToolbarControlAccelerometer">Accelerometer</string>
+    <string name="helpAccelerometerTitle">Information</string>
+    <string name="helpAccelerometerText">Rotate your device to control the car.</string>
+
+    <!-- Strings related to Control Voice Activity -->
+    <string name="titleToolbarControlVoice">Speech Recognition</string>
+    <string name="helpVoiceTitle">Information</string>
+    <string name="helpVoiceText">The voice commands and the language to control the car can be modified in the setting page.\n\nThe \"Stop\" command will be sent after the chosen delay.\n\nTo use voice recognition offline, you must download the package corresponding to your language.</string>
+    <string name="helpPositive">Got it!</string>
+    <string name="VoicePrompt">What do you want to do?</string>
+
+    <!-- Strings related to update 1.2.0 -->
+
+    <string name="settingLightOn_title">Switch on the light</string>
+    <string name="settingLightOn_summary">Enter the command to switch on the light</string>
+    <string name="settingLightOn_title_dialog">Command to switch on the light</string>
+    <string name="settingLightOn_text_dialog">Enter the command to switch on the light</string>
+
+    <string name="settingLightOff_title">Switch off the light</string>
+    <string name="settingLightOff_summary">Enter the command to switch off the light</string>
+    <string name="settingLightOff_title_dialog">Command to switch off the light</string>
+    <string name="settingLightOff_text_dialog">Enter the command to switch off the light</string>
+
+    <string name="settingLightOnVoice_title">Switch on the light</string>
+    <string name="settingLightOnVoice_summary">Enter the keyword to switch on the light</string>
+    <string name="settingLightOnVoice_title_dialog">Keyword to switch on the light</string>
+    <string name="settingLightOnVoice_text_dialog">Enter the keyword to switch on the light</string>
+
+    <string name="settingLightOffVoice_title">Switch off the light</string>
+    <string name="settingLightOffVoice_summary">Enter the keyword to switch off the light</string>
+    <string name="settingLightOffVoice_title_dialog">Keyword to switch off the light</string>
+    <string name="settingLightOffVoice_text_dialog">Enter the keyword to switch off the light</string>
+
 </resources>

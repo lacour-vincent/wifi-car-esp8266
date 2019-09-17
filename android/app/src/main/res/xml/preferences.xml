@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+        android:title="@string/settingSection_1">
+
+        <EditTextPreference
+            android:key="key_IP"
+            android:title="@string/settingIP_title"
+            android:summary="@string/settingIP_summary"
+            android:dialogTitle="@string/settingIP_title_dialog"
+            android:dialogMessage="@string/settingIP_text_dialog"
+            android:inputType="number|numberDecimal"
+            android:digits="0123456789."/>
+
+        <EditTextPreference
+            android:key="key_port"
+            android:title="@string/settingPort_title"
+            android:summary="@string/settingPort_summary"
+            android:dialogTitle="@string/settingPort_title_dialog"
+            android:dialogMessage="@string/settingPort_text_dialog"
+            android:inputType="number|numberDecimal"
+            android:digits="0123456789."/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/settingSection_2">
+
+        <EditTextPreference
+            android:key="key_forward"
+            android:title="@string/settingForward_title"
+            android:summary="@string/settingForward_summary"
+            android:dialogTitle="@string/settingForward_title_dialog"
+            android:dialogMessage="@string/settingForward_text_dialog"
+            android:inputType="textCapWords"/>
+
+        <EditTextPreference
+            android:key="key_backward"
+            android:title="@string/settingBackward_title"
+            android:summary="@string/settingBackward_summary"
+            android:dialogTitle="@string/settingBackward_title_dialog"
+            android:dialogMessage="@string/settingBackward_text_dialog"
+            android:inputType="textCapWords"/>
+
+        <EditTextPreference
+            android:key="key_stop"
+            android:title="@string/settingStop_title"
+            android:summary="@string/settingStop_summary"
+            android:dialogTitle="@string/settingStop_title_dialog"
+            android:dialogMessage="@string/settingStop_text_dialog"
+            android:inputType="textCapWords"/>
+
+        <EditTextPreference
+            android:key="key_turn_right"
+            android:title="@string/settingTurnRight_title"
+            android:summary="@string/settingTurnRight_summary"
+            android:dialogTitle="@string/settingTurnRight_title_dialog"
+            android:dialogMessage="@string/settingTurnRight_text_dialog"
+            android:inputType="textCapWords"/>
+
+        <EditTextPreference
+            android:key="key_turn_left"
+            android:title="@string/settingTurnLeft_title"
+            android:summary="@string/settingTurnLeft_summary"
+            android:dialogTitle="@string/settingTurnLeft_title_dialog"
+            android:dialogMessage="@string/settingTurnLeft_text_dialog"
+            android:inputType="textCapWords"/>
+
+        <EditTextPreference
+            android:key="key_light_on"
+            android:title="@string/settingLightOn_title"
+            android:summary="@string/settingLightOn_summary"
+            android:dialogTitle="@string/settingLightOn_title_dialog"
+            android:dialogMessage="@string/settingLightOn_text_dialog"
+            android:inputType="textCapWords"/>
+
+        <EditTextPreference
+            android:key="key_light_off"
+            android:title="@string/settingLightOff_title"
+            android:summary="@string/settingLightOff_summary"
+            android:dialogTitle="@string/settingLightOff_title_dialog"
+            android:dialogMessage="@string/settingLightOff_text_dialog"
+            android:inputType="textCapWords"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/settingSection_3">
+
+        <ListPreference
+            android:key="key_language_voice"
+            android:title="@string/settingLanguage_title"
+            android:summary="@string/settingLanguage_summary"
+            android:dialogTitle="@string/settingLanguage_title_dialog"
+            android:entries="@array/listCountryName"
+            android:entryValues="@array/listCountryCode"
+            />
+
+        <EditTextPreference
+            android:key="key_forward_voice"
+            android:title="@string/settingForwardVoice_title"
+            android:summary="@string/settingForwardVoice_summary"
+            android:dialogTitle="@string/settingForwardVoice_title_dialog"
+            android:dialogMessage="@string/settingForwardVoice_text_dialog"
+            android:inputType="text"/>
+
+
+        <EditTextPreference
+            android:key="key_backward_voice"
+            android:title="@string/settingBackwardVoice_title"
+            android:summary="@string/settingBackwardVoice_summary"
+            android:dialogTitle="@string/settingBackwardVoice_title_dialog"
+            android:dialogMessage="@string/settingBackwardVoice_text_dialog"
+            android:inputType="text"/>
+
+
+        <EditTextPreference
+            android:key="key_turn_right_voice"
+            android:title="@string/settingTurnRightVoice_title"
+            android:summary="@string/settingTurnRightVoice_summary"
+            android:dialogTitle="@string/settingTurnRightVoice_title_dialog"
+            android:dialogMessage="@string/settingTurnRightVoice_text_dialog"
+            android:inputType="text" />
+
+        <EditTextPreference
+            android:key="key_turn_left_voice"
+            android:title="@string/settingTurnLeftVoice_title"
+            android:summary="@string/settingTurnLeftVoice_summary"
+            android:dialogTitle="@string/settingTurnLeftVoice_title_dialog"
+            android:dialogMessage="@string/settingTurnLeftVoice_text_dialog"
+            android:inputType="text"/>
+
+        <EditTextPreference
+            android:key="key_light_on_voice"
+            android:title="@string/settingLightOnVoice_title"
+            android:summary="@string/settingLightOnVoice_summary"
+            android:dialogTitle="@string/settingLightOnVoice_title_dialog"
+            android:dialogMessage="@string/settingLightOnVoice_text_dialog"
+            android:inputType="text"/>
+
+        <EditTextPreference
+            android:key="key_light_off_voice"
+            android:title="@string/settingLightOffVoice_title"
+            android:summary="@string/settingLightOffVoice_summary"
+            android:dialogTitle="@string/settingLightOffVoice_title_dialog"
+            android:dialogMessage="@string/settingLightOffVoice_text_dialog"
+            android:inputType="text"/>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
