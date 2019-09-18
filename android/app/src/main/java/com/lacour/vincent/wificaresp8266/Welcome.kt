@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 
+import android.provider.Settings;
+
 class Welcome : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,11 +25,13 @@ class Welcome : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean =
         when (item.itemId) {
             R.id.action_wifi -> {
+                val wifi_intent = Intent(Settings.ACTION_WIFI_SETTINGS)
+                startActivity(wifi_intent)
                 true
             }
             R.id.action_settings -> {
-                val settingsIntent = Intent(this, Settings::class.java)
-                startActivity(settingsIntent)
+                val intent = Intent(this, Configuration::class.java)
+                startActivity(intent)
                 this@Welcome.overridePendingTransition(
                     R.anim.anim_slide_in_left,
                     R.anim.anim_slide_out_left

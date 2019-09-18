@@ -2,4 +2,82 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <PreferenceCategory
+        android:title="Server"
+        app:iconSpaceReserved="false">
+
+        <EditTextPreference
+            android:dialogMessage="Enter your IP Address of your server"
+            android:dialogTitle="Your IP Address"
+            android:inputType="text"
+            android:key="ip_address"
+            android:summary="Enter the IP Address of your server"
+            android:title="IP Address : 192.168.4.1"
+            app:iconSpaceReserved="false" />
+
+        <EditTextPreference
+            android:dialogMessage="Enter the port of your server"
+            android:dialogTitle="The port of your server"
+            android:inputType="text"
+            android:key="port"
+            android:summary="Enter the port of your server"
+            android:title="Port : 8080"
+            app:iconSpaceReserved="false" />
+
+    </PreferenceCategory>
+
+
+    <PreferenceCategory
+        android:title="Move parameters"
+        app:iconSpaceReserved="false">
+
+        <EditTextPreference
+            android:dialogMessage="Enter the command to move forward"
+            android:dialogTitle="Move forward"
+            android:inputType="text"
+            android:key="move_forward"
+            android:summary="Enter the command to move forward"
+            android:title="Moving forward: F"
+            app:iconSpaceReserved="false" />
+
+        <EditTextPreference
+            android:dialogMessage="Enter the command to move backward"
+            android:dialogTitle="Move backward"
+            android:inputType="text"
+            android:key="move_backward"
+            android:summary="Enter the command to move backward"
+            android:title="Moving backward: B"
+            app:iconSpaceReserved="false" />
+
+        <EditTextPreference
+            android:dialogMessage="Enter the command to turn right"
+            android:dialogTitle="Turn right"
+            android:inputType="text"
+            android:key="turn_right"
+            android:summary="Enter the command to turn right"
+            android:title="Turn right: R"
+            app:iconSpaceReserved="false" />
+
+
+        <EditTextPreference
+            android:dialogMessage="Enter the command to turn left"
+            android:dialogTitle="Turn left"
+            android:inputType="text"
+            android:key="turn_left"
+            android:summary="Enter the command to turn left"
+            android:title="Turn left: L"
+            app:iconSpaceReserved="false" />
+
+        <EditTextPreference
+            android:dialogMessage="Enter the command to stop"
+            android:dialogTitle="Stop"
+            android:inputType="text"
+            android:key="move_stop"
+            android:summary="Enter the command to stop"
+            android:title="Stop: S"
+            app:iconSpaceReserved="false" />
+
+
+    </PreferenceCategory>
+
 </PreferenceScreen>

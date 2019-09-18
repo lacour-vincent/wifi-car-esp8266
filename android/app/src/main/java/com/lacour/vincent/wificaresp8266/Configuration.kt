@@ -5,24 +5,26 @@ import android.view.KeyEvent
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 
-class Settings : AppCompatActivity() {
+
+class Configuration : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.settings_activity)
-        setSupportActionBar(findViewById(R.id.toolbar_settings))
+        setContentView(R.layout.configuration_activity)
+        setSupportActionBar(findViewById(R.id.toolbar_configuration))
+        setTheme(R.style.PreferenceTheme)
 
         if (supportActionBar != null) {
             with(supportActionBar!!) {
                 setDisplayHomeAsUpEnabled(true)
                 setDisplayShowHomeEnabled(true)
-                title = "Settings" // getString(R.string.settings_label)
+                title = "Configuration" // getString(R.string.settings_label)
             }
         }
 
         supportFragmentManager
             .beginTransaction()
-            .replace(R.id.content_frame, SettingsFragment())
+            .replace(R.id.content_frame, ConfigurationFragment())
             .commit()
 
     }
@@ -48,7 +50,7 @@ class Settings : AppCompatActivity() {
 
     private fun finishActivity() {
         finish()
-        this@Settings.overridePendingTransition(
+        this@Configuration.overridePendingTransition(
             R.anim.anim_slide_in_right,
             R.anim.anim_slide_out_right
         )

@@ -19,7 +19,7 @@
     <string name="ratingPositive">Open PlayStore</string>
     <string name="ratingNegative">Later</string>
 
-    <!-- Strings related to Settings -->
+    <!-- Strings related to Configuration -->
     <string name="titleToolbarSettings">Settings</string>
     <string name="settingSection_1">Server setting</string>
     <string name="settingSection_2">Commands</string>

@@ -24,22 +24,7 @@
         <item name="android:background">#FFFFFF</item>
     </style>
 
-    <style name="AlertDialogCustom" parent="@android:style/Theme.Dialog">
-        <!-- Used for the title and text -->
-        <item name="android:textColorPrimary">@color/ColorSettingsResume</item>
-        <!-- Used for the background -->
-        <item name="android:background">@color/ColorGraySettingsBackground</item>
-        <item name="android:windowTitleStyle">@style/MyTitleTextStyle</item>
-        <item name="android:windowNoTitle">true</item>
-    </style>
-
-    <style name="MyTitleTextStyle">
-        <item name="android:textColor">@color/colorAccent</item>
-        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Title</item>
-    </style>
-
-
-    <style name="PreferenceScreen" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="PreferenceTheme" parent="PreferenceThemeOverlay">
         <item name="android:textColorPrimary">@color/ColorSettingsTitle</item>
         <item name="android:textColorSecondary">@color/ColorSettingsResume</item>
         <item name="android:colorPrimaryDark">@color/colorPrimaryDark</item>

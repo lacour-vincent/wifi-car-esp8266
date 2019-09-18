@@ -30,7 +30,7 @@
         </activity>
 
         <activity
-            android:name=".Settings"
+            android:name=".Configuration"
             android:screenOrientation="portrait" />
 
 
