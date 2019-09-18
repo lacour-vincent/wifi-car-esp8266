@@ -1,4 +1,4 @@
-package com.lacour.vincent.wificaresp8266
+package com.lacour.vincent.wificaresp8266.screen
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -7,6 +7,7 @@ import android.view.Menu
 import android.view.MenuItem
 
 import android.provider.Settings;
+import com.lacour.vincent.wificaresp8266.R
 
 class Welcome : AppCompatActivity() {
 

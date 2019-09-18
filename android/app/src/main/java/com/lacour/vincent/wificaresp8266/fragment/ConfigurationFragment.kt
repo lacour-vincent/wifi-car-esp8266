@@ -1,12 +1,13 @@
-package com.lacour.vincent.wificaresp8266
+package com.lacour.vincent.wificaresp8266.fragment
 
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.text.TextUtils
 import androidx.preference.EditTextPreference
 import androidx.preference.Preference
-
 import androidx.preference.PreferenceFragmentCompat
+
+import com.lacour.vincent.wificaresp8266.R
 
 
 class ConfigurationFragment : PreferenceFragmentCompat(),

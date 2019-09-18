@@ -1,9 +1,11 @@
-package com.lacour.vincent.wificaresp8266
+package com.lacour.vincent.wificaresp8266.screen
 
 import android.os.Bundle
 import android.view.KeyEvent
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import com.lacour.vincent.wificaresp8266.fragment.ConfigurationFragment
+import com.lacour.vincent.wificaresp8266.R
 
 
 class Configuration : AppCompatActivity() {
@@ -24,7 +26,10 @@ class Configuration : AppCompatActivity() {
 
         supportFragmentManager
             .beginTransaction()
-            .replace(R.id.content_frame, ConfigurationFragment())
+            .replace(
+                R.id.content_frame,
+                ConfigurationFragment()
+            )
             .commit()
 
     }
