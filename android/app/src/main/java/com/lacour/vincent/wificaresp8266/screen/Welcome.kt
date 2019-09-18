@@ -7,7 +7,10 @@ import android.view.Menu
 import android.view.MenuItem
 
 import android.provider.Settings;
+import android.widget.Toast
 import com.lacour.vincent.wificaresp8266.R
+
+import kotlinx.android.synthetic.main.welcome_activity.*
 
 class Welcome : AppCompatActivity() {
 
@@ -15,6 +18,18 @@ class Welcome : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.welcome_activity)
         setSupportActionBar(findViewById(R.id.toolbar_welcome))
+
+        menu_button.setOnClickListener {
+            Toast.makeText(this, "menu - Button", Toast.LENGTH_LONG).show()
+        }
+
+        menu_accelerometer.setOnClickListener {
+            Toast.makeText(this, "menu - Accelerometer", Toast.LENGTH_LONG).show()
+        }
+
+        menu_voice.setOnClickListener {
+            Toast.makeText(this, "menu - Voice", Toast.LENGTH_LONG).show()
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
