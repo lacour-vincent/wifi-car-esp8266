@@ -1,5 +1,6 @@
 package com.lacour.vincent.wificaresp8266
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -22,6 +23,15 @@ class Welcome : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean =
         when (item.itemId) {
             R.id.action_wifi -> {
+                true
+            }
+            R.id.action_settings -> {
+                val settingsIntent = Intent(this, Settings::class.java)
+                startActivity(settingsIntent)
+                this@Welcome.overridePendingTransition(
+                    R.anim.anim_slide_in_left,
+                    R.anim.anim_slide_out_left
+                )
                 true
             }
             else -> super.onOptionsItemSelected(item)
