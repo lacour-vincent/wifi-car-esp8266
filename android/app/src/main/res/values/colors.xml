@@ -5,13 +5,10 @@
     <color name="colorPrimaryDark">#37474F</color>
     <color name="colorAccent">#2aa198</color>
 
-    <color name="ColorGraySettingsBackground">#073642</color>
-    <color name="ColorGraySettingsToolbar">#002b36</color>
-    <color name="ColorSettingsTitle">#f4f4f4</color>
-    <color name="ColorSettingsResume">#839496</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorDark">#000000</color>
+    <color name="colorGray">#839496</color>
+    <color name="colorDarkGray">#073642</color>
 
-    <color name="ColorTextButton">#e07556</color>
-    <color name="ColorTextAccelerometer">#9C3C53</color>
-    <color name="ColorTextVoice">#402344</color>
 
 </resources>

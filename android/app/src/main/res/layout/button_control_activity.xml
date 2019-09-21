@@ -108,7 +108,8 @@
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toStartOf="@+id/action_button_2"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:theme="@style/AppTheme.Button" />
 
         <Button
             android:id="@+id/action_button_2"
@@ -119,7 +120,8 @@
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toStartOf="@+id/action_button_3"
             app:layout_constraintStart_toEndOf="@+id/action_button_1"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:theme="@style/AppTheme.Button" />
 
         <Button
             android:id="@+id/action_button_3"
@@ -130,7 +132,8 @@
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toStartOf="@+id/action_button_4"
             app:layout_constraintStart_toEndOf="@+id/action_button_2"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:theme="@style/AppTheme.Button" />
 
         <Button
             android:id="@+id/action_button_4"
@@ -141,7 +144,8 @@
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/action_button_3"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:theme="@style/AppTheme.Button" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -165,7 +169,8 @@
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toStartOf="@+id/action_button_6"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:theme="@style/AppTheme.Button" />
 
         <Button
             android:id="@+id/action_button_6"
@@ -176,7 +181,8 @@
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toStartOf="@+id/action_button_7"
             app:layout_constraintStart_toEndOf="@+id/action_button_5"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:theme="@style/AppTheme.Button" />
 
         <Button
             android:id="@+id/action_button_7"
@@ -187,7 +193,8 @@
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toStartOf="@+id/action_button_8"
             app:layout_constraintStart_toEndOf="@+id/action_button_6"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:theme="@style/AppTheme.Button" />
 
         <Button
             android:id="@+id/action_button_8"
@@ -198,7 +205,8 @@
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/action_button_7"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:theme="@style/AppTheme.Button" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

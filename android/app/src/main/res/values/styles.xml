@@ -6,13 +6,13 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:windowBackground">@color/ColorGraySettingsBackground</item>
+        <item name="android:windowBackground">@color/colorDarkGray</item>
     </style>
 
     <style name="AppTheme.Toolbar">
         <item name="android:background">@color/colorPrimary</item>
-        <item name="android:textColorPrimary">#FFFFFF</item>
-        <item name="colorControlNormal">#FFFFFF</item>
+        <item name="android:textColorPrimary">@color/colorWhite</item>
+        <item name="colorControlNormal">@color/colorWhite</item>
     </style>
 
     <style name="AppTheme.Toolbar.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
@@ -20,17 +20,23 @@
     </style>
 
     <style name="AppTheme.Toolbar.PopUp" parent="ThemeOverlay.AppCompat.Light">
-        <item name="android:textColor">#000000</item>
-        <item name="android:background">#FFFFFF</item>
+        <item name="android:textColor">@color/colorDark</item>
+        <item name="android:background">@color/colorWhite</item>
+    </style>
+
+
+    <style name="AppTheme.Button" parent="ThemeOverlay.AppCompat.Light">>
+        <item name="android:backgroundTint">@color/colorPrimary</item>
+        <item name="android:textColor">@color/colorWhite</item>
     </style>
 
     <style name="PreferenceTheme" parent="PreferenceThemeOverlay">
-        <item name="android:textColorPrimary">@color/ColorSettingsTitle</item>
-        <item name="android:textColorSecondary">@color/ColorSettingsResume</item>
+        <item name="android:textColorPrimary">@color/colorWhite</item>
+        <item name="android:textColorSecondary">@color/colorGray</item>
         <item name="android:colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="android:colorAccent">@color/colorAccent</item>
-        <item name="android:background">@color/ColorGraySettingsBackground</item>
-        <item name="android:textColorAlertDialogListItem">@color/ColorSettingsResume</item>
+        <item name="android:background">@color/colorDarkGray</item>
+        <item name="android:textColorAlertDialogListItem">@color/colorGray</item>
     </style>
 
 
