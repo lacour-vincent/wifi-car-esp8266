@@ -33,6 +33,9 @@
             android:name=".screen.Configuration"
             android:screenOrientation="portrait" />
 
+        <activity
+            android:name=".screen.ButtonControl"
+            android:screenOrientation="portrait" />
 
     </application>
 

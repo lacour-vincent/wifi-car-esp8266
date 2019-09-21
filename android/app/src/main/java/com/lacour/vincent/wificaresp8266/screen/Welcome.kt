@@ -20,7 +20,12 @@ class Welcome : AppCompatActivity() {
         setSupportActionBar(findViewById(R.id.toolbar_welcome))
 
         menu_button.setOnClickListener {
-            Toast.makeText(this, "menu - Button", Toast.LENGTH_LONG).show()
+            val intent = Intent(this, ButtonControl::class.java)
+            startActivity(intent)
+            this@Welcome.overridePendingTransition(
+                R.anim.anim_slide_in_left,
+                R.anim.anim_slide_out_left
+            )
         }
 
         menu_accelerometer.setOnClickListener {
@@ -41,8 +46,12 @@ class Welcome : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean =
         when (item.itemId) {
             R.id.action_wifi -> {
-                val wifi_intent = Intent(Settings.ACTION_WIFI_SETTINGS)
-                startActivity(wifi_intent)
+                val intent = Intent(Settings.ACTION_WIFI_SETTINGS)
+                startActivity(intent)
+                this@Welcome.overridePendingTransition(
+                    R.anim.anim_slide_in_left,
+                    R.anim.anim_slide_out_left
+                )
                 true
             }
             R.id.action_settings -> {
