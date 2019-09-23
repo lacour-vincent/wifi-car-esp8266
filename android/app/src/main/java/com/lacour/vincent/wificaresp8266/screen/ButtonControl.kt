@@ -6,9 +6,12 @@ import android.view.*
 
 import android.widget.Toast
 import com.lacour.vincent.wificaresp8266.R
+import com.lacour.vincent.wificaresp8266.connector.CarConnector
 import kotlinx.android.synthetic.main.button_control_activity.*
 
 class ButtonControl : AppCompatActivity() {
+
+    lateinit var carConnector: CarConnector;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,11 +26,15 @@ class ButtonControl : AppCompatActivity() {
             }
         }
 
-        action_button_1.setOnClickListener {}
-        action_button_2.setOnClickListener {}
-        action_button_3.setOnClickListener {}
-        action_button_4.setOnClickListener {}
-        action_button_5.setOnClickListener {}
+        carConnector = CarConnector(this@ButtonControl)
+
+
+
+        action_button_1.setOnClickListener { carConnector.moveForward() }
+        action_button_2.setOnClickListener { carConnector.moveBackward() }
+        action_button_3.setOnClickListener { carConnector.turnLeft() }
+        action_button_4.setOnClickListener { carConnector.turnRight() }
+        action_button_5.setOnClickListener { carConnector.stopMoving() }
         action_button_6.setOnClickListener {}
         action_button_7.setOnClickListener {}
         action_button_8.setOnClickListener {}
