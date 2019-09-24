@@ -3,8 +3,10 @@ package com.lacour.vincent.wificaresp8266.screen
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.*
+import android.widget.Button
 
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import com.lacour.vincent.wificaresp8266.R
 import com.lacour.vincent.wificaresp8266.connector.CarConnector
 import kotlinx.android.synthetic.main.button_control_activity.*
@@ -28,26 +30,70 @@ class ButtonControl : AppCompatActivity() {
 
         carConnector = CarConnector(this@ButtonControl)
 
+        arrow_up.setOnTouchListener { v: View, event: MotionEvent -> onTouchArrow(v, event) }
+        arrow_right.setOnTouchListener { v: View, event: MotionEvent -> onTouchArrow(v, event) }
+        arrow_down.setOnTouchListener { v: View, event: MotionEvent -> onTouchArrow(v, event) }
+        arrow_left.setOnTouchListener { v: View, event: MotionEvent -> onTouchArrow(v, event) }
 
-
-        action_button_1.setOnClickListener { carConnector.moveForward() }
-        action_button_2.setOnClickListener { carConnector.moveBackward() }
-        action_button_3.setOnClickListener { carConnector.turnLeft() }
-        action_button_4.setOnClickListener { carConnector.turnRight() }
-        action_button_5.setOnClickListener { carConnector.stopMoving() }
-        action_button_6.setOnClickListener {}
-        action_button_7.setOnClickListener {}
-        action_button_8.setOnClickListener {}
-
-        arrow_up.setOnTouchListener { v: View?, event: MotionEvent? -> onTouchArrow(v, event) }
-        arrow_right.setOnTouchListener { v: View?, event: MotionEvent? -> onTouchArrow(v, event) }
-        arrow_down.setOnTouchListener { v: View?, event: MotionEvent? -> onTouchArrow(v, event) }
-        arrow_left.setOnTouchListener { v: View?, event: MotionEvent? -> onTouchArrow(v, event) }
+        action_button_1.setOnClickListener { v: View -> onClickAction(v) }
+        action_button_2.setOnClickListener { v: View -> onClickAction(v) }
+        action_button_3.setOnClickListener { v: View -> onClickAction(v) }
+        action_button_4.setOnClickListener { v: View -> onClickAction(v) }
+        action_button_5.setOnClickListener { v: View -> onClickAction(v) }
+        action_button_6.setOnClickListener { v: View -> onClickAction(v) }
+        action_button_7.setOnClickListener { v: View -> onClickAction(v) }
+        action_button_8.setOnClickListener { v: View -> onClickAction(v) }
     }
 
-    private fun onTouchArrow(v: View?, event: MotionEvent?): Boolean {
-        Toast.makeText(this, "touched", Toast.LENGTH_SHORT).show()
-        return true
+    private fun onTouchArrow(v: View, event: MotionEvent): Boolean {
+        val isTouchDown = event.action == MotionEvent.ACTION_DOWN
+        val isTouchUp = event.action == MotionEvent.ACTION_UP;
+        if (isTouchDown) {
+            when (v.id) {
+                R.id.arrow_up -> {
+                    carConnector.moveForward()
+                    arrow_up.setBackgroundResource(R.drawable.arrow_up_pressed)
+                }
+                R.id.arrow_down -> {
+                    carConnector.moveBackward()
+                    arrow_down.setBackgroundResource(R.drawable.arrow_down_pressed)
+                }
+                R.id.arrow_right -> {
+                    carConnector.turnRight()
+                    arrow_right.setBackgroundResource(R.drawable.arrow_right_pressed)
+                }
+                R.id.arrow_left -> {
+                    carConnector.turnLeft()
+                    arrow_left.setBackgroundResource(R.drawable.arrow_left_pressed)
+                }
+            }
+            return true
+        }
+        if (isTouchUp) {
+            carConnector.stopMoving();
+            when (v.id) {
+                R.id.arrow_up -> arrow_up.setBackgroundResource(R.drawable.arrow_up)
+                R.id.arrow_down -> arrow_down.setBackgroundResource(R.drawable.arrow_down)
+                R.id.arrow_right -> arrow_right.setBackgroundResource(R.drawable.arrow_right)
+                R.id.arrow_left -> arrow_left.setBackgroundResource(R.drawable.arrow_left)
+            }
+            return true
+        }
+        return false;
+    }
+
+    private fun onClickAction(v: View): Boolean {
+        when (v.id) {
+            R.id.action_button_1 -> carConnector.actionOne()
+            R.id.action_button_2 -> carConnector.actionTwo()
+            R.id.action_button_3 -> carConnector.actionThree()
+            R.id.action_button_4 -> carConnector.actionFour()
+            R.id.action_button_5 -> carConnector.actionFive()
+            R.id.action_button_6 -> carConnector.actionSix()
+            R.id.action_button_7 -> carConnector.actionSeven()
+            R.id.action_button_8 -> carConnector.actionHeight()
+        }
+        return true;
     }
 
 

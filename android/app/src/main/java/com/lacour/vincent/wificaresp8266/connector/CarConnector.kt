@@ -13,7 +13,7 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 
-interface CarApiService {
+private interface CarApiService {
     @GET("/move")
     fun move(@Query("dir") direction: String): Call<Void>
 
@@ -55,7 +55,47 @@ class CarConnector(context: Context) {
         send(stopMovingRequest)
     }
 
-    fun send(request: Call<Void>) {
+    fun actionOne() {
+        val actionOneRequest = service.action("1")
+        send(actionOneRequest)
+    }
+
+    fun actionTwo() {
+        val actionTwoRequest = service.action("2")
+        send(actionTwoRequest)
+    }
+
+    fun actionThree() {
+        val actionThreeRequest = service.action("3")
+        send(actionThreeRequest)
+    }
+
+    fun actionFour() {
+        val actionFourRequest = service.action("4")
+        send(actionFourRequest)
+    }
+
+    fun actionFive() {
+        val actionFiveRequest = service.action("5")
+        send(actionFiveRequest)
+    }
+
+    fun actionSix() {
+        val actionSixRequest = service.action("6")
+        send(actionSixRequest)
+    }
+
+    fun actionSeven() {
+        val actionSevenRequest = service.action("7")
+        send(actionSevenRequest)
+    }
+
+    fun actionHeight() {
+        val actionHeightRequest = service.action("8")
+        send(actionHeightRequest)
+    }
+
+    private fun send(request: Call<Void>) {
         request.enqueue(object : Callback<Void> {
             override fun onResponse(call: Call<Void>, response: Response<Void>) {
                 // Log.i("Response", response.code().toString())
