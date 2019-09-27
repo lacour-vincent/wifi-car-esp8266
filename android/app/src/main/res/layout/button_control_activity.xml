@@ -9,10 +9,10 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:elevation="4dp"
+        android:theme="@style/AppTheme.Toolbar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:theme="@style/AppTheme.Toolbar"
         app:titleTextAppearance="@style/AppTheme.Toolbar.TitleText" />
 
 
@@ -73,48 +73,48 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:text="1"
+            android:theme="@style/AppTheme.Button"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toStartOf="@+id/action_button_2"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:theme="@style/AppTheme.Button" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/action_button_2"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:text="2"
+            android:theme="@style/AppTheme.Button"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toStartOf="@+id/action_button_3"
             app:layout_constraintStart_toEndOf="@+id/action_button_1"
-            app:layout_constraintTop_toTopOf="parent"
-            app:theme="@style/AppTheme.Button" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/action_button_3"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:text="3"
+            android:theme="@style/AppTheme.Button"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toStartOf="@+id/action_button_4"
             app:layout_constraintStart_toEndOf="@+id/action_button_2"
-            app:layout_constraintTop_toTopOf="parent"
-            app:theme="@style/AppTheme.Button" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/action_button_4"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:text="4"
+            android:theme="@style/AppTheme.Button"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/action_button_3"
-            app:layout_constraintTop_toTopOf="parent"
-            app:theme="@style/AppTheme.Button" />
+            app:layout_constraintTop_toTopOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -134,48 +134,48 @@
             android:layout_height="0dp"
             android:layout_margin="0dp"
             android:text="5"
+            android:theme="@style/AppTheme.Button"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toStartOf="@+id/action_button_6"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:theme="@style/AppTheme.Button" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/action_button_6"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:text="6"
+            android:theme="@style/AppTheme.Button"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toStartOf="@+id/action_button_7"
             app:layout_constraintStart_toEndOf="@+id/action_button_5"
-            app:layout_constraintTop_toTopOf="parent"
-            app:theme="@style/AppTheme.Button" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/action_button_7"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:text="7"
+            android:theme="@style/AppTheme.Button"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toStartOf="@+id/action_button_8"
             app:layout_constraintStart_toEndOf="@+id/action_button_6"
-            app:layout_constraintTop_toTopOf="parent"
-            app:theme="@style/AppTheme.Button" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/action_button_8"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:text="8"
+            android:theme="@style/AppTheme.Button"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/action_button_7"
-            app:layout_constraintTop_toTopOf="parent"
-            app:theme="@style/AppTheme.Button" />
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
