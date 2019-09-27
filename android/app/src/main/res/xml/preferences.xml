@@ -80,4 +80,83 @@
 
     </PreferenceCategory>
 
+    <PreferenceCategory
+        android:title="Action parameters"
+        app:iconSpaceReserved="false">
+
+        <EditTextPreference
+            android:dialogMessage="Enter the command to trigger action 1"
+            android:dialogTitle="Action one"
+            android:inputType="text"
+            android:key="action_1"
+            android:summary="Enter the command to trigger action 1"
+            android:title="Action one"
+            app:iconSpaceReserved="false" />
+
+        <EditTextPreference
+            android:dialogMessage="Enter the command to trigger action 2"
+            android:dialogTitle="Action two"
+            android:inputType="text"
+            android:key="action_2"
+            android:summary="Enter the command to trigger action 2"
+            android:title="Action two"
+            app:iconSpaceReserved="false" />
+
+        <EditTextPreference
+            android:dialogMessage="Enter the command to trigger action 3"
+            android:dialogTitle="Action three"
+            android:inputType="text"
+            android:key="action_3"
+            android:summary="Enter the command to trigger action 3"
+            android:title="Action three"
+            app:iconSpaceReserved="false" />
+
+        <EditTextPreference
+            android:dialogMessage="Enter the command to trigger action 4"
+            android:dialogTitle="Action four"
+            android:inputType="text"
+            android:key="action_4"
+            android:summary="Enter the command to trigger action 4"
+            android:title="Action four"
+            app:iconSpaceReserved="false" />
+
+        <EditTextPreference
+            android:dialogMessage="Enter the command to trigger action 5"
+            android:dialogTitle="Action five"
+            android:inputType="text"
+            android:key="action_5"
+            android:summary="Enter the command to trigger action 5"
+            android:title="Action five"
+            app:iconSpaceReserved="false" />
+
+        <EditTextPreference
+            android:dialogMessage="Enter the command to trigger action 6"
+            android:dialogTitle="Action six"
+            android:inputType="text"
+            android:key="action_6"
+            android:summary="Enter the command to trigger action 6"
+            android:title="Action six"
+            app:iconSpaceReserved="false" />
+
+        <EditTextPreference
+            android:dialogMessage="Enter the command to trigger action 7"
+            android:dialogTitle="Action seven"
+            android:inputType="text"
+            android:key="action_7"
+            android:summary="Enter the command to trigger action 7"
+            android:title="Action seven"
+            app:iconSpaceReserved="false" />
+
+        <EditTextPreference
+            android:dialogMessage="Enter the command to trigger action 8"
+            android:dialogTitle="Action height"
+            android:inputType="text"
+            android:key="action_8"
+            android:summary="Enter the command to trigger action 8"
+            android:title="Action height"
+            app:iconSpaceReserved="false" />
+
+
+    </PreferenceCategory>
+
 </PreferenceScreen>
