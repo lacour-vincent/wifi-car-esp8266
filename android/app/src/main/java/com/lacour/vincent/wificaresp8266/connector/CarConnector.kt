@@ -3,21 +3,22 @@ package com.lacour.vincent.wificaresp8266.connector
 import android.content.Context
 import android.util.Log
 import com.lacour.vincent.wificaresp8266.storage.Preferences
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import retrofit2.*
 
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-import retrofit2.Retrofit
 import retrofit2.http.GET
 import retrofit2.http.Query
 
 
 private interface CarApiService {
     @GET("/move")
-    fun move(@Query("dir") direction: String): Call<Void>
+    suspend fun move(@Query("dir") direction: String): Response<Void>
 
     @GET("/action")
-    fun action(@Query("type") type: String): Call<Void>
+    suspend fun action(@Query("type") type: String): Response<Void>
 }
 
 class CarConnector(context: Context) {
@@ -27,34 +28,54 @@ class CarConnector(context: Context) {
     private val retrofit = Retrofit.Builder().baseUrl(url).build()
     private val service = retrofit.create(CarApiService::class.java)
 
-    fun moveForward() {
-        send(service.move(preferences.getMoveForwardValue()))
+    fun moveForward() = sendMoveRequest(preferences.getMoveBackwardValue())
+    fun moveBackward() = sendMoveRequest(preferences.getMoveBackwardValue())
+    fun stopMoving() = sendMoveRequest(preferences.getStopValue())
+    fun turnLeft() = sendMoveRequest(preferences.getTurnLeftValue())
+    fun turnRight() = sendMoveRequest(preferences.getTurnRightValue())
+
+    fun actionOne() = sendActionRequest(preferences.getActionOneValue())
+    fun actionTwo() = sendActionRequest(preferences.getActionTwoValue())
+    fun actionThree() = sendActionRequest(preferences.getActionThreeValue())
+    fun actionFour() = sendActionRequest(preferences.getActionFourValue())
+    fun actionFive() = sendActionRequest(preferences.getActionFiveValue())
+    fun actionSix() = sendActionRequest(preferences.getActionSixValue())
+    fun actionSeven() = sendActionRequest(preferences.getActionSevenValue())
+    fun actionHeight() = sendActionRequest(preferences.getActionHeightValue())
+
+
+    private fun sendMoveRequest(dir: String) {
+        CoroutineScope(Dispatchers.IO).launch {
+            val response = service.move(dir)
+            withContext(Dispatchers.Main) {
+                try {
+                    if (response.isSuccessful) {
+                        Log.i("Response", response.code().toString())
+                    } else {
+                        Log.i("Error", response.code().toString())
+                    }
+                } catch (e: HttpException) {
+                    Log.i("Exception", e.message().toString())
+                }
+            }
+        }
     }
 
-    fun moveBackward() = send(service.move(preferences.getMoveBackwardValue()))
-    fun stopMoving() = send(service.move(preferences.getStopValue()))
-    fun turnLeft() = send(service.move(preferences.getTurnLeftValue()))
-    fun turnRight() = send(service.move(preferences.getTurnRightValue()))
-
-    fun actionOne() = send(service.action(preferences.getActionOneValue()))
-    fun actionTwo() = send(service.action(preferences.getActionTwoValue()))
-    fun actionThree() = send(service.action(preferences.getActionThreeValue()))
-    fun actionFour() = send(service.action(preferences.getActionFourValue()))
-    fun actionFive() = send(service.action(preferences.getActionFiveValue()))
-    fun actionSix() = send(service.action(preferences.getActionSixValue()))
-    fun actionSeven() = send(service.action(preferences.getActionSevenValue()))
-    fun actionHeight() = send(service.action(preferences.getActionHeightValue()))
-
-
-    private fun send(request: Call<Void>) {
-        request.enqueue(object : Callback<Void> {
-            override fun onResponse(call: Call<Void>, response: Response<Void>) {
-                Log.i("Response", response.code().toString())
+    private fun sendActionRequest(type: String) {
+        CoroutineScope(Dispatchers.IO).launch {
+            val response = service.action(type)
+            withContext(Dispatchers.Main) {
+                try {
+                    if (response.isSuccessful) {
+                        Log.i("Response", response.code().toString())
+                    } else {
+                        Log.i("Error", response.code().toString())
+                    }
+                } catch (e: HttpException) {
+                    Log.i("Exception", e.message().toString())
+                }
             }
-
-            override fun onFailure(call: Call<Void>, t: Throwable) {
-                Log.i("Error", t.message!!)
-            }
-        })
+        }
     }
+
 }
