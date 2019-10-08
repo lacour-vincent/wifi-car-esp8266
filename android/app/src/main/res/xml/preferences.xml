@@ -7,153 +7,138 @@
         app:iconSpaceReserved="false">
 
         <EditTextPreference
-            android:dialogMessage="Enter your IP Address of your server"
-            android:dialogTitle="Your IP Address"
+            android:dialogMessage="@string/address_ip_dialog_message"
+            android:dialogTitle="@string/address_ip_dialog_title"
             android:inputType="text"
             android:key="ip_address"
-            android:summary="Enter the IP Address of your server"
-            android:title="IP Address : 192.168.4.1"
+            android:title="@string/address_ip_title"
             app:iconSpaceReserved="false" />
 
         <EditTextPreference
-            android:dialogMessage="Enter the port of your server"
-            android:dialogTitle="The port of your server"
+            android:dialogMessage="@string/port_dialog_message"
+            android:dialogTitle="@string/port_dialog_title"
             android:inputType="text"
             android:key="port"
-            android:summary="Enter the port of your server"
-            android:title="Port : 8080"
+            android:title="@string/port_title"
             app:iconSpaceReserved="false" />
 
     </PreferenceCategory>
 
 
     <PreferenceCategory
-        android:title="Move parameters"
+        android:title="@string/configuration_move"
         app:iconSpaceReserved="false">
 
         <EditTextPreference
-            android:dialogMessage="Enter the command to move forward"
-            android:dialogTitle="Move forward"
+            android:dialogMessage="@string/move_forward_dialog_message"
+            android:dialogTitle="@string/move_forward_dialog_title"
             android:inputType="text"
             android:key="move_forward"
-            android:summary="Enter the command to move forward"
-            android:title="Moving forward: F"
+            android:title="@string/move_forward_title"
             app:iconSpaceReserved="false" />
 
         <EditTextPreference
-            android:dialogMessage="Enter the command to move backward"
-            android:dialogTitle="Move backward"
+            android:dialogMessage="@string/move_backward_dialog_message"
+            android:dialogTitle="@string/move_backward_dialog_title"
             android:inputType="text"
             android:key="move_backward"
-            android:summary="Enter the command to move backward"
-            android:title="Moving backward: B"
+            android:title="@string/move_backward_title"
             app:iconSpaceReserved="false" />
 
         <EditTextPreference
-            android:dialogMessage="Enter the command to turn right"
-            android:dialogTitle="Turn right"
+            android:dialogMessage="@string/turn_right_dialog_message"
+            android:dialogTitle="@string/turn_right_dialog_title"
             android:inputType="text"
             android:key="turn_right"
-            android:summary="Enter the command to turn right"
-            android:title="Turn right: R"
+            android:title="@string/turn_right_title"
             app:iconSpaceReserved="false" />
 
 
         <EditTextPreference
-            android:dialogMessage="Enter the command to turn left"
-            android:dialogTitle="Turn left"
+            android:dialogMessage="@string/turn_left_dialog_message"
+            android:dialogTitle="@string/turn_left_dialog_title"
             android:inputType="text"
             android:key="turn_left"
-            android:summary="Enter the command to turn left"
-            android:title="Turn left: L"
+            android:title="@string/turn_left_title"
             app:iconSpaceReserved="false" />
 
         <EditTextPreference
-            android:dialogMessage="Enter the command to stop"
-            android:dialogTitle="Stop"
+            android:dialogMessage="@string/move_stop_dialog_message"
+            android:dialogTitle="@string/move_stop_dialog_title"
             android:inputType="text"
             android:key="move_stop"
-            android:summary="Enter the command to stop"
-            android:title="Stop: S"
+            android:title="@string/move_stop_title"
             app:iconSpaceReserved="false" />
 
 
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:title="Action parameters"
+        android:title="@string/configuration_action"
         app:iconSpaceReserved="false">
 
         <EditTextPreference
-            android:dialogMessage="Enter the command to trigger action 1"
-            android:dialogTitle="Action one"
+            android:dialogMessage="@string/action_1_dialog_message"
+            android:dialogTitle="@string/action_1_dialog_title"
             android:inputType="text"
             android:key="action_1"
-            android:summary="Enter the command to trigger action 1"
-            android:title="Action one"
+            android:title="@string/action_1_title"
             app:iconSpaceReserved="false" />
 
         <EditTextPreference
-            android:dialogMessage="Enter the command to trigger action 2"
-            android:dialogTitle="Action two"
+            android:dialogMessage="@string/action_2_dialog_message"
+            android:dialogTitle="@string/action_2_dialog_title"
             android:inputType="text"
             android:key="action_2"
-            android:summary="Enter the command to trigger action 2"
-            android:title="Action two"
+            android:title="@string/action_2_title"
             app:iconSpaceReserved="false" />
 
         <EditTextPreference
-            android:dialogMessage="Enter the command to trigger action 3"
-            android:dialogTitle="Action three"
+            android:dialogMessage="@string/action_3_dialog_message"
+            android:dialogTitle="@string/action_3_dialog_title"
             android:inputType="text"
             android:key="action_3"
-            android:summary="Enter the command to trigger action 3"
-            android:title="Action three"
+            android:title="@string/action_3_title"
             app:iconSpaceReserved="false" />
 
         <EditTextPreference
-            android:dialogMessage="Enter the command to trigger action 4"
-            android:dialogTitle="Action four"
+            android:dialogMessage="@string/action_4_dialog_message"
+            android:dialogTitle="@string/action_4_dialog_title"
             android:inputType="text"
             android:key="action_4"
-            android:summary="Enter the command to trigger action 4"
-            android:title="Action four"
+            android:title="@string/action_4_title"
             app:iconSpaceReserved="false" />
 
         <EditTextPreference
-            android:dialogMessage="Enter the command to trigger action 5"
-            android:dialogTitle="Action five"
+            android:dialogMessage="@string/action_5_dialog_message"
+            android:dialogTitle="@string/action_5_dialog_title"
             android:inputType="text"
             android:key="action_5"
-            android:summary="Enter the command to trigger action 5"
-            android:title="Action five"
+            android:title="@string/action_5_title"
             app:iconSpaceReserved="false" />
 
         <EditTextPreference
-            android:dialogMessage="Enter the command to trigger action 6"
-            android:dialogTitle="Action six"
+            android:dialogMessage="@string/action_6_dialog_message"
+            android:dialogTitle="@string/action_6_dialog_title"
             android:inputType="text"
             android:key="action_6"
-            android:summary="Enter the command to trigger action 6"
-            android:title="Action six"
+            android:title="@string/action_6_title"
             app:iconSpaceReserved="false" />
 
         <EditTextPreference
-            android:dialogMessage="Enter the command to trigger action 7"
-            android:dialogTitle="Action seven"
+            android:dialogMessage="@string/action_7_dialog_message"
+            android:dialogTitle="@string/action_7_dialog_title"
             android:inputType="text"
             android:key="action_7"
-            android:summary="Enter the command to trigger action 7"
-            android:title="Action seven"
+            android:title="@string/action_7_title"
             app:iconSpaceReserved="false" />
 
         <EditTextPreference
-            android:dialogMessage="Enter the command to trigger action 8"
-            android:dialogTitle="Action height"
+            android:dialogMessage="@string/action_8_dialog_message"
+            android:dialogTitle="@string/action_8_dialog_title"
             android:inputType="text"
             android:key="action_8"
-            android:summary="Enter the command to trigger action 8"
-            android:title="Action height"
+            android:title="@string/action_8_title"
             app:iconSpaceReserved="false" />
 
 

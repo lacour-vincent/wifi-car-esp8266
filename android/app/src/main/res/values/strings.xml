@@ -34,6 +34,71 @@
     <string name="action_button_7">7</string>
     <string name="action_button_8">8</string>
 
+    <!-- Configuration -->
+
+    <string name="configuration_server">Server</string>
+    <string name="configuration_move">Move parameters</string>
+    <string name="configuration_action">Action parameters</string>
+
+    <string name="address_ip_title">IP Address</string>
+    <string name="address_ip_dialog_title">IP Address</string>
+    <string name="address_ip_dialog_message">Enter the IP Address of your server</string>
+
+    <string name="port_title">Port</string>
+    <string name="port_dialog_title">Port</string>
+    <string name="port_dialog_message">Enter the port of your server</string>
+
+    <string name="move_forward_title">Move forward</string>
+    <string name="move_forward_dialog_title">Move forward</string>
+    <string name="move_forward_dialog_message">Enter the command to move forward</string>
+
+    <string name="move_backward_title">Move backward</string>
+    <string name="move_backward_dialog_title">Move backward</string>
+    <string name="move_backward_dialog_message">Enter the command to move backward</string>
+
+    <string name="move_stop_title">Move stop</string>
+    <string name="move_stop_dialog_title">Move stop</string>
+    <string name="move_stop_dialog_message">Enter the command to move stop</string>
+
+    <string name="turn_left_title">Turn left</string>
+    <string name="turn_left_dialog_title">Turn left</string>
+    <string name="turn_left_dialog_message">Enter the command to turn left</string>
+
+    <string name="turn_right_title">Turn right</string>
+    <string name="turn_right_dialog_title">Turn right</string>
+    <string name="turn_right_dialog_message">Enter the command to turn right</string>
+
+    <string name="action_1_title">Action 1</string>
+    <string name="action_1_dialog_title">Action 1</string>
+    <string name="action_1_dialog_message">Enter the command to linked with action 1</string>
+
+    <string name="action_2_title">Action 2</string>
+    <string name="action_2_dialog_title">Action 2</string>
+    <string name="action_2_dialog_message">Enter the command to linked with action 2</string>
+
+    <string name="action_3_title">Action 3</string>
+    <string name="action_3_dialog_title">Action 3</string>
+    <string name="action_3_dialog_message">Enter the command to linked with action 3</string>
+
+    <string name="action_4_title">Action 4</string>
+    <string name="action_4_dialog_title">Action 4</string>
+    <string name="action_4_dialog_message">Enter the command to linked with action 4</string>
+
+    <string name="action_5_title">Action 5</string>
+    <string name="action_5_dialog_title">Action 5</string>
+    <string name="action_5_dialog_message">Enter the command to linked with action 5</string>
+
+    <string name="action_6_title">Action 6</string>
+    <string name="action_6_dialog_title">Action 6</string>
+    <string name="action_6_dialog_message">Enter the command to linked with action 6</string>
+
+    <string name="action_7_title">Action 7</string>
+    <string name="action_7_dialog_title">Action 7</string>
+    <string name="action_7_dialog_message">Enter the command to linked with action 7</string>
+
+    <string name="action_8_title">Action 8</string>
+    <string name="action_8_dialog_title">Action 8</string>
+    <string name="action_8_dialog_message">Enter the command to linked with action 8</string>
 
     <!-- Legacy String-->
     <string name="titleToolbarSettings">Settings</string>
