@@ -3,10 +3,8 @@ package com.lacour.vincent.wificaresp8266.screen
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.*
-import android.widget.Button
 
 import android.widget.Toast
-import androidx.core.content.ContextCompat
 import com.lacour.vincent.wificaresp8266.R
 import com.lacour.vincent.wificaresp8266.connector.CarConnector
 import kotlinx.android.synthetic.main.button_control_activity.*
@@ -24,7 +22,7 @@ class ButtonControl : AppCompatActivity() {
             with(supportActionBar!!) {
                 setDisplayHomeAsUpEnabled(true)
                 setDisplayShowHomeEnabled(true)
-                title = "Button" // getString(R.string.)
+                title = getString(R.string.activity_button)
             }
         }
 
@@ -47,7 +45,7 @@ class ButtonControl : AppCompatActivity() {
 
     private fun onTouchArrow(v: View, event: MotionEvent): Boolean {
         val isTouchDown = event.action == MotionEvent.ACTION_DOWN
-        val isTouchUp = event.action == MotionEvent.ACTION_UP;
+        val isTouchUp = event.action == MotionEvent.ACTION_UP
         if (isTouchDown) {
             when (v.id) {
                 R.id.arrow_up -> {
@@ -70,7 +68,7 @@ class ButtonControl : AppCompatActivity() {
             return true
         }
         if (isTouchUp) {
-            carConnector.stopMoving();
+            carConnector.stopMoving()
             when (v.id) {
                 R.id.arrow_up -> arrow_up.setBackgroundResource(R.drawable.arrow_up)
                 R.id.arrow_down -> arrow_down.setBackgroundResource(R.drawable.arrow_down)
@@ -79,7 +77,7 @@ class ButtonControl : AppCompatActivity() {
             }
             return true
         }
-        return false;
+        return false
     }
 
     private fun onClickAction(v: View): Boolean {
@@ -93,7 +91,7 @@ class ButtonControl : AppCompatActivity() {
             R.id.action_button_7 -> carConnector.actionSeven()
             R.id.action_button_8 -> carConnector.actionHeight()
         }
-        return true;
+        return true
     }
 
     override fun onKeyDown(keyCode: Int, event: KeyEvent): Boolean {

@@ -23,5 +23,4 @@ object Constant {
     val ACTION_7_STORAGE = Storage("action_7", "7")
     val ACTION_8_STORAGE = Storage("action_8", "8")
 
-
 }

@@ -1,25 +1,41 @@
 <resources>
 
-    <!-- Strings related to App -->
+    <!-- Globals -->
     <string name="app_name">Wifi RC Car ESP8266</string>
+    <string name="short_app_name">Wifi ESP8266</string>
 
-    <!-- Strings related to Welcome Activity -->
+    <string name="activity_button">Button</string>
+    <string name="activity_accelerometer">Accelerometer</string>
+    <string name="activity_voice">Voice</string>
+    <string name="activity_configuration">Configuration</string>
 
-    <string name="menu_1">Button</string>
-    <string name="menu_2">Accelerometer</string>
-    <string name="menu_3">Voice</string>
 
-    <string name="doubleBackToExit">Press the return button again to exit.</string>
+    <!-- Icon and Images -->
+    <string name="alt_controller">Controller</string>
+    <string name="alt_accelerometer">Accelerometer</string>
+    <string name="alt_megaphone">Megaphone</string>
 
-    <string name="errorWifiTitle">Wifi disabled</string>
-    <string name="errorWifiText">Please activate the wifi to connect to the car.</string>
+    <string name="alt_arrow_up">Arrow up</string>
+    <string name="alt_arrow_down">Arrow down</string>
+    <string name="alt_arrow_right">Arrow right</string>
+    <string name="alt_arrow_left">Arrow left</string>
 
-    <string name="ratingTitle">Rate the application</string>
-    <string name="ratingText">If you want to support our work, you can rate the application favorably on the Google PlayStore. To get there :</string>
-    <string name="ratingPositive">Open PlayStore</string>
-    <string name="ratingNegative">Later</string>
+    <string name="alt_information">Information</string>
+    <string name="alt_wifi">Wifi</string>
+    <string name="alt_configuration">Configuration</string>
 
-    <!-- Strings related to Configuration -->
+    <!-- Action Button -->
+    <string name="action_button_1">1</string>
+    <string name="action_button_2">2</string>
+    <string name="action_button_3">3</string>
+    <string name="action_button_4">4</string>
+    <string name="action_button_5">5</string>
+    <string name="action_button_6">6</string>
+    <string name="action_button_7">7</string>
+    <string name="action_button_8">8</string>
+
+
+    <!-- Legacy String-->
     <string name="titleToolbarSettings">Settings</string>
     <string name="settingSection_1">Server setting</string>
     <string name="settingSection_2">Commands</string>
@@ -112,27 +128,5 @@
     <string name="helpVoiceText">The voice commands and the language to control the car can be modified in the setting page.\n\nThe \"Stop\" command will be sent after the chosen delay.\n\nTo use voice recognition offline, you must download the package corresponding to your language.</string>
     <string name="helpPositive">Got it!</string>
     <string name="VoicePrompt">What do you want to do?</string>
-
-    <!-- Strings related to update 1.2.0 -->
-
-    <string name="settingLightOn_title">Switch on the light</string>
-    <string name="settingLightOn_summary">Enter the command to switch on the light</string>
-    <string name="settingLightOn_title_dialog">Command to switch on the light</string>
-    <string name="settingLightOn_text_dialog">Enter the command to switch on the light</string>
-
-    <string name="settingLightOff_title">Switch off the light</string>
-    <string name="settingLightOff_summary">Enter the command to switch off the light</string>
-    <string name="settingLightOff_title_dialog">Command to switch off the light</string>
-    <string name="settingLightOff_text_dialog">Enter the command to switch off the light</string>
-
-    <string name="settingLightOnVoice_title">Switch on the light</string>
-    <string name="settingLightOnVoice_summary">Enter the keyword to switch on the light</string>
-    <string name="settingLightOnVoice_title_dialog">Keyword to switch on the light</string>
-    <string name="settingLightOnVoice_text_dialog">Enter the keyword to switch on the light</string>
-
-    <string name="settingLightOffVoice_title">Switch off the light</string>
-    <string name="settingLightOffVoice_summary">Enter the keyword to switch off the light</string>
-    <string name="settingLightOffVoice_title_dialog">Keyword to switch off the light</string>
-    <string name="settingLightOffVoice_text_dialog">Enter the keyword to switch off the light</string>
 
 </resources>

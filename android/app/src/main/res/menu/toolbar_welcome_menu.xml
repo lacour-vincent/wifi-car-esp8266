@@ -6,14 +6,14 @@
         android:id="@+id/action_wifi"
         android:icon="@drawable/ic_wifi"
         android:orderInCategory="0"
-        android:title="wifi"
+        android:title="@string/alt_wifi"
         app:showAsAction="ifRoom" />
 
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/action_configuration"
         android:icon="@drawable/ic_settings"
         android:orderInCategory="1"
-        android:title="information"
+        android:title="@string/alt_configuration"
         app:showAsAction="ifRoom" />
 
 

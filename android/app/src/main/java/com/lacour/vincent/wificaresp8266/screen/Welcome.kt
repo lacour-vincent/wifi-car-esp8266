@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 
-import android.provider.Settings;
+import android.provider.Settings
 import android.widget.Toast
 import com.lacour.vincent.wificaresp8266.R
 
@@ -18,6 +18,12 @@ class Welcome : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.welcome_activity)
         setSupportActionBar(findViewById(R.id.toolbar_welcome))
+
+        if (supportActionBar != null) {
+            with(supportActionBar!!) {
+                title = getString(R.string.app_name)
+            }
+        }
 
         menu_button.setOnClickListener {
             val intent = Intent(this, ButtonControl::class.java)
@@ -54,7 +60,7 @@ class Welcome : AppCompatActivity() {
                 )
                 true
             }
-            R.id.action_settings -> {
+            R.id.action_configuration -> {
                 val intent = Intent(this, Configuration::class.java)
                 startActivity(intent)
                 this@Welcome.overridePendingTransition(

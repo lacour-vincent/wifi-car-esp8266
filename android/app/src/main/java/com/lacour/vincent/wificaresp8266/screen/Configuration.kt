@@ -20,7 +20,7 @@ class Configuration : AppCompatActivity() {
             with(supportActionBar!!) {
                 setDisplayHomeAsUpEnabled(true)
                 setDisplayShowHomeEnabled(true)
-                title = "Configuration" // getString(R.string.settings_label)
+                title = getString(R.string.activity_configuration)
             }
         }
 
