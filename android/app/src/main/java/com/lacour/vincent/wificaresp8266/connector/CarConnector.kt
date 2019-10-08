@@ -1,12 +1,7 @@
 package com.lacour.vincent.wificaresp8266.connector
 
 import android.content.Context
-import android.util.Log
 import com.lacour.vincent.wificaresp8266.storage.Preferences
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import retrofit2.*
 
 import retrofit2.http.GET
@@ -15,10 +10,10 @@ import retrofit2.http.Query
 
 private interface CarApiService {
     @GET("/move")
-    suspend fun move(@Query("dir") direction: String): Response<Void>
+    fun move(@Query("dir") direction: String): Call<Void>
 
     @GET("/action")
-    suspend fun action(@Query("type") type: String): Response<Void>
+    fun action(@Query("type") type: String): Call<Void>
 }
 
 class CarConnector(context: Context) {
@@ -45,37 +40,29 @@ class CarConnector(context: Context) {
 
 
     private fun sendMoveRequest(dir: String) {
-        CoroutineScope(Dispatchers.IO).launch {
-            val response = service.move(dir)
-            withContext(Dispatchers.Main) {
-                try {
-                    if (response.isSuccessful) {
-                        Log.i("Response", response.code().toString())
-                    } else {
-                        Log.i("Error", response.code().toString())
-                    }
-                } catch (e: HttpException) {
-                    Log.i("Exception", e.message().toString())
-                }
+        val request = service.move(dir)
+        request.enqueue(object : Callback<Void> {
+            override fun onResponse(call: Call<Void>, response: Response<Void>) {
+                //Log.i("Response", response.code().toString())
             }
-        }
+
+            override fun onFailure(call: Call<Void>, t: Throwable) {
+                //Log.i("Failure", t.message.toString())
+            }
+        })
     }
 
     private fun sendActionRequest(type: String) {
-        CoroutineScope(Dispatchers.IO).launch {
-            val response = service.action(type)
-            withContext(Dispatchers.Main) {
-                try {
-                    if (response.isSuccessful) {
-                        Log.i("Response", response.code().toString())
-                    } else {
-                        Log.i("Error", response.code().toString())
-                    }
-                } catch (e: HttpException) {
-                    Log.i("Exception", e.message().toString())
-                }
+        val request = service.action(type)
+        request.enqueue(object : Callback<Void> {
+            override fun onResponse(call: Call<Void>, response: Response<Void>) {
+                //Log.i("Response", response.code().toString())
             }
-        }
+
+            override fun onFailure(call: Call<Void>, t: Throwable) {
+                //Log.i("Failure", t.message.toString())
+            }
+        })
     }
 
 }
