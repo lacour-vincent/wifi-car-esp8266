@@ -23,7 +23,7 @@ class CarConnector(context: Context) {
     private val retrofit = Retrofit.Builder().baseUrl(url).build()
     private val service = retrofit.create(CarApiService::class.java)
 
-    fun moveForward() = sendMoveRequest(preferences.getMoveBackwardValue())
+    fun moveForward() = sendMoveRequest(preferences.getMoveForwardValue())
     fun moveBackward() = sendMoveRequest(preferences.getMoveBackwardValue())
     fun stopMoving() = sendMoveRequest(preferences.getStopValue())
     fun turnLeft() = sendMoveRequest(preferences.getTurnLeftValue())
