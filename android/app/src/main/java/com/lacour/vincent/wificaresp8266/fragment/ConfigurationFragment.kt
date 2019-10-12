@@ -2,7 +2,6 @@ package com.lacour.vincent.wificaresp8266.fragment
 
 import android.content.SharedPreferences
 import android.os.Bundle
-import android.text.TextUtils
 import androidx.preference.EditTextPreference
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
@@ -44,7 +43,7 @@ class ConfigurationFragment : PreferenceFragmentCompat(),
         val preference: EditTextPreference? = findPreference(key)
         preference?.summaryProvider = Preference.SummaryProvider<EditTextPreference> { pref ->
             val value = pref.text
-            if (TextUtils.isEmpty(value)) default else value
+            if (value.isNullOrBlank()) default else value
         }
     }
 
@@ -53,7 +52,7 @@ class ConfigurationFragment : PreferenceFragmentCompat(),
         val preference: EditTextPreference? = findPreference(key)
         preference?.summaryProvider = Preference.SummaryProvider<EditTextPreference> { pref ->
             val value = pref.text
-            "/move?dir=${if (TextUtils.isEmpty(value)) default else value}"
+            "/move?dir=${if (value.isNullOrBlank()) default else value}"
         }
     }
 
@@ -62,7 +61,7 @@ class ConfigurationFragment : PreferenceFragmentCompat(),
         val preference: EditTextPreference? = findPreference(key)
         preference?.summaryProvider = Preference.SummaryProvider<EditTextPreference> { pref ->
             val value = pref.text
-            "/action?type=${if (TextUtils.isEmpty(value)) default else value}"
+            "/action?type=${if (value.isNullOrBlank()) default else value}"
         }
     }
 

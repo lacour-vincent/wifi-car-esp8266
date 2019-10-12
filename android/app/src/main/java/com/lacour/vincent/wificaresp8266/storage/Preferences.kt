@@ -13,7 +13,7 @@ class Preferences(ctx: Context) {
     private fun getSharedPreferencesValue(storage: Storage): String {
         val (key, default) = storage
         val value = preferences.getString(key, default)!!
-        return if (!value.isBlank()) value else default
+        return if (value.isBlank()) default else value
     }
 
     fun getIpAddress(): String = getSharedPreferencesValue(Constant.IP_ADDRESS_ST0RAGE)
