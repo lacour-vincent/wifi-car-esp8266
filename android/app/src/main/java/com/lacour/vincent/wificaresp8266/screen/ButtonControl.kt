@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.*
 
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import com.lacour.vincent.wificaresp8266.R
 import com.lacour.vincent.wificaresp8266.connector.CarConnector
 import kotlinx.android.synthetic.main.button_control_activity.*
@@ -28,19 +29,19 @@ class ButtonControl : AppCompatActivity() {
 
         carConnector = CarConnector(this@ButtonControl)
 
-        arrow_up.setOnTouchListener { v: View, event: MotionEvent -> onTouchArrow(v, event) }
-        arrow_right.setOnTouchListener { v: View, event: MotionEvent -> onTouchArrow(v, event) }
-        arrow_down.setOnTouchListener { v: View, event: MotionEvent -> onTouchArrow(v, event) }
-        arrow_left.setOnTouchListener { v: View, event: MotionEvent -> onTouchArrow(v, event) }
+        arrow_up.setOnTouchListener { v: View, e: MotionEvent -> onTouchArrow(v, e) }
+        arrow_right.setOnTouchListener { v: View, e: MotionEvent -> onTouchArrow(v, e) }
+        arrow_down.setOnTouchListener { v: View, e: MotionEvent -> onTouchArrow(v, e) }
+        arrow_left.setOnTouchListener { v: View, e: MotionEvent -> onTouchArrow(v, e) }
 
-        action_button_1.setOnClickListener { v: View -> onClickAction(v) }
-        action_button_2.setOnClickListener { v: View -> onClickAction(v) }
-        action_button_3.setOnClickListener { v: View -> onClickAction(v) }
-        action_button_4.setOnClickListener { v: View -> onClickAction(v) }
-        action_button_5.setOnClickListener { v: View -> onClickAction(v) }
-        action_button_6.setOnClickListener { v: View -> onClickAction(v) }
-        action_button_7.setOnClickListener { v: View -> onClickAction(v) }
-        action_button_8.setOnClickListener { v: View -> onClickAction(v) }
+        action_button_1.setOnTouchListener { v: View, e: MotionEvent -> onTouchAction(v, e) }
+        action_button_2.setOnTouchListener { v: View, e: MotionEvent -> onTouchAction(v, e) }
+        action_button_3.setOnTouchListener { v: View, e: MotionEvent -> onTouchAction(v, e) }
+        action_button_4.setOnTouchListener { v: View, e: MotionEvent -> onTouchAction(v, e) }
+        action_button_5.setOnTouchListener { v: View, e: MotionEvent -> onTouchAction(v, e) }
+        action_button_6.setOnTouchListener { v: View, e: MotionEvent -> onTouchAction(v, e) }
+        action_button_7.setOnTouchListener { v: View, e: MotionEvent -> onTouchAction(v, e) }
+        action_button_8.setOnTouchListener { v: View, e: MotionEvent -> onTouchAction(v, e) }
     }
 
     private fun onTouchArrow(v: View, event: MotionEvent): Boolean {
@@ -80,18 +81,62 @@ class ButtonControl : AppCompatActivity() {
         return false
     }
 
-    private fun onClickAction(v: View): Boolean {
-        when (v.id) {
-            R.id.action_button_1 -> carConnector.actionOne()
-            R.id.action_button_2 -> carConnector.actionTwo()
-            R.id.action_button_3 -> carConnector.actionThree()
-            R.id.action_button_4 -> carConnector.actionFour()
-            R.id.action_button_5 -> carConnector.actionFive()
-            R.id.action_button_6 -> carConnector.actionSix()
-            R.id.action_button_7 -> carConnector.actionSeven()
-            R.id.action_button_8 -> carConnector.actionHeight()
+    private fun onTouchAction(v: View, event: MotionEvent): Boolean {
+        val isTouchDown = event.action == MotionEvent.ACTION_DOWN
+        val isTouchUp = event.action == MotionEvent.ACTION_UP
+        if (isTouchDown) {
+            val orangeColor = ContextCompat.getColor(this, R.color.colorOrange);
+            when (v.id) {
+                R.id.action_button_1 -> {
+                    carConnector.actionOne()
+                    action_button_1.setTextColor(orangeColor)
+                }
+                R.id.action_button_2 -> {
+                    carConnector.actionTwo()
+                    action_button_2.setTextColor(orangeColor)
+                }
+                R.id.action_button_3 -> {
+                    carConnector.actionThree()
+                    action_button_3.setTextColor(orangeColor)
+                }
+                R.id.action_button_4 -> {
+                    carConnector.actionFour()
+                    action_button_4.setTextColor(orangeColor)
+                }
+                R.id.action_button_5 -> {
+                    carConnector.actionFive()
+                    action_button_5.setTextColor(orangeColor)
+                }
+                R.id.action_button_6 -> {
+                    carConnector.actionSix()
+                    action_button_6.setTextColor(orangeColor)
+                }
+                R.id.action_button_7 -> {
+                    carConnector.actionSeven()
+                    action_button_7.setTextColor(orangeColor)
+                }
+                R.id.action_button_8 -> {
+                    carConnector.actionHeight()
+                    action_button_8.setTextColor(orangeColor)
+                }
+            }
+            return true
         }
-        return true
+        if (isTouchUp) {
+            val whiteColor = ContextCompat.getColor(this, R.color.colorWhite);
+            when (v.id) {
+                R.id.action_button_1 -> action_button_1.setTextColor(whiteColor)
+                R.id.action_button_2 -> action_button_2.setTextColor(whiteColor)
+                R.id.action_button_3 -> action_button_3.setTextColor(whiteColor)
+                R.id.action_button_4 -> action_button_4.setTextColor(whiteColor)
+                R.id.action_button_5 -> action_button_5.setTextColor(whiteColor)
+                R.id.action_button_6 -> action_button_6.setTextColor(whiteColor)
+                R.id.action_button_7 -> action_button_7.setTextColor(whiteColor)
+                R.id.action_button_8 -> action_button_8.setTextColor(whiteColor)
+            }
+            return true
+        }
+        return false
     }
 
     override fun onKeyDown(keyCode: Int, event: KeyEvent): Boolean {
