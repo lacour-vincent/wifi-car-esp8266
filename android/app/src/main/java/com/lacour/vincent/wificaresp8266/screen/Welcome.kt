@@ -35,7 +35,12 @@ class Welcome : AppCompatActivity() {
         }
 
         menu_accelerometer.setOnClickListener {
-            Toast.makeText(this, "menu - Accelerometer", Toast.LENGTH_LONG).show()
+            val intent = Intent(this, AccelerometerControl::class.java)
+            startActivity(intent)
+            this@Welcome.overridePendingTransition(
+                R.anim.anim_slide_in_left,
+                R.anim.anim_slide_out_left
+            )
         }
 
         menu_voice.setOnClickListener {

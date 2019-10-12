@@ -1,5 +1,10 @@
 package com.lacour.vincent.wificaresp8266.screen
 
+import android.content.Context
+import android.hardware.Sensor
+import android.hardware.SensorEvent
+import android.hardware.SensorEventListener
+import android.hardware.SensorManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.*
@@ -8,31 +13,32 @@ import android.widget.Toast
 import androidx.core.content.ContextCompat
 import com.lacour.vincent.wificaresp8266.R
 import com.lacour.vincent.wificaresp8266.connector.CarConnector
-import kotlinx.android.synthetic.main.button_control_activity.*
+import kotlinx.android.synthetic.main.accelerometer_control_activity.*
 
-class ButtonControl : AppCompatActivity() {
+class AccelerometerControl : AppCompatActivity(), SensorEventListener {
 
     private lateinit var carConnector: CarConnector
+    private lateinit var mSensorManager: SensorManager
+    private lateinit var accelerometerSensor: Sensor
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.button_control_activity)
-        setSupportActionBar(findViewById(R.id.toolbar_button_control))
+        setContentView(R.layout.accelerometer_control_activity)
+        setSupportActionBar(findViewById(R.id.toolbar_accelerometer_control))
 
         if (supportActionBar != null) {
             with(supportActionBar!!) {
                 setDisplayHomeAsUpEnabled(true)
                 setDisplayShowHomeEnabled(true)
-                title = getString(R.string.activity_button)
+                title = getString(R.string.activity_accelerometer)
             }
         }
 
-        carConnector = CarConnector(this@ButtonControl)
+        carConnector = CarConnector(this@AccelerometerControl)
 
-        arrow_up.setOnTouchListener { v: View, e: MotionEvent -> onTouchArrow(v, e) }
-        arrow_right.setOnTouchListener { v: View, e: MotionEvent -> onTouchArrow(v, e) }
-        arrow_down.setOnTouchListener { v: View, e: MotionEvent -> onTouchArrow(v, e) }
-        arrow_left.setOnTouchListener { v: View, e: MotionEvent -> onTouchArrow(v, e) }
+        mSensorManager = getSystemService(Context.SENSOR_SERVICE) as SensorManager
+        accelerometerSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER)
+
 
         action_button_1.setOnTouchListener { v: View, e: MotionEvent -> onTouchAction(v, e) }
         action_button_2.setOnTouchListener { v: View, e: MotionEvent -> onTouchAction(v, e) }
@@ -44,42 +50,59 @@ class ButtonControl : AppCompatActivity() {
         action_button_8.setOnTouchListener { v: View, e: MotionEvent -> onTouchAction(v, e) }
     }
 
-    private fun onTouchArrow(v: View, event: MotionEvent): Boolean {
-        val isTouchDown = event.action == MotionEvent.ACTION_DOWN
-        val isTouchUp = event.action == MotionEvent.ACTION_UP
-        if (isTouchDown) {
-            when (v.id) {
-                R.id.arrow_up -> {
-                    carConnector.moveForward()
-                    arrow_up.setBackgroundResource(R.drawable.arrow_up_pressed)
-                }
-                R.id.arrow_down -> {
-                    carConnector.moveBackward()
-                    arrow_down.setBackgroundResource(R.drawable.arrow_down_pressed)
-                }
-                R.id.arrow_right -> {
-                    carConnector.turnRight()
-                    arrow_right.setBackgroundResource(R.drawable.arrow_right_pressed)
-                }
-                R.id.arrow_left -> {
-                    carConnector.turnLeft()
-                    arrow_left.setBackgroundResource(R.drawable.arrow_left_pressed)
-                }
-            }
-            return true
-        }
-        if (isTouchUp) {
-            carConnector.stopMoving()
-            when (v.id) {
-                R.id.arrow_up -> arrow_up.setBackgroundResource(R.drawable.arrow_up)
-                R.id.arrow_down -> arrow_down.setBackgroundResource(R.drawable.arrow_down)
-                R.id.arrow_right -> arrow_right.setBackgroundResource(R.drawable.arrow_right)
-                R.id.arrow_left -> arrow_left.setBackgroundResource(R.drawable.arrow_left)
-            }
-            return true
-        }
-        return false
+    override fun onAccuracyChanged(p0: Sensor?, p1: Int) {
+        /* Do Nothing */
     }
+
+    override fun onSensorChanged(p0: SensorEvent?) {
+        if (p0 == null) return
+        val axisX = p0.values[0]
+        val axisY = p0.values[1]
+
+        val isUpOrientation: Boolean = ((axisX > -3) && (axisX < 3) && (axisY < -3))
+        val isDownOrientation: Boolean = ((axisX > -3) && (axisX < 3) && (axisY > 3))
+        val isRightOrientation: Boolean = ((axisY > -3) && (axisY < 3) && (axisX < -3))
+        val isLeftOrientation: Boolean = ((axisY > -3) && (axisY < 3) && (axisX > 3))
+
+        when {
+            isUpOrientation -> {
+                carConnector.moveForward()
+                arrow_up.setBackgroundResource(R.drawable.arrow_up_pressed)
+                arrow_down.setBackgroundResource(R.drawable.arrow_down)
+                arrow_right.setBackgroundResource(R.drawable.arrow_right)
+                arrow_left.setBackgroundResource(R.drawable.arrow_left)
+            }
+            isDownOrientation -> {
+                carConnector.moveBackward()
+                arrow_up.setBackgroundResource(R.drawable.arrow_up)
+                arrow_down.setBackgroundResource(R.drawable.arrow_down_pressed)
+                arrow_right.setBackgroundResource(R.drawable.arrow_right)
+                arrow_left.setBackgroundResource(R.drawable.arrow_left)
+            }
+            isRightOrientation -> {
+                carConnector.turnRight()
+                arrow_up.setBackgroundResource(R.drawable.arrow_up)
+                arrow_down.setBackgroundResource(R.drawable.arrow_down)
+                arrow_right.setBackgroundResource(R.drawable.arrow_right_pressed)
+                arrow_left.setBackgroundResource(R.drawable.arrow_left)
+            }
+            isLeftOrientation -> {
+                carConnector.turnLeft()
+                arrow_up.setBackgroundResource(R.drawable.arrow_up)
+                arrow_down.setBackgroundResource(R.drawable.arrow_down)
+                arrow_right.setBackgroundResource(R.drawable.arrow_right)
+                arrow_left.setBackgroundResource(R.drawable.arrow_left_pressed)
+            }
+            else -> {
+                carConnector.stopMoving()
+                arrow_up.setBackgroundResource(R.drawable.arrow_up)
+                arrow_down.setBackgroundResource(R.drawable.arrow_down)
+                arrow_right.setBackgroundResource(R.drawable.arrow_right)
+                arrow_left.setBackgroundResource(R.drawable.arrow_left)
+            }
+        }
+    }
+
 
     private fun onTouchAction(v: View, event: MotionEvent): Boolean {
         val isTouchDown = event.action == MotionEvent.ACTION_DOWN
@@ -139,6 +162,20 @@ class ButtonControl : AppCompatActivity() {
         return false
     }
 
+    override fun onResume() {
+        super.onResume()
+        mSensorManager.registerListener(
+            this,
+            accelerometerSensor,
+            SensorManager.SENSOR_DELAY_NORMAL
+        )
+    }
+
+    override fun onPause() {
+        super.onPause()
+        mSensorManager.unregisterListener(this)
+    }
+
     override fun onKeyDown(keyCode: Int, event: KeyEvent): Boolean {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
             finishActivity()
@@ -167,7 +204,7 @@ class ButtonControl : AppCompatActivity() {
 
     private fun finishActivity() {
         finish()
-        this@ButtonControl.overridePendingTransition(
+        this@AccelerometerControl.overridePendingTransition(
             R.anim.anim_slide_in_right,
             R.anim.anim_slide_out_right
         )
