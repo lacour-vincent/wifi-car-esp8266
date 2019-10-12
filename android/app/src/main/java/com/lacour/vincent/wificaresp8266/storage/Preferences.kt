@@ -12,18 +12,12 @@ class Preferences(ctx: Context) {
 
     private fun getSharedPreferencesValue(storage: Storage): String {
         val (key, default) = storage
-        return preferences.getString(key, default)!!
+        val value = preferences.getString(key, default)!!
+        return if (!value.isBlank()) value else default
     }
 
-    fun getIpAddress(): String {
-        val ipAddress = getSharedPreferencesValue(Constant.IP_ADDRESS_ST0RAGE)
-        return if (!ipAddress.isBlank()) ipAddress else Constant.IP_ADDRESS_ST0RAGE.default
-    }
-
-    fun getPort(): String {
-        val port = getSharedPreferencesValue(Constant.PORT_STORAGE)
-        return if (!port.isBlank()) port else Constant.PORT_STORAGE.default
-    }
+    fun getIpAddress(): String = getSharedPreferencesValue(Constant.IP_ADDRESS_ST0RAGE)
+    fun getPort(): String = getSharedPreferencesValue(Constant.PORT_STORAGE)
 
     fun getMoveForwardValue(): String = getSharedPreferencesValue(Constant.MOVE_FORWARD_STORAGE)
     fun getMoveBackwardValue(): String = getSharedPreferencesValue(Constant.MOVE_BACKWARD_STORAGE)

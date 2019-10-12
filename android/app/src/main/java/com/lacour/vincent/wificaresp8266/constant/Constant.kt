@@ -2,7 +2,6 @@ package com.lacour.vincent.wificaresp8266.constant
 
 import com.lacour.vincent.wificaresp8266.model.Storage
 
-
 object Constant {
 
     val IP_ADDRESS_ST0RAGE = Storage("ip_address", "192.168.4.1")

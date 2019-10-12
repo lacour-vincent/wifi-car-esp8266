@@ -1,6 +1,7 @@
 package com.lacour.vincent.wificaresp8266.connector
 
 import android.content.Context
+import android.util.Log
 import com.lacour.vincent.wificaresp8266.storage.Preferences
 import retrofit2.*
 
@@ -43,11 +44,11 @@ class CarConnector(context: Context) {
         val request = service.move(dir)
         request.enqueue(object : Callback<Void> {
             override fun onResponse(call: Call<Void>, response: Response<Void>) {
-                //Log.i("Response", response.code().toString())
+                Log.i("Response", response.code().toString())
             }
 
             override fun onFailure(call: Call<Void>, t: Throwable) {
-                //Log.i("Failure", t.message.toString())
+                Log.e("Failure", t.message.toString())
             }
         })
     }
@@ -56,11 +57,11 @@ class CarConnector(context: Context) {
         val request = service.action(type)
         request.enqueue(object : Callback<Void> {
             override fun onResponse(call: Call<Void>, response: Response<Void>) {
-                //Log.i("Response", response.code().toString())
+                Log.i("Response", response.code().toString())
             }
 
             override fun onFailure(call: Call<Void>, t: Throwable) {
-                //Log.i("Failure", t.message.toString())
+                Log.e("Failure", t.message.toString())
             }
         })
     }
