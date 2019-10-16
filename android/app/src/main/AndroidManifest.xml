@@ -37,6 +37,10 @@
             android:name=".screen.AccelerometerControl"
             android:screenOrientation="portrait" />
 
+        <activity
+            android:name=".screen.VoiceControl"
+            android:screenOrientation="portrait" />
+
     </application>
 
 </manifest>

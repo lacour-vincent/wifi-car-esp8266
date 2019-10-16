@@ -44,7 +44,12 @@ class Welcome : AppCompatActivity() {
         }
 
         menu_voice.setOnClickListener {
-            Toast.makeText(this, "menu - Voice", Toast.LENGTH_LONG).show()
+            val intent = Intent(this, VoiceControl::class.java)
+            startActivity(intent)
+            this@Welcome.overridePendingTransition(
+                R.anim.anim_slide_in_left,
+                R.anim.anim_slide_out_left
+            )
         }
     }
 
