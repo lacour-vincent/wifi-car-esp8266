@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.*
 
-import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
 import com.lacour.vincent.wificaresp8266.R
 import com.lacour.vincent.wificaresp8266.connector.CarConnector
@@ -159,7 +159,7 @@ class ButtonControl : AppCompatActivity() {
                 true
             }
             R.id.action_information -> {
-                Toast.makeText(this, "Information", Toast.LENGTH_LONG).show()
+                showInformationDialog()
                 true
             }
             else -> super.onOptionsItemSelected(item)
@@ -171,6 +171,17 @@ class ButtonControl : AppCompatActivity() {
             R.anim.anim_slide_in_right,
             R.anim.anim_slide_out_right
         )
+    }
+
+    private fun showInformationDialog() {
+        val builder =
+            AlertDialog.Builder(ContextThemeWrapper(this, R.style.AlertDialogTheme))
+        with(builder) {
+            setTitle(getString(R.string.button_dialog_title))
+            setMessage(getString(R.string.button_dialog_message))
+            setPositiveButton(getString(R.string.ok)) { _, _ -> }
+            show()
+        }
     }
 
 }

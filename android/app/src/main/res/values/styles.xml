@@ -40,5 +40,16 @@
         <item name="android:textColorAlertDialogListItem">@color/colorGray</item>
     </style>
 
+    <style name="AlertDialogTheme" parent="Theme.AppCompat.Dialog.Alert">
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:background">@color/colorDarkGray</item>
+        <item name="buttonBarPositiveButtonStyle">@style/AlertDialogTheme.PositiveButton</item>
+
+    </style>
+
+    <style name="AlertDialogTheme.PositiveButton">
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
 
 </resources>

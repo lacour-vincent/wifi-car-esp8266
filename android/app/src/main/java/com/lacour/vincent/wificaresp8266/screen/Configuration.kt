@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.KeyEvent
 import android.view.Menu
 import android.view.MenuItem
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.lacour.vincent.wificaresp8266.fragment.ConfigurationFragment
 import com.lacour.vincent.wificaresp8266.R
@@ -54,6 +55,7 @@ class Configuration : AppCompatActivity() {
                 true
             }
             R.id.action_information -> {
+                showInformationDialog()
                 true
             }
             else -> super.onOptionsItemSelected(item)
@@ -65,6 +67,16 @@ class Configuration : AppCompatActivity() {
             R.anim.anim_slide_in_right,
             R.anim.anim_slide_out_right
         )
+    }
+
+    private fun showInformationDialog() {
+        val builder = AlertDialog.Builder(this)
+        with(builder) {
+            setTitle(getString(R.string.configuration_dialog_title))
+            setMessage(getString(R.string.configuration_dialog_message))
+            setPositiveButton(getString(R.string.ok)) { _, _ -> }
+            show()
+        }
     }
 
 }

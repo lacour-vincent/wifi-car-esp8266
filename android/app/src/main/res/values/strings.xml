@@ -9,6 +9,8 @@
     <string name="activity_voice">Voice</string>
     <string name="activity_configuration">Configuration</string>
 
+    <string name="ok">OK</string>
+
 
     <!-- Icon and Images -->
     <string name="alt_controller">Controller</string>
@@ -100,92 +102,34 @@
     <string name="action_8_dialog_title">Action 8</string>
     <string name="action_8_dialog_message">Enter the command to linked with action 8</string>
 
-    <!-- Legacy String-->
-    <string name="titleToolbarSettings">Settings</string>
-    <string name="settingSection_1">Server setting</string>
-    <string name="settingSection_2">Commands</string>
+    <!-- Information - Dialog -->
 
-    <string name="settingIP_title">IP Address</string>
-    <string name="settingIP_summary">Enter your IP Address</string>
-    <string name="settingIP_title_dialog">Your IP Address</string>
-    <string name="settingIP_text_dialog">Enter your IP Address</string>
-
-    <string name="settingPort_title">Port</string>
-    <string name="settingPort_summary">Enter the port of your server</string>
-    <string name="settingPort_title_dialog">The server port</string>
-    <string name="settingPort_text_dialog">Enter the port of your server</string>
-
-    <string name="settingForward_title">Moving forward</string>
-    <string name="settingForward_summary">Enter the command to move forward</string>
-    <string name="settingForward_title_dialog">Command to move forward</string>
-    <string name="settingForward_text_dialog">Enter the command to move forward</string>
-
-    <string name="settingBackward_title">Moving backward</string>
-    <string name="settingBackward_summary">Enter the command to move backward</string>
-    <string name="settingBackward_title_dialog">Command to move backward</string>
-    <string name="settingBackward_text_dialog">Enter the command to move backward</string>
-
-    <string name="settingTurnRight_title">Turn right</string>
-    <string name="settingTurnRight_summary">Enter the command to turn right</string>
-    <string name="settingTurnRight_title_dialog">Command to turn right</string>
-    <string name="settingTurnRight_text_dialog">Enter the command to turn right</string>
-
-    <string name="settingTurnLeft_title">Turn left</string>
-    <string name="settingTurnLeft_summary">Enter the command to turn left</string>
-    <string name="settingTurnLeft_title_dialog">Command to turn left</string>
-    <string name="settingTurnLeft_text_dialog">Enter the command to turn left</string>
-
-    <string name="settingStop_title">Stop</string>
-    <string name="settingStop_summary">Enter the command to stop</string>
-    <string name="settingStop_title_dialog">Command to stop</string>
-    <string name="settingStop_text_dialog">Enter the command to stop</string>
-
-    <string name="settingSection_3">Voice Command Keywords</string>
-
-    <string name="settingLanguage_title">Keyword language</string>
-    <string name="settingLanguage_summary">Select the language of the keywords</string>
-    <string name="settingLanguage_title_dialog">Select your language</string>
-
-    <string name="settingForwardVoice_title">Moving forward</string>
-    <string name="settingForwardVoice_summary">Enter the keyword to move forward</string>
-    <string name="settingForwardVoice_title_dialog">Keyword to move forward</string>
-    <string name="settingForwardVoice_text_dialog">Enter the keyword to move forward</string>
-
-    <string name="settingBackwardVoice_title">Moving backward</string>
-    <string name="settingBackwardVoice_summary">Enter the keyword to move backward</string>
-    <string name="settingBackwardVoice_title_dialog">Keyword to move backward</string>
-    <string name="settingBackwardVoice_text_dialog">Enter the keyword to move backward</string>
-
-    <string name="settingTurnRightVoice_title">Turn right</string>
-    <string name="settingTurnRightVoice_summary">Enter the keyword to turn right</string>
-    <string name="settingTurnRightVoice_title_dialog">Keyword to turn right</string>
-    <string name="settingTurnRightVoice_text_dialog">Enter the keyword to turn right</string>
-
-    <string name="settingTurnLeftVoice_title">Turn left</string>
-    <string name="settingTurnLeftVoice_summary">Enter the keyword to turn left</string>
-    <string name="settingTurnLeftVoice_title_dialog">Keyword to turn left</string>
-    <string name="settingTurnLeftVoice_text_dialog">Enter the keyword to turn left</string>
-
-    <string name="settingTextSourceCode">The source code of my Wifi Car is available here :\n\n https://github.com/lacour-vincent/wifi-car-esp8266 \n\n
-    The default commands sent are:\n
-           • http://IP:Port/?State=F\n
-           • http://IP:Port/?State=B\n
-           • http://IP:Port/?State=R\n
-           • http://IP:Port/?State=L\n
-           • http://IP:Port/?State=S\n
-           • http://IP:Port/?State=ON\n
-           • http://IP:Port/?State=OFFn
+    <string name="configuration_dialog_title">Information</string>
+    <string name="configuration_dialog_message">The source code of my wifi car is available on my github :\n\n
+        https://github.com/lacour-vincent/wifi-car-esp8266\n\n
+        The default commands sent are:\n
+           • http://IP:Port/move?dir=F \n
+           • http://IP:Port/move?dir=B \n
+           • http://IP:Port/move?dir=S \n
+           • http://IP:Port/move?dir=R \n
+           • http://IP:Port/move?dir=L \n
+            \n
+           • http://IP:Port/action?type=(1 to 8)
     </string>
 
-    <!-- Strings related to Control Button Activity -->
-    <string name="titleToolbarControlButton">Buttons</string>
-    <string name="helpButtonTitle">Information</string>
-    <string name="helpButtonText">Keep pressing a button to send the command.\n\nThe \"Stop\" command is sent when you release the button.</string>
+    <string name="button_dialog_title">Information</string>
+    <string name="button_dialog_message">Keep pressing a move button to send the command.\n\n
+        The \"Stop\" command is sent when you release the button.\n\n
+        The \"Action\" command is sent when you click on the action button.</string>
 
-    <!-- Strings related to Control Accelerometer Activity -->
-    <string name="titleToolbarControlAccelerometer">Accelerometer</string>
-    <string name="helpAccelerometerTitle">Information</string>
-    <string name="helpAccelerometerText">Rotate your device to control the car.</string>
+    <string name="accelerometer_dialog_title">Information</string>
+    <string name="accelerometer_dialog_message">Rotate your device to control the car.\n\n
+        The \"Stop\" command is sent when your device is on a flat position.\n\n
+        The \"Action\" command is sent when you click on the action button.</string>
+
+
+    <!-- Legacy String-->
+
 
     <!-- Strings related to Control Voice Activity -->
     <string name="titleToolbarControlVoice">Speech Recognition</string>
