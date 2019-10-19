@@ -1,6 +1,5 @@
 package com.lacour.vincent.wificaresp8266.screen
 
-import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.*
@@ -9,25 +8,25 @@ import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
 import com.lacour.vincent.wificaresp8266.connector.CarConnector
 import kotlinx.android.synthetic.main.voice_control_activity.*
-import android.media.AudioManager
 import com.lacour.vincent.wificaresp8266.R
-import android.speech.tts.TextToSpeech
-import android.util.Log
-import java.util.*
 import android.speech.RecognizerIntent
 import android.content.Intent
 import android.widget.Toast
 
 import android.app.Activity
+import android.os.Handler
 
 
-class VoiceControl : AppCompatActivity(), TextToSpeech.OnInitListener {
+class VoiceControl : AppCompatActivity() {
+
+
+    companion object {
+        const val REQUEST_CODE: Int = 20100
+        const val MAX_MATCHES = 3
+        const val DELAY_STOP: Long = 3000
+    }
 
     private lateinit var carConnector: CarConnector
-
-    private lateinit var tts: TextToSpeech
-    private lateinit var mAudioManager: AudioManager
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,16 +43,13 @@ class VoiceControl : AppCompatActivity(), TextToSpeech.OnInitListener {
 
         carConnector = CarConnector(this@VoiceControl)
 
-        tts = TextToSpeech(this, this)
-        mAudioManager = getSystemService(Context.AUDIO_SERVICE) as AudioManager
-
 
         val pm = packageManager
         val activities =
             pm.queryIntentActivities(Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH), 0)
         val hasVoiceRecognizer: Boolean = activities.size != 0
         if (hasVoiceRecognizer) {
-            action_voice.setOnClickListener { onVoiceAction() }
+            action_voice.setOnClickListener { startVoiceRecognitionIntent() }
         } else {
             action_voice.setOnClickListener {
                 Toast.makeText(
@@ -76,23 +72,6 @@ class VoiceControl : AppCompatActivity(), TextToSpeech.OnInitListener {
 
     }
 
-    public override fun onDestroy() {
-        tts.stop()
-        tts.shutdown()
-        super.onDestroy()
-    }
-
-
-    override fun onInit(status: Int) {
-        if (status == TextToSpeech.SUCCESS) {
-            val result = tts.setLanguage(Locale.US)
-            if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED) {
-                Log.i("TTS - onInit", "This Language is not supported")
-            }
-        } else {
-            Log.e("TTS - onInit", "Initilization Failed!")
-        }
-    }
 
     private fun startVoiceRecognitionIntent() {
         val intent = Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH)
@@ -102,23 +81,71 @@ class VoiceControl : AppCompatActivity(), TextToSpeech.OnInitListener {
         )
         intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, "en_US")
         intent.putExtra(RecognizerIntent.EXTRA_PROMPT, getString(R.string.VoicePrompt))
-        startActivityForResult(intent, 20100)
+        startActivityForResult(intent, REQUEST_CODE)
     }
 
-    private fun speak(text: String) {
-        tts.speak(text, TextToSpeech.QUEUE_FLUSH, null, null)
-    }
-
-    private fun onVoiceAction() {
-        startVoiceRecognitionIntent()
-    }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        if (requestCode == 20100 && resultCode == Activity.RESULT_OK) {
-            val matches = data!!.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS)
-            Toast.makeText(this, matches.toString(), Toast.LENGTH_SHORT).show()
+        if (requestCode == REQUEST_CODE && resultCode == Activity.RESULT_OK) {
+            if (data !== null) {
+                val matches = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS)
+                handleVoiceRecognitionMatches(matches!!)
+            }
         }
         super.onActivityResult(requestCode, resultCode, data)
+    }
+
+
+    private fun handleVoiceRecognitionMatches(matches: List<String>) {
+        action_voice.isEnabled = false
+        when {
+            isKeywordRecognized(matches, "forward") -> {
+                carConnector.moveForward()
+                arrow_up.setBackgroundResource(R.drawable.arrow_up_pressed)
+                stopMovingDelayed()
+            }
+            isKeywordRecognized(matches, "backward") -> {
+                carConnector.moveBackward()
+                arrow_down.setBackgroundResource(R.drawable.arrow_down_pressed)
+                stopMovingDelayed()
+            }
+            isKeywordRecognized(matches, "right") -> {
+                carConnector.turnRight()
+                arrow_right.setBackgroundResource(R.drawable.arrow_right_pressed)
+                stopMovingDelayed()
+            }
+            isKeywordRecognized(matches, "left") -> {
+                carConnector.turnLeft()
+                arrow_left.setBackgroundResource(R.drawable.arrow_left_pressed)
+                stopMovingDelayed()
+            }
+            else -> {
+                Toast.makeText(this, "Not recognized", Toast.LENGTH_LONG).show()
+                action_voice.isEnabled = true
+            }
+        }
+    }
+
+
+    private fun isKeywordRecognized(matches: List<String>, keyword: String): Boolean {
+        if (matches.isEmpty()) return false
+        val subEndIndex: Int = if (matches.size > MAX_MATCHES - 1) MAX_MATCHES else matches.size
+        val mainMatches: List<String> = matches.subList(0, subEndIndex)
+        return mainMatches.any { m -> m.contains(keyword) }
+    }
+
+    private fun stopMovingDelayed() {
+        Handler().postDelayed(
+            {
+                carConnector.stopMoving()
+                action_voice.isEnabled = true
+                arrow_up.setBackgroundResource(R.drawable.arrow_up)
+                arrow_down.setBackgroundResource(R.drawable.arrow_down)
+                arrow_right.setBackgroundResource(R.drawable.arrow_right)
+                arrow_left.setBackgroundResource(R.drawable.arrow_left)
+            },
+            DELAY_STOP
+        )
     }
 
 
@@ -184,18 +211,6 @@ class VoiceControl : AppCompatActivity(), TextToSpeech.OnInitListener {
     override fun onKeyDown(keyCode: Int, event: KeyEvent): Boolean {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
             finishActivity()
-        }
-        if ((keyCode == KeyEvent.KEYCODE_VOLUME_UP)) {
-            mAudioManager.adjustStreamVolume(
-                AudioManager.STREAM_MUSIC,
-                AudioManager.ADJUST_RAISE, AudioManager.FLAG_SHOW_UI
-            );
-        }
-        if ((keyCode == KeyEvent.KEYCODE_VOLUME_DOWN)) {
-            mAudioManager.adjustStreamVolume(
-                AudioManager.STREAM_MUSIC,
-                AudioManager.ADJUST_LOWER, AudioManager.FLAG_SHOW_UI
-            );
         }
         return true
     }

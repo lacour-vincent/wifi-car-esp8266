@@ -22,4 +22,9 @@ object Constant {
     val ACTION_7_STORAGE = Storage("action_7", "7")
     val ACTION_8_STORAGE = Storage("action_8", "8")
 
+    val VOICE_FORWARD_STORAGE = Storage("move_forward", "forward")
+    val VOICE_BACKWARD_STORAGE = Storage("move_backward", "backward")
+    val VOICE_RIGHT_STORAGE = Storage("turn_right", "R")
+    val VOICE_LEFT_STORAGE = Storage("turn_left", "L")
+
 }
