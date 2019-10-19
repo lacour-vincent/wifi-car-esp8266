@@ -62,15 +62,30 @@
         app:layout_constraintTop_toBottomOf="@+id/arrow_up" />
 
 
-    <Button
+    <!--
+        <Button
+            android:id="@+id/action_voice"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/ic_voice"
+            app:layout_constraintBottom_toTopOf="@+id/guideline_bottom_left"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/arrow_down" />
+    -->
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/action_voice"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="@drawable/ic_voice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_voice"
+        app:backgroundTint="@color/colorPrimary"
+        app:fabSize="normal"
         app:layout_constraintBottom_toTopOf="@+id/guideline_bottom_left"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/arrow_down" />
+
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/wrapper_action_button_top"
