@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <PreferenceCategory
-        android:title="Server"
+        android:title="@string/configuration_server"
         app:iconSpaceReserved="false">
 
         <EditTextPreference
