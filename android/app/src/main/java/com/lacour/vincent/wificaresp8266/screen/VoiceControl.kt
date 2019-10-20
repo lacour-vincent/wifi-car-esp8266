@@ -253,8 +253,7 @@ class VoiceControl : AppCompatActivity() {
     }
 
     private fun showInformationDialog() {
-        val builder =
-            AlertDialog.Builder(ContextThemeWrapper(this, R.style.AlertDialogTheme))
+        val builder = AlertDialog.Builder(ContextThemeWrapper(this, R.style.AlertDialogTheme))
         with(builder) {
             setTitle(getString(R.string.voice_dialog_title))
             setMessage(getString(R.string.voice_dialog_message))

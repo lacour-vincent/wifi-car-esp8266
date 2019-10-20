@@ -174,8 +174,7 @@ class ButtonControl : AppCompatActivity() {
     }
 
     private fun showInformationDialog() {
-        val builder =
-            AlertDialog.Builder(ContextThemeWrapper(this, R.style.AlertDialogTheme))
+        val builder = AlertDialog.Builder(ContextThemeWrapper(this, R.style.AlertDialogTheme))
         with(builder) {
             setTitle(getString(R.string.button_dialog_title))
             setMessage(getString(R.string.button_dialog_message))

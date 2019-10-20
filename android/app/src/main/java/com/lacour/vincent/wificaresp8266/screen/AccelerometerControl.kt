@@ -211,7 +211,7 @@ class AccelerometerControl : AppCompatActivity(), SensorEventListener {
     }
 
     private fun showInformationDialog() {
-        val builder = AlertDialog.Builder(this)
+        val builder = AlertDialog.Builder(ContextThemeWrapper(this, R.style.AlertDialogTheme))
         with(builder) {
             setTitle(getString(R.string.accelerometer_dialog_title))
             setMessage(getString(R.string.accelerometer_dialog_message))

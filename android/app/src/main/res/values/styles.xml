@@ -25,7 +25,7 @@
         <item name="android:textSize">20sp</item>
     </style>
 
-    <style name="PreferenceTheme">
+    <style name="PreferenceTheme" parent="PreferenceThemeOverlay">
         <item name="android:textColorPrimary">@color/colorWhite</item>
         <item name="android:textColorSecondary">@color/colorGray</item>
         <item name="android:colorPrimaryDark">@color/colorPrimaryDark</item>

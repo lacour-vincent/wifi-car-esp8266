@@ -1,6 +1,7 @@
 package com.lacour.vincent.wificaresp8266.screen
 
 import android.os.Bundle
+import android.view.ContextThemeWrapper
 import android.view.KeyEvent
 import android.view.Menu
 import android.view.MenuItem
@@ -70,7 +71,7 @@ class Configuration : AppCompatActivity() {
     }
 
     private fun showInformationDialog() {
-        val builder = AlertDialog.Builder(this)
+        val builder = AlertDialog.Builder(ContextThemeWrapper(this, R.style.AlertDialogTheme))
         with(builder) {
             setTitle(getString(R.string.configuration_dialog_title))
             setMessage(getString(R.string.configuration_dialog_message))
