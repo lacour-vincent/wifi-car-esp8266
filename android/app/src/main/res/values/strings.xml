@@ -12,7 +12,7 @@
     <string name="ok">OK</string>
 
     <string name="specch_recognizer_not_found">You do not have a speech recognizer installed on your device.</string>
-    <string name="speech_recognizer_no_matches">The keyword does not match any commands.</string>
+    <string name="speech_recognizer_no_matches">The command does not match any keywords.</string>
 
     <!-- Icon and Images -->
     <string name="alt_controller">Controller</string>
@@ -143,8 +143,7 @@
 
     <string name="accelerometer_dialog_title">Information</string>
     <string name="accelerometer_dialog_message">Rotate your device to control the car.\n\nThe \"stop\" command is sent when your device is on a flat position.\n\nThe \"Action\" command is sent when you click on the action button.</string>
-
-
+    
     <string name="voice_dialog_title">Information</string>
     <string name="voice_dialog_message">The voice commands can be modified in the configuration page.\n\nThe \"stop\" command will be sent after 3 seconds.\n\nTo use voice recognition offline, you must download the package corresponding to your language.</string>
     <string name="voice_recognition_prompt">What do you want to do?</string>

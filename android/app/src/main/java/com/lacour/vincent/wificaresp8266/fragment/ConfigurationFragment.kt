@@ -39,10 +39,10 @@ class ConfigurationFragment : PreferenceFragmentCompat(),
 
         setPreferenceSpeechRecognitionLanguageOnChange(Constant.SPEECH_RECOGNITION_LANGUAGE_STORAGE)
 
-        setPreferenceKeywordOnChange(Constant.KEYWORD_FORWARD_STORAGE)
-        setPreferenceKeywordOnChange(Constant.KEYWORD_BACKWARD_STORAGE)
-        setPreferenceKeywordOnChange(Constant.KEYWORD_RIGHT_STORAGE)
-        setPreferenceKeywordOnChange(Constant.KEYWORD_LEFT_STORAGE)
+        setPreferenceOnChange(Constant.KEYWORD_FORWARD_STORAGE)
+        setPreferenceOnChange(Constant.KEYWORD_BACKWARD_STORAGE)
+        setPreferenceOnChange(Constant.KEYWORD_RIGHT_STORAGE)
+        setPreferenceOnChange(Constant.KEYWORD_LEFT_STORAGE)
     }
 
     private fun setPreferenceOnChange(storage: Storage) {
@@ -77,15 +77,6 @@ class ConfigurationFragment : PreferenceFragmentCompat(),
         val preference: ListPreference? = findPreference(key)
         preference?.summaryProvider = Preference.SummaryProvider<ListPreference> { pref ->
             val value = pref.value
-            if (value.isNullOrBlank()) default else value
-        }
-    }
-
-    private fun setPreferenceKeywordOnChange(storage: Storage) {
-        val (key, default) = storage
-        val preference: EditTextPreference? = findPreference(key)
-        preference?.summaryProvider = Preference.SummaryProvider<EditTextPreference> { pref ->
-            val value = pref.text
             if (value.isNullOrBlank()) default else value
         }
     }

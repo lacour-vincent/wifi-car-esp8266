@@ -7,7 +7,6 @@ import android.view.Menu
 import android.view.MenuItem
 
 import android.provider.Settings
-import android.widget.Toast
 import com.lacour.vincent.wificaresp8266.R
 
 import kotlinx.android.synthetic.main.welcome_activity.*
