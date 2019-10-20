@@ -34,6 +34,12 @@ class Preferences(ctx: Context) {
     fun getActionSevenValue(): String = getSharedPreferencesValue(Constant.ACTION_7_STORAGE)
     fun getActionHeightValue(): String = getSharedPreferencesValue(Constant.ACTION_8_STORAGE)
 
+    fun getSpeechRecognitionLanguageValue(): String = getSharedPreferencesValue(Constant.SPEECH_RECOGNITION_LANGUAGE_STORAGE)
+    fun getKeywordForwardValue(): String = getSharedPreferencesValue(Constant.KEYWORD_FORWARD_STORAGE)
+    fun getKeywordBackwardValue(): String = getSharedPreferencesValue(Constant.KEYWORD_BACKWARD_STORAGE)
+    fun getKeywordRightValue(): String = getSharedPreferencesValue(Constant.KEYWORD_RIGHT_STORAGE)
+    fun getKeywordLeftValue(): String = getSharedPreferencesValue(Constant.KEYWORD_LEFT_STORAGE)
+
 }
 
 

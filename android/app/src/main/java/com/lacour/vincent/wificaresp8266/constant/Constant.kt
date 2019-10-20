@@ -22,9 +22,9 @@ object Constant {
     val ACTION_7_STORAGE = Storage("action_7", "7")
     val ACTION_8_STORAGE = Storage("action_8", "8")
 
-    val VOICE_FORWARD_STORAGE = Storage("move_forward", "forward")
-    val VOICE_BACKWARD_STORAGE = Storage("move_backward", "backward")
-    val VOICE_RIGHT_STORAGE = Storage("turn_right", "R")
-    val VOICE_LEFT_STORAGE = Storage("turn_left", "L")
-
+    val SPEECH_RECOGNITION_LANGUAGE_STORAGE = Storage("speech_recognition_language", "en_US")
+    val KEYWORD_FORWARD_STORAGE = Storage("keyword_forward", "forward")
+    val KEYWORD_BACKWARD_STORAGE = Storage("keyword_backward", "backward")
+    val KEYWORD_RIGHT_STORAGE = Storage("keyword_right", "right")
+    val KEYWORD_LEFT_STORAGE = Storage("keyword_left", "left")
 }

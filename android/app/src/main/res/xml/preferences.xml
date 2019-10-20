@@ -144,4 +144,51 @@
 
     </PreferenceCategory>
 
+    <PreferenceCategory
+        android:title="@string/configuration_speech_recognition"
+        app:iconSpaceReserved="false">
+
+        <ListPreference
+            android:dialogTitle="@string/speech_recognition_language_dialog_title"
+            android:entries="@array/country_names"
+            android:entryValues="@array/country_codes"
+            android:key="speech_recognition_language"
+            android:title="@string/speech_recognition_language_title"
+            app:iconSpaceReserved="false" />
+
+        <EditTextPreference
+            android:dialogMessage="@string/forward_keyword_dialog_message"
+            android:dialogTitle="@string/forward_keyword_dialog_title"
+            android:inputType="text"
+            android:key="keyword_forward"
+            android:title="@string/forward_keyword_title"
+            app:iconSpaceReserved="false" />
+
+        <EditTextPreference
+            android:dialogMessage="@string/backward_keyword_dialog_message"
+            android:dialogTitle="@string/backward_keyword_dialog_title"
+            android:inputType="text"
+            android:key="keyword_backward"
+            android:title="@string/backward_keyword_title"
+            app:iconSpaceReserved="false" />
+
+        <EditTextPreference
+            android:dialogMessage="@string/right_keyword_dialog_message"
+            android:dialogTitle="@string/right_keyword_dialog_title"
+            android:inputType="text"
+            android:key="keyword_right"
+            android:title="@string/right_keyword_title"
+            app:iconSpaceReserved="false" />
+
+        <EditTextPreference
+            android:dialogMessage="@string/left_keyword_dialog_message"
+            android:dialogTitle="@string/left_keyword_dialog_title"
+            android:inputType="text"
+            android:key="keyword_left"
+            android:title="@string/left_keyword_title"
+            app:iconSpaceReserved="false" />
+
+    </PreferenceCategory>
+
+
 </PreferenceScreen>

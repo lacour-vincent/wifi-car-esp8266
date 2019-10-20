@@ -3,6 +3,7 @@ package com.lacour.vincent.wificaresp8266.fragment
 import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.preference.EditTextPreference
+import androidx.preference.ListPreference
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 
@@ -36,6 +37,12 @@ class ConfigurationFragment : PreferenceFragmentCompat(),
         setPreferenceActionOnChange(Constant.ACTION_7_STORAGE)
         setPreferenceActionOnChange(Constant.ACTION_8_STORAGE)
 
+        setPreferenceSpeechRecognitionLanguageOnChange(Constant.SPEECH_RECOGNITION_LANGUAGE_STORAGE)
+
+        setPreferenceKeywordOnChange(Constant.KEYWORD_FORWARD_STORAGE)
+        setPreferenceKeywordOnChange(Constant.KEYWORD_BACKWARD_STORAGE)
+        setPreferenceKeywordOnChange(Constant.KEYWORD_RIGHT_STORAGE)
+        setPreferenceKeywordOnChange(Constant.KEYWORD_LEFT_STORAGE)
     }
 
     private fun setPreferenceOnChange(storage: Storage) {
@@ -62,6 +69,24 @@ class ConfigurationFragment : PreferenceFragmentCompat(),
         preference?.summaryProvider = Preference.SummaryProvider<EditTextPreference> { pref ->
             val value = pref.text
             "/action?type=${if (value.isNullOrBlank()) default else value}"
+        }
+    }
+
+    private fun setPreferenceSpeechRecognitionLanguageOnChange(storage: Storage) {
+        val (key, default) = storage
+        val preference: ListPreference? = findPreference(key)
+        preference?.summaryProvider = Preference.SummaryProvider<ListPreference> { pref ->
+            val value = pref.value
+            if (value.isNullOrBlank()) default else value
+        }
+    }
+
+    private fun setPreferenceKeywordOnChange(storage: Storage) {
+        val (key, default) = storage
+        val preference: EditTextPreference? = findPreference(key)
+        preference?.summaryProvider = Preference.SummaryProvider<EditTextPreference> { pref ->
+            val value = pref.text
+            if (value.isNullOrBlank()) default else value
         }
     }
 

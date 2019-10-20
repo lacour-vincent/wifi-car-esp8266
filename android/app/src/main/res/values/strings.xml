@@ -11,6 +11,8 @@
 
     <string name="ok">OK</string>
 
+    <string name="specch_recognizer_not_found">You do not have a speech recognizer installed on your device.</string>
+    <string name="speech_recognizer_no_matches">The keyword does not match any commands.</string>
 
     <!-- Icon and Images -->
     <string name="alt_controller">Controller</string>
@@ -41,6 +43,7 @@
     <string name="configuration_server">Server</string>
     <string name="configuration_move">Move parameters</string>
     <string name="configuration_action">Action parameters</string>
+    <string name="configuration_speech_recognition">Speech recognition parameters</string>
 
     <string name="address_ip_title">IP Address</string>
     <string name="address_ip_dialog_title">IP Address</string>
@@ -72,42 +75,60 @@
 
     <string name="action_1_title">Action 1</string>
     <string name="action_1_dialog_title">Action 1</string>
-    <string name="action_1_dialog_message">Enter the command to linked with action 1</string>
+    <string name="action_1_dialog_message">Enter the command to trigger action 1</string>
 
     <string name="action_2_title">Action 2</string>
     <string name="action_2_dialog_title">Action 2</string>
-    <string name="action_2_dialog_message">Enter the command to linked with action 2</string>
+    <string name="action_2_dialog_message">Enter the command to trigger action 2</string>
 
     <string name="action_3_title">Action 3</string>
     <string name="action_3_dialog_title">Action 3</string>
-    <string name="action_3_dialog_message">Enter the command to linked with action 3</string>
+    <string name="action_3_dialog_message">Enter the command to trigger action 3</string>
 
     <string name="action_4_title">Action 4</string>
     <string name="action_4_dialog_title">Action 4</string>
-    <string name="action_4_dialog_message">Enter the command to linked with action 4</string>
+    <string name="action_4_dialog_message">Enter the command to trigger action 4</string>
 
     <string name="action_5_title">Action 5</string>
     <string name="action_5_dialog_title">Action 5</string>
-    <string name="action_5_dialog_message">Enter the command to linked with action 5</string>
+    <string name="action_5_dialog_message">Enter the command to trigger action 5</string>
 
     <string name="action_6_title">Action 6</string>
     <string name="action_6_dialog_title">Action 6</string>
-    <string name="action_6_dialog_message">Enter the command to linked with action 6</string>
+    <string name="action_6_dialog_message">Enter the command to trigger action 6</string>
 
     <string name="action_7_title">Action 7</string>
     <string name="action_7_dialog_title">Action 7</string>
-    <string name="action_7_dialog_message">Enter the command to linked with action 7</string>
+    <string name="action_7_dialog_message">Enter the command to trigger action 7</string>
 
     <string name="action_8_title">Action 8</string>
     <string name="action_8_dialog_title">Action 8</string>
-    <string name="action_8_dialog_message">Enter the command to linked with action 8</string>
+    <string name="action_8_dialog_message">Enter the command to trigger action 8</string>
+
+    <string name="speech_recognition_language_title">Language</string>
+    <string name="speech_recognition_language_dialog_title">Select your language</string>
+
+    <string name="forward_keyword_title">Forward keyword</string>
+    <string name="forward_keyword_dialog_title">Forward keyword</string>
+    <string name="forward_keyword_dialog_message">Enter the keyword to move forward</string>
+
+    <string name="backward_keyword_title">Backward keyword</string>
+    <string name="backward_keyword_dialog_title">Backward keyword</string>
+    <string name="backward_keyword_dialog_message">Enter the keyword to move backward</string>
+
+    <string name="right_keyword_title">Right keyword</string>
+    <string name="right_keyword_dialog_title">Right keyword</string>
+    <string name="right_keyword_dialog_message">Enter the keyword to turn right</string>
+
+    <string name="left_keyword_title">Left keyword</string>
+    <string name="left_keyword_dialog_title">Left keyword</string>
+    <string name="left_keyword_dialog_message">Enter the keyword to turn left</string>
+
 
     <!-- Information - Dialog -->
 
     <string name="configuration_dialog_title">Information</string>
-    <string name="configuration_dialog_message">The source code of my wifi car is available on my github :\n\n
-        https://github.com/lacour-vincent/wifi-car-esp8266\n\n
-        The default commands sent are:\n
+    <string name="configuration_dialog_message">The source code of my wifi car is available on my github :\n\nhttps://github.com/lacour-vincent/wifi-car-esp8266\n\nThe default commands sent are:\n
            • http://IP:Port/move?dir=F \n
            • http://IP:Port/move?dir=B \n
            • http://IP:Port/move?dir=S \n
@@ -118,24 +139,14 @@
     </string>
 
     <string name="button_dialog_title">Information</string>
-    <string name="button_dialog_message">Keep pressing a move button to send the command.\n\n
-        The \"Stop\" command is sent when you release the button.\n\n
-        The \"Action\" command is sent when you click on the action button.</string>
+    <string name="button_dialog_message">Keep pressing a move button to send the command.\n\nThe \"stop\" command is sent when you release the button.\n\nThe \"action\" command is sent when you click on the action button.</string>
 
     <string name="accelerometer_dialog_title">Information</string>
-    <string name="accelerometer_dialog_message">Rotate your device to control the car.\n\n
-        The \"Stop\" command is sent when your device is on a flat position.\n\n
-        The \"Action\" command is sent when you click on the action button.</string>
+    <string name="accelerometer_dialog_message">Rotate your device to control the car.\n\nThe \"stop\" command is sent when your device is on a flat position.\n\nThe \"Action\" command is sent when you click on the action button.</string>
 
 
-    <!-- Legacy String-->
-
-
-    <!-- Strings related to Control Voice Activity -->
-    <string name="titleToolbarControlVoice">Speech Recognition</string>
-    <string name="helpVoiceTitle">Information</string>
-    <string name="helpVoiceText">The voice commands and the language to control the car can be modified in the setting page.\n\nThe \"Stop\" command will be sent after the chosen delay.\n\nTo use voice recognition offline, you must download the package corresponding to your language.</string>
-    <string name="helpPositive">Got it!</string>
-    <string name="VoicePrompt">What do you want to do?</string>
+    <string name="voice_dialog_title">Information</string>
+    <string name="voice_dialog_message">The voice commands can be modified in the configuration page.\n\nThe \"stop\" command will be sent after 3 seconds.\n\nTo use voice recognition offline, you must download the package corresponding to your language.</string>
+    <string name="voice_recognition_prompt">What do you want to do?</string>
 
 </resources>

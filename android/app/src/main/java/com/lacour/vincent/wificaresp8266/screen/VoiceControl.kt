@@ -15,10 +15,10 @@ import android.widget.Toast
 
 import android.app.Activity
 import android.os.Handler
+import com.lacour.vincent.wificaresp8266.storage.Preferences
 
 
 class VoiceControl : AppCompatActivity() {
-
 
     companion object {
         const val REQUEST_CODE: Int = 20100
@@ -27,6 +27,7 @@ class VoiceControl : AppCompatActivity() {
     }
 
     private lateinit var carConnector: CarConnector
+    private lateinit var preferences: Preferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,6 +43,7 @@ class VoiceControl : AppCompatActivity() {
         }
 
         carConnector = CarConnector(this@VoiceControl)
+        preferences = Preferences(this@VoiceControl)
 
 
         val pm = packageManager
@@ -54,7 +56,7 @@ class VoiceControl : AppCompatActivity() {
             action_voice.setOnClickListener {
                 Toast.makeText(
                     this,
-                    "You do not have a speech recognizer installed on your device",
+                    getString(R.string.specch_recognizer_not_found),
                     Toast.LENGTH_SHORT
                 ).show()
             }
@@ -68,8 +70,6 @@ class VoiceControl : AppCompatActivity() {
         action_button_6.setOnTouchListener { v: View, e: MotionEvent -> onTouchAction(v, e) }
         action_button_7.setOnTouchListener { v: View, e: MotionEvent -> onTouchAction(v, e) }
         action_button_8.setOnTouchListener { v: View, e: MotionEvent -> onTouchAction(v, e) }
-
-
     }
 
 
@@ -79,8 +79,9 @@ class VoiceControl : AppCompatActivity() {
             RecognizerIntent.EXTRA_LANGUAGE_MODEL,
             RecognizerIntent.LANGUAGE_MODEL_FREE_FORM
         )
-        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, "en_US")
-        intent.putExtra(RecognizerIntent.EXTRA_PROMPT, getString(R.string.VoicePrompt))
+        val language: String = preferences.getSpeechRecognitionLanguageValue()
+        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, language)
+        intent.putExtra(RecognizerIntent.EXTRA_PROMPT, getString(R.string.voice_recognition_prompt))
         startActivityForResult(intent, REQUEST_CODE)
     }
 
@@ -97,30 +98,39 @@ class VoiceControl : AppCompatActivity() {
 
 
     private fun handleVoiceRecognitionMatches(matches: List<String>) {
+        val forwardKeyword: String = preferences.getKeywordForwardValue()
+        val backwardKeyword: String = preferences.getKeywordBackwardValue()
+        val rightKeyword: String = preferences.getKeywordRightValue()
+        val leftKeyword: String = preferences.getKeywordLeftValue()
         action_voice.isEnabled = false
+
         when {
-            isKeywordRecognized(matches, "forward") -> {
+            isKeywordRecognized(matches, forwardKeyword) -> {
                 carConnector.moveForward()
                 arrow_up.setBackgroundResource(R.drawable.arrow_up_pressed)
                 stopMovingDelayed()
             }
-            isKeywordRecognized(matches, "backward") -> {
+            isKeywordRecognized(matches, backwardKeyword) -> {
                 carConnector.moveBackward()
                 arrow_down.setBackgroundResource(R.drawable.arrow_down_pressed)
                 stopMovingDelayed()
             }
-            isKeywordRecognized(matches, "right") -> {
+            isKeywordRecognized(matches, rightKeyword) -> {
                 carConnector.turnRight()
                 arrow_right.setBackgroundResource(R.drawable.arrow_right_pressed)
                 stopMovingDelayed()
             }
-            isKeywordRecognized(matches, "left") -> {
+            isKeywordRecognized(matches, leftKeyword) -> {
                 carConnector.turnLeft()
                 arrow_left.setBackgroundResource(R.drawable.arrow_left_pressed)
                 stopMovingDelayed()
             }
             else -> {
-                Toast.makeText(this, "Not recognized", Toast.LENGTH_LONG).show()
+                Toast.makeText(
+                    this,
+                    getString(R.string.speech_recognizer_no_matches),
+                    Toast.LENGTH_LONG
+                ).show()
                 action_voice.isEnabled = true
             }
         }
@@ -246,8 +256,8 @@ class VoiceControl : AppCompatActivity() {
         val builder =
             AlertDialog.Builder(ContextThemeWrapper(this, R.style.AlertDialogTheme))
         with(builder) {
-            setTitle("title")
-            setMessage("message")
+            setTitle(getString(R.string.voice_dialog_title))
+            setMessage(getString(R.string.voice_dialog_message))
             setPositiveButton(getString(R.string.ok)) { _, _ -> }
             show()
         }
