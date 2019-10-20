@@ -1,0 +1,151 @@
+<resources>
+
+    <!-- Globals -->
+    <string name="app_name">Wifi RC Car ESP8266</string>
+    <string name="short_app_name">Wifi ESP8266</string>
+
+    <string name="activity_button">Botón</string>
+    <string name="activity_accelerometer">Acelerómetro</string>
+    <string name="activity_voice">Voz</string>
+    <string name="activity_configuration">Configuración</string>
+
+    <string name="ok">OK</string>
+
+    <string name="specch_recognizer_not_found">No tiene un reconocedor de voz instalado en su dispositivo.</string>
+    <string name="speech_recognizer_no_matches">El comando no corresponde a ninguna palabra clave.</string>
+
+    <!-- Icon and Images -->
+    <string name="alt_controller">Controlador</string>
+    <string name="alt_accelerometer">Acelerómetro</string>
+    <string name="alt_megaphone">Megáfono</string>
+
+    <string name="alt_arrow_up">Flecha arriba</string>
+    <string name="alt_arrow_down">Flecha abajo</string>
+    <string name="alt_arrow_right">Flecha derecha</string>
+    <string name="alt_arrow_left">Flecha izquierda</string>
+
+    <string name="alt_information">Información</string>
+    <string name="alt_wifi">Wifi</string>
+    <string name="alt_configuration">Configuración</string>
+
+    <!-- Action Button -->
+    <string name="action_button_1">1</string>
+    <string name="action_button_2">2</string>
+    <string name="action_button_3">3</string>
+    <string name="action_button_4">4</string>
+    <string name="action_button_5">5</string>
+    <string name="action_button_6">6</string>
+    <string name="action_button_7">7</string>
+    <string name="action_button_8">8</string>
+
+    <!-- Configuration -->
+
+    <string name="configuration_server">Servidor</string>
+    <string name="configuration_move">Parámetros de movimiento</string>
+    <string name="configuration_action">Parámetros de acción</string>
+    <string name="configuration_speech_recognition">Parámetros de reconocimiento de voz</string>
+
+    <string name="address_ip_title">Dirección IP</string>
+    <string name="address_ip_dialog_title">Dirección IP</string>
+    <string name="address_ip_dialog_message">Ingrese la dirección IP de su servidor</string>
+
+    <string name="port_title">Port</string>
+    <string name="port_dialog_title">Port</string>
+    <string name="port_dialog_message">Ingrese el port de su servidor</string>
+
+    <string name="move_forward_title">Avanzar</string>
+    <string name="move_forward_dialog_title">Avanzar</string>
+    <string name="move_forward_dialog_message">Ingrese el comando para avanzar</string>
+
+    <string name="move_backward_title">Retroceder</string>
+    <string name="move_backward_dialog_title">Retroceder</string>
+    <string name="move_backward_dialog_message">Ingrese el comando para retroceder</string>
+
+    <string name="move_stop_title">Parar</string>
+    <string name="move_stop_dialog_title">Parar</string>
+    <string name="move_stop_dialog_message">Ingrese el comando para parar</string>
+
+    <string name="turn_left_title">Girar a la izquierda</string>
+    <string name="turn_left_dialog_title">Girar a la izquierda</string>
+    <string name="turn_left_dialog_message">Ingrese el comando para girar a la izquierda</string>
+
+    <string name="turn_right_title">Girar a la derecha</string>
+    <string name="turn_right_dialog_title">Girar a la derecha</string>
+    <string name="turn_right_dialog_message">Ingrese el comando para girar a la derecha</string>
+
+    <string name="action_1_title">Action 1</string>
+    <string name="action_1_dialog_title">Action 1</string>
+    <string name="action_1_dialog_message">Ingrese el comando para ejecutar la acción 1</string>
+
+    <string name="action_2_title">Action 2</string>
+    <string name="action_2_dialog_title">Action 2</string>
+    <string name="action_2_dialog_message">Ingrese el comando para ejecutar la acción 2</string>
+
+    <string name="action_3_title">Action 3</string>
+    <string name="action_3_dialog_title">Action 3</string>
+    <string name="action_3_dialog_message">Ingrese el comando para ejecutar la acción 3</string>
+
+    <string name="action_4_title">Action 4</string>
+    <string name="action_4_dialog_title">Action 4</string>
+    <string name="action_4_dialog_message">Ingrese el comando para ejecutar la acción 4</string>
+
+    <string name="action_5_title">Action 5</string>
+    <string name="action_5_dialog_title">Action 5</string>
+    <string name="action_5_dialog_message">Ingrese el comando para ejecutar la acción 5</string>
+
+    <string name="action_6_title">Action 6</string>
+    <string name="action_6_dialog_title">Action 6</string>
+    <string name="action_6_dialog_message">Ingrese el comando para ejecutar la acción 6</string>
+
+    <string name="action_7_title">Action 7</string>
+    <string name="action_7_dialog_title">Action 7</string>
+    <string name="action_7_dialog_message">Ingrese el comando para ejecutar la acción 7</string>
+
+    <string name="action_8_title">Action 8</string>
+    <string name="action_8_dialog_title">Action 8</string>
+    <string name="action_8_dialog_message">Ingrese el comando para ejecutar la acción 8</string>
+
+    <string name="speech_recognition_language_title">Idioma</string>
+    <string name="speech_recognition_language_dialog_title">Seleccione su idioma</string>
+
+    <string name="forward_keyword_title">Avanzar palabra clave</string>
+    <string name="forward_keyword_dialog_title">Avanzar palabra clave</string>
+    <string name="forward_keyword_dialog_message">Ingrese la palabra clave para avanzar</string>
+
+    <string name="backward_keyword_title">Retroceder palabra clave</string>
+    <string name="backward_keyword_dialog_title">Retroceder palabra clave</string>
+    <string name="backward_keyword_dialog_message">Ingrese la palabra clave para retroceder</string>
+
+    <string name="right_keyword_title">Derecha palabra clave</string>
+    <string name="right_keyword_dialog_title">Derecha keyword</string>
+    <string name="right_keyword_dialog_message">Ingrese la palabra clave para girar a la derecha</string>
+
+    <string name="left_keyword_title">Izquierda palabra clave</string>
+    <string name="left_keyword_dialog_title">Izquierda palabra clave</string>
+    <string name="left_keyword_dialog_message">Ingrese la palabra clave para girar a la izquierda</string>
+
+
+    <!-- Information - Dialog -->
+
+    <string name="configuration_dialog_title">Información</string>
+    <string name="configuration_dialog_message">El código fuente de mi coche wifi está disponible en mi github:\n\nhttps://github.com/lacour-vincent/wifi-car-esp8266\n\nLos comandos por defecto enviados son:\n
+           • http://IP:PORT/move?dir=F \n
+           • http://IP:PORT/move?dir=B \n
+           • http://IP:PORT/move?dir=S \n
+           • http://IP:PORT/move?dir=R \n
+           • http://IP:PORT/move?dir=L \n
+            \n
+           • http://IP:PORT/action?type=(1-8)
+    </string>
+
+    <string name="button_dialog_title">Información</string>
+    <string name="button_dialog_message">Mantenga pulsado el botón mover para enviar el comando.\n\nEl comando \"stop\" se envía cuando sueltas el botón.\n\nEl comando \"action\" se envía cuando haces clic en el botón de acción.</string>
+
+    <string name="accelerometer_dialog_title">Información</string>
+    <string name="accelerometer_dialog_message">Gira el dispositivo para controlar el coche.\n\nEl comando \"stop\" se envía cuando el dispositivo está en posición horizontal.\n\nEl comando \"action\" se envía cuando haces clic en el botón de acción.</string>
+
+    <string name="voice_dialog_title">Información</string>
+    <string name="voice_dialog_message">Los comandos de voz se pueden modificar en la página de configuración.\n\nEl comando \"stop\" se enviará después de 3 segundos.\n\nEl comando \"action\" se envía cuando haces clic en el botón de acción.\n\nPara utilizar el reconocimiento de voz fuera de la red, debe descargar el paquete correspondiente a su idioma.</string>
+    <string name="voice_recognition_prompt">¿Qué es lo que quieres hacer?</string>
+
+</resources>
