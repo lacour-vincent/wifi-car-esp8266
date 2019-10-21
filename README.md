@@ -40,11 +40,46 @@ You can find a complete kit the build a wifi car at this [link](https://www.bang
 
 ## Upload the code into your controller
 
-To complete ... 
+The second step is to program your microcontroller in order to serve an HTTP server. The microcontroller would be able to control the rotation of each motors.
+
+I have made 2 scripts AP and STA modes. In AP mode, the microcontroller will create its own wifi network and serve the HTTP server. In STA mode, the microcontroller will connect to an existing network and server the HTTP server. In both case, you need the know the IP Address of your microcontroller.
+
+To upload the script, you can use the Arduino IDE: [link](https://randomnerdtutorials.com/how-to-install-esp8266-board-arduino-ide/)
 
 ## Configure your mobile application
 
-To complete ... 
+I have develop an Android Application to control the wifi car. You can customize all the commands with my app. In truth, I haven't found an application to properly control my car as Bluetooth RC car app. So I decided to create mine.
+
+Connect your smartphone to the same wifi network as your wifi car. Make sure that the application parameters are correct (IP, PORT, etc..). Have fun!
+
+The defaults commands send are:
+
+```
+http://192.168.4.1:8080/move?dir=F (forward)
+http://192.168.4.1:8080/move?dir=B (backward)
+http://192.168.4.1:8080/move?dir=R (right)
+http://192.168.4.1:8080/move?dir=L (left)
+http://192.168.4.1:8080/move?dir=S (stop)
+
+http://192.168.4.1:8080/action?type=1 (action 1)
+...
+http://192.168.4.1:8080/action?type=8 (action 8)
+```
+
+
+<p align="center">
+  <img width="135px" height="240px" src="img/android_1.png">
+  <img width="135px" height="240px" src="img/android_2.png" style="margin:0px 50px">
+  <img width="135px" height="240px" src="img/android_3.png">
+</p>
+
+
+[<img src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png"
+      alt="Download from Google Play"
+      height="80">](https://play.google.com/store/apps/details?id=com.lacour.vincent.wificaresp8266)
+
+
+__iOS__: upcoming development
 
 ## Preview
 
