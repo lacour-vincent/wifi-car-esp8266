@@ -66,9 +66,9 @@ GET - http://192.168.4.1:8080/action?type=8 (action 8)
 ```
 
 <p align="center">
-  <img width="135px" height="240px" src="img/android_1.png">
-  <img width="135px" height="240px" src="img/android_2.png" style="margin:0px 50px">
-  <img width="135px" height="240px" src="img/android_3.png">
+  <img width="216px" height="384px" src="img/android_1.png">
+  <img width="216px" height="384px" src="img/android_2.png">
+  <img width="216px" height="384px" src="img/android_3.png">
 </p>
 
 
