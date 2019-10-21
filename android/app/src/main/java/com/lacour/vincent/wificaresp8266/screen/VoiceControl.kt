@@ -56,7 +56,7 @@ class VoiceControl : AppCompatActivity() {
             action_voice.setOnClickListener {
                 Toast.makeText(
                     this,
-                    getString(R.string.specch_recognizer_not_found),
+                    getString(R.string.speech_recognizer_not_found),
                     Toast.LENGTH_SHORT
                 ).show()
             }

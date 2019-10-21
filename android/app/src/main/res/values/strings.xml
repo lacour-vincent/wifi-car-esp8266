@@ -11,7 +11,8 @@
 
     <string name="ok">OK</string>
 
-    <string name="specch_recognizer_not_found">You do not have a speech recognizer installed on your device.</string>
+    <string name="invalid_hostname">Error: \"%1$s\" invalid hostname.</string>
+    <string name="speech_recognizer_not_found">You do not have a speech recognizer installed on your device.</string>
     <string name="speech_recognizer_no_matches">The command does not match any keywords.</string>
 
     <!-- Icon and Images -->

@@ -2,6 +2,8 @@ package com.lacour.vincent.wificaresp8266.connector
 
 import android.content.Context
 import android.util.Log
+import android.widget.Toast
+import com.lacour.vincent.wificaresp8266.R
 import com.lacour.vincent.wificaresp8266.storage.Preferences
 import retrofit2.*
 
@@ -20,9 +22,22 @@ private interface CarApiService {
 class CarConnector(context: Context) {
 
     private val preferences = Preferences(context)
-    private val url = "http://${preferences.getIpAddress()}:${preferences.getPort()}"
-    private val retrofit = Retrofit.Builder().baseUrl(url).build()
-    private val service = retrofit.create(CarApiService::class.java)
+    private var service: CarApiService? = null
+
+    init {
+        val url = "http://${preferences.getIpAddress()}:${preferences.getPort()}"
+        try {
+            val retrofit = Retrofit.Builder().baseUrl(url).build()
+            service = retrofit.create(CarApiService::class.java)
+        } catch (e: IllegalArgumentException) {
+            Toast.makeText(
+                context,
+                context.getString(R.string.invalid_hostname, url),
+                Toast.LENGTH_LONG
+            ).show()
+        }
+
+    }
 
     fun moveForward() = sendMoveRequest(preferences.getMoveForwardValue())
     fun moveBackward() = sendMoveRequest(preferences.getMoveBackwardValue())
@@ -41,7 +56,8 @@ class CarConnector(context: Context) {
 
 
     private fun sendMoveRequest(dir: String) {
-        val request = service.move(dir)
+        if (service == null) return
+        val request = (service as CarApiService).move(dir)
         request.enqueue(object : Callback<Void> {
             override fun onResponse(call: Call<Void>, response: Response<Void>) {
                 Log.i("Response", response.code().toString())
@@ -54,7 +70,8 @@ class CarConnector(context: Context) {
     }
 
     private fun sendActionRequest(type: String) {
-        val request = service.action(type)
+        if (service == null) return
+        val request = (service as CarApiService).action(type)
         request.enqueue(object : Callback<Void> {
             override fun onResponse(call: Call<Void>, response: Response<Void>) {
                 Log.i("Response", response.code().toString())

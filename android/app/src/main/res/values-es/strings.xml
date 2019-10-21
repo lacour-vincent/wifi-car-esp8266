@@ -11,7 +11,8 @@
 
     <string name="ok">OK</string>
 
-    <string name="specch_recognizer_not_found">No tiene un reconocedor de voz instalado en su dispositivo.</string>
+    <string name="invalid_hostname">Error: \"%1$s\" no es un nombre de host válido.</string>
+    <string name="speech_recognizer_not_found">No tiene un reconocedor de voz instalado en su dispositivo.</string>
     <string name="speech_recognizer_no_matches">El comando no corresponde a ninguna palabra clave.</string>
 
     <!-- Icon and Images -->

@@ -11,7 +11,8 @@
 
     <string name="ok">OK</string>
 
-    <string name="specch_recognizer_not_found">Vous n\'avez pas de dispositif de reconnaissance vocale installé sur votre appareil.</string>
+    <string name="invalid_hostname">Erreur : \"%1$s\" n\'est pas un nom de domaine valide.</string>
+    <string name="speech_recognizer_not_found">Vous n\'avez pas de dispositif de reconnaissance vocale installé sur votre appareil.</string>
     <string name="speech_recognizer_no_matches">La commande ne correspond à aucun mot-clé.</string>
 
     <!-- Icon and Images -->
