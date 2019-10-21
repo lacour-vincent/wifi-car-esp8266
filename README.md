@@ -7,7 +7,7 @@
 
 ## Synopsis
 
-There are a lot of RC car projects using a smartphone to control the car. Most use the bluetooth protocol. Thanks to the ESP8266 chip, reliable and cheap, it is now possible to build a RC car for about $30.
+There are a lot of RC car projects using a smartphone to control the car. Most of them use the bluetooth protocol. Thanks to the ESP8266 chip, reliable and cheap, it is now possible to build a RC car for about $30.
 The steps are:
 * build the wifi car
 * develop the HTTP server with motor control
@@ -25,7 +25,6 @@ To make it simple, the smartphone must be connected to the same wifi network as 
 
 The user will interact with the buttons of the mobile application to control the car.
 
-
 ## Build your own wifi car
 
 The first step is to build your wifi car. Basically, you have to assemble the chassis with 2 motors, connect the controller and the motor controller, add battery.
@@ -40,32 +39,31 @@ You can find a complete kit the build a wifi car at this [link](https://www.bang
 
 ## Upload the code into your controller
 
-The second step is to program your microcontroller in order to serve an HTTP server. The microcontroller would be able to control the rotation of each motors.
+The second step is to program your microcontroller in order to serve an HTTP server. The microcontroller would be able to control the rotation of each motors according to the request received. I decided to implement GET instead of POST request because the server will not return the state of the car.
 
-I have made 2 scripts AP and STA modes. In AP mode, the microcontroller will create its own wifi network and serve the HTTP server. In STA mode, the microcontroller will connect to an existing network and server the HTTP server. In both case, you need the know the IP Address of your microcontroller.
+I have made 2 scripts AP and STA modes. In AP mode, the microcontroller will create its own wifi network and serve the HTTP server. In STA mode, the microcontroller will connect to an existing network and server the HTTP server. In both case, you need to know the IP Address of your microcontroller.
 
 To upload the script, you can use the Arduino IDE: [link](https://randomnerdtutorials.com/how-to-install-esp8266-board-arduino-ide/)
 
 ## Configure your mobile application
 
-I have develop an Android Application to control the wifi car. You can customize all the commands with my app. In truth, I haven't found an application to properly control my car as Bluetooth RC car app. So I decided to create mine.
+I have develop an Android app to control the wifi car. You can customize all the commands. To be totally honest, I have not found an application to properly control my car as Bluetooth RC car app. So I decided to create mine.
 
 Connect your smartphone to the same wifi network as your wifi car. Make sure that the application parameters are correct (IP, PORT, etc..). Have fun!
 
-The defaults commands send are:
+The defaults commands sent are:
 
 ```
-http://192.168.4.1:8080/move?dir=F (forward)
-http://192.168.4.1:8080/move?dir=B (backward)
-http://192.168.4.1:8080/move?dir=R (right)
-http://192.168.4.1:8080/move?dir=L (left)
-http://192.168.4.1:8080/move?dir=S (stop)
+GET - http://192.168.4.1:8080/move?dir=F (forward)
+GET - http://192.168.4.1:8080/move?dir=B (backward)
+GET - http://192.168.4.1:8080/move?dir=R (right)
+GET - http://192.168.4.1:8080/move?dir=L (left)
+GET - http://192.168.4.1:8080/move?dir=S (stop)
 
-http://192.168.4.1:8080/action?type=1 (action 1)
+GET - http://192.168.4.1:8080/action?type=1 (action 1)
 ...
-http://192.168.4.1:8080/action?type=8 (action 8)
+GET - http://192.168.4.1:8080/action?type=8 (action 8)
 ```
-
 
 <p align="center">
   <img width="135px" height="240px" src="img/android_1.png">
@@ -84,7 +82,3 @@ __iOS__: upcoming development
 ## Preview
 
 You can find the result my project at this [link](https://www.youtube.com/watch?v=E-RyAsFMnTI)
-
-
-
-
