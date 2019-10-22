@@ -1,0 +1,6 @@
+framework module Pods_wificaresp8266 {
+  umbrella header "Pods-wificaresp8266-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,414 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		819FB666235F1BD300236B05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819FB665235F1BD300236B05 /* AppDelegate.swift */; };
+		819FB668235F1BD300236B05 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819FB667235F1BD300236B05 /* SceneDelegate.swift */; };
+		819FB66A235F1BD300236B05 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819FB669235F1BD300236B05 /* ViewController.swift */; };
+		819FB66D235F1BD300236B05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 819FB66B235F1BD300236B05 /* Main.storyboard */; };
+		819FB66F235F1BD400236B05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 819FB66E235F1BD400236B05 /* Assets.xcassets */; };
+		819FB672235F1BD400236B05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 819FB670235F1BD400236B05 /* LaunchScreen.storyboard */; };
+		F71AD216078B7294BC784F66 /* Pods_wificaresp8266.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D30462D12A27E29D1F2DBA24 /* Pods_wificaresp8266.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		28E24C76C1891BA84F923618 /* Pods-wificaresp8266.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wificaresp8266.release.xcconfig"; path = "Target Support Files/Pods-wificaresp8266/Pods-wificaresp8266.release.xcconfig"; sourceTree = "<group>"; };
+		819FB662235F1BD300236B05 /* wificaresp8266.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wificaresp8266.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		819FB665235F1BD300236B05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		819FB667235F1BD300236B05 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		819FB669235F1BD300236B05 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		819FB66C235F1BD300236B05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		819FB66E235F1BD400236B05 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		819FB671235F1BD400236B05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		819FB673235F1BD400236B05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE5D017886DD2677135764D7 /* Pods-wificaresp8266.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wificaresp8266.debug.xcconfig"; path = "Target Support Files/Pods-wificaresp8266/Pods-wificaresp8266.debug.xcconfig"; sourceTree = "<group>"; };
+		D30462D12A27E29D1F2DBA24 /* Pods_wificaresp8266.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wificaresp8266.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		819FB65F235F1BD300236B05 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F71AD216078B7294BC784F66 /* Pods_wificaresp8266.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		819FB659235F1BD300236B05 = {
+			isa = PBXGroup;
+			children = (
+				819FB664235F1BD300236B05 /* wificaresp8266 */,
+				819FB663235F1BD300236B05 /* Products */,
+				ADE6447BA971AC86D33DBD9C /* Pods */,
+				A11BBA3D5C21C12F04E67E91 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		819FB663235F1BD300236B05 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				819FB662235F1BD300236B05 /* wificaresp8266.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		819FB664235F1BD300236B05 /* wificaresp8266 */ = {
+			isa = PBXGroup;
+			children = (
+				819FB665235F1BD300236B05 /* AppDelegate.swift */,
+				819FB667235F1BD300236B05 /* SceneDelegate.swift */,
+				819FB669235F1BD300236B05 /* ViewController.swift */,
+				819FB66B235F1BD300236B05 /* Main.storyboard */,
+				819FB66E235F1BD400236B05 /* Assets.xcassets */,
+				819FB670235F1BD400236B05 /* LaunchScreen.storyboard */,
+				819FB673235F1BD400236B05 /* Info.plist */,
+			);
+			path = wificaresp8266;
+			sourceTree = "<group>";
+		};
+		A11BBA3D5C21C12F04E67E91 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D30462D12A27E29D1F2DBA24 /* Pods_wificaresp8266.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ADE6447BA971AC86D33DBD9C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BE5D017886DD2677135764D7 /* Pods-wificaresp8266.debug.xcconfig */,
+				28E24C76C1891BA84F923618 /* Pods-wificaresp8266.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		819FB661235F1BD300236B05 /* wificaresp8266 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 819FB676235F1BD400236B05 /* Build configuration list for PBXNativeTarget "wificaresp8266" */;
+			buildPhases = (
+				BD56937BD6596DCE56FA4098 /* [CP] Check Pods Manifest.lock */,
+				819FB65E235F1BD300236B05 /* Sources */,
+				819FB65F235F1BD300236B05 /* Frameworks */,
+				819FB660235F1BD300236B05 /* Resources */,
+				713085D25CE7AFDB81977D76 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = wificaresp8266;
+			productName = wificaresp8266;
+			productReference = 819FB662235F1BD300236B05 /* wificaresp8266.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		819FB65A235F1BD300236B05 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1110;
+				LastUpgradeCheck = 1110;
+				ORGANIZATIONNAME = "Vincent Lacour";
+				TargetAttributes = {
+					819FB661235F1BD300236B05 = {
+						CreatedOnToolsVersion = 11.1;
+					};
+				};
+			};
+			buildConfigurationList = 819FB65D235F1BD300236B05 /* Build configuration list for PBXProject "wificaresp8266" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 819FB659235F1BD300236B05;
+			productRefGroup = 819FB663235F1BD300236B05 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				819FB661235F1BD300236B05 /* wificaresp8266 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		819FB660235F1BD300236B05 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				819FB672235F1BD400236B05 /* LaunchScreen.storyboard in Resources */,
+				819FB66F235F1BD400236B05 /* Assets.xcassets in Resources */,
+				819FB66D235F1BD300236B05 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		713085D25CE7AFDB81977D76 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-wificaresp8266/Pods-wificaresp8266-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-wificaresp8266/Pods-wificaresp8266-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-wificaresp8266/Pods-wificaresp8266-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BD56937BD6596DCE56FA4098 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-wificaresp8266-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		819FB65E235F1BD300236B05 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				819FB66A235F1BD300236B05 /* ViewController.swift in Sources */,
+				819FB666235F1BD300236B05 /* AppDelegate.swift in Sources */,
+				819FB668235F1BD300236B05 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		819FB66B235F1BD300236B05 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				819FB66C235F1BD300236B05 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		819FB670235F1BD400236B05 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				819FB671235F1BD400236B05 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		819FB674235F1BD400236B05 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		819FB675235F1BD400236B05 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		819FB677235F1BD400236B05 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE5D017886DD2677135764D7 /* Pods-wificaresp8266.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AQ25LXYG3Q;
+				INFOPLIST_FILE = wificaresp8266/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lacour.vincent.wificaresp8266;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		819FB678235F1BD400236B05 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 28E24C76C1891BA84F923618 /* Pods-wificaresp8266.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AQ25LXYG3Q;
+				INFOPLIST_FILE = wificaresp8266/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lacour.vincent.wificaresp8266;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		819FB65D235F1BD300236B05 /* Build configuration list for PBXProject "wificaresp8266" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				819FB674235F1BD400236B05 /* Debug */,
+				819FB675235F1BD400236B05 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		819FB676235F1BD400236B05 /* Build configuration list for PBXNativeTarget "wificaresp8266" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				819FB677235F1BD400236B05 /* Debug */,
+				819FB678235F1BD400236B05 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 819FB65A235F1BD300236B05 /* Project object */;
+}
