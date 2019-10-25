@@ -3,13 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		815EB9462363A3F2003C29CA /* Configuration.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 815EB9452363A3F2003C29CA /* Configuration.bundle */; };
 		819FB666235F1BD300236B05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819FB665235F1BD300236B05 /* AppDelegate.swift */; };
 		819FB668235F1BD300236B05 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819FB667235F1BD300236B05 /* SceneDelegate.swift */; };
-		819FB66A235F1BD300236B05 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819FB669235F1BD300236B05 /* ViewController.swift */; };
+		819FB66A235F1BD300236B05 /* WelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819FB669235F1BD300236B05 /* WelcomeController.swift */; };
 		819FB66D235F1BD300236B05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 819FB66B235F1BD300236B05 /* Main.storyboard */; };
 		819FB66F235F1BD400236B05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 819FB66E235F1BD400236B05 /* Assets.xcassets */; };
 		819FB672235F1BD400236B05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 819FB670235F1BD400236B05 /* LaunchScreen.storyboard */; };
@@ -18,10 +19,11 @@
 
 /* Begin PBXFileReference section */
 		28E24C76C1891BA84F923618 /* Pods-wificaresp8266.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wificaresp8266.release.xcconfig"; path = "Target Support Files/Pods-wificaresp8266/Pods-wificaresp8266.release.xcconfig"; sourceTree = "<group>"; };
+		815EB9452363A3F2003C29CA /* Configuration.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Configuration.bundle; sourceTree = "<group>"; };
 		819FB662235F1BD300236B05 /* wificaresp8266.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wificaresp8266.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		819FB665235F1BD300236B05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		819FB667235F1BD300236B05 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		819FB669235F1BD300236B05 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		819FB669235F1BD300236B05 /* WelcomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeController.swift; sourceTree = "<group>"; };
 		819FB66C235F1BD300236B05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		819FB66E235F1BD400236B05 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		819FB671235F1BD400236B05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -42,6 +44,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		81986BB72361C5B80099F8A9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				819FB66B235F1BD300236B05 /* Main.storyboard */,
+				819FB670235F1BD400236B05 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		81986BB82361C6410099F8A9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				819FB669235F1BD300236B05 /* WelcomeController.swift */,
+				815EB9452363A3F2003C29CA /* Configuration.bundle */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		81986BB92361C64A0099F8A9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		81986BBA2361C66D0099F8A9 /* Connector */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Connector;
+			sourceTree = "<group>";
+		};
+		81986BBB2361C6720099F8A9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				819FB66E235F1BD400236B05 /* Assets.xcassets */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		819FB659235F1BD300236B05 = {
 			isa = PBXGroup;
 			children = (
@@ -65,11 +107,12 @@
 			children = (
 				819FB665235F1BD300236B05 /* AppDelegate.swift */,
 				819FB667235F1BD300236B05 /* SceneDelegate.swift */,
-				819FB669235F1BD300236B05 /* ViewController.swift */,
-				819FB66B235F1BD300236B05 /* Main.storyboard */,
-				819FB66E235F1BD400236B05 /* Assets.xcassets */,
-				819FB670235F1BD400236B05 /* LaunchScreen.storyboard */,
 				819FB673235F1BD400236B05 /* Info.plist */,
+				81986BB92361C64A0099F8A9 /* Model */,
+				81986BB72361C5B80099F8A9 /* View */,
+				81986BB82361C6410099F8A9 /* Controller */,
+				81986BBA2361C66D0099F8A9 /* Connector */,
+				81986BBB2361C6720099F8A9 /* Supporting Files */,
 			);
 			path = wificaresp8266;
 			sourceTree = "<group>";
@@ -88,7 +131,6 @@
 				BE5D017886DD2677135764D7 /* Pods-wificaresp8266.debug.xcconfig */,
 				28E24C76C1891BA84F923618 /* Pods-wificaresp8266.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -152,6 +194,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				815EB9462363A3F2003C29CA /* Configuration.bundle in Resources */,
 				819FB672235F1BD400236B05 /* LaunchScreen.storyboard in Resources */,
 				819FB66F235F1BD400236B05 /* Assets.xcassets in Resources */,
 				819FB66D235F1BD300236B05 /* Main.storyboard in Resources */,
@@ -207,7 +250,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				819FB66A235F1BD300236B05 /* ViewController.swift in Sources */,
+				819FB66A235F1BD300236B05 /* WelcomeController.swift in Sources */,
 				819FB666235F1BD300236B05 /* AppDelegate.swift in Sources */,
 				819FB668235F1BD300236B05 /* SceneDelegate.swift in Sources */,
 			);
