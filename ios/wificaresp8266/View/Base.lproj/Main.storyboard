@@ -10,7 +10,7 @@
         <!--Welcome-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" userLabel="Welcome" customClass="ViewController" customModule="wificaresp8266" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" userLabel="Welcome" customClass="ViewController" customModule="Wifi_RC_Car_ESP8266" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -67,14 +67,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Wifi RC Car ESP8266" id="Fqn-56-eJm">
-                        <rightBarButtonItems>
-                            <barButtonItem title="Item" image="gear" catalog="system" id="QUx-Fi-gHF"/>
-                            <barButtonItem title="Item" image="wifi" catalog="system" id="Se9-iJ-MfD">
-                                <connections>
-                                    <action selector="onClickWifiButton:" destination="BYZ-38-t0r" id="fan-oH-AGB"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="gear" catalog="system" id="QUx-Fi-gHF">
+                            <connections>
+                                <action selector="onSettingsClick:" destination="BYZ-38-t0r" id="gYw-nG-XiP"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -124,6 +121,5 @@
         <image name="img_button" width="64" height="64"/>
         <image name="img_voice" width="64" height="64"/>
         <image name="info.circle" catalog="system" width="64" height="60"/>
-        <image name="wifi" catalog="system" width="64" height="46"/>
     </resources>
 </document>

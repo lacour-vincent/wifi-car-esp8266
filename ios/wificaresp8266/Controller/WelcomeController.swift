@@ -5,7 +5,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
     }
 
-    @IBAction func onClickWifiButton(_ sender: UIBarButtonItem) {
+    @IBAction func onSettingsClick(_ sender: UIBarButtonItem) {
         guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
             return
         }
