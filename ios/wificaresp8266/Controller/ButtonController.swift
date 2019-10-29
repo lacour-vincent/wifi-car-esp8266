@@ -1,6 +1,8 @@
 import UIKit
 
 class ButtonController: UIViewController {
+    let carConnector: CarConnector = CarConnector()
+    
     @IBOutlet var arrowUpButton: UIButton!
     @IBOutlet var arrowRightButton: UIButton!
     @IBOutlet var arrowDownButton: UIButton!
@@ -8,6 +10,7 @@ class ButtonController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         arrowUpButton.adjustsImageWhenHighlighted = false
         arrowRightButton.adjustsImageWhenHighlighted = false
         arrowDownButton.adjustsImageWhenHighlighted = false
@@ -29,28 +32,33 @@ class ButtonController: UIViewController {
     func handleOnTouchArrowDown(sender: UIButton) {
         switch sender {
             case arrowUpButton:
-                arrowUpButton.setImage(UIImage(named: "arrow_up_pressed.png"), for: UIControl.State.normal)
+                carConnector.moveForward()
+                arrowUpButton.setImage(UIImage(named: "arrow_up_pressed.png"), for: .normal)
             case arrowDownButton:
-                arrowDownButton.setImage(UIImage(named: "arrow_down_pressed.png"), for: UIControl.State.normal)
+                carConnector.moveBackward()
+                arrowDownButton.setImage(UIImage(named: "arrow_down_pressed.png"), for: .normal)
             case arrowRightButton:
-                arrowRightButton.setImage(UIImage(named: "arrow_right_pressed.png"), for: UIControl.State.normal)
+                carConnector.turnRight()
+                arrowRightButton.setImage(UIImage(named: "arrow_right_pressed.png"), for: .normal)
             case arrowLeftButton:
-                arrowLeftButton.setImage(UIImage(named: "arrow_left_pressed.png"), for: UIControl.State.normal)
+                carConnector.turnLeft()
+                arrowLeftButton.setImage(UIImage(named: "arrow_left_pressed.png"), for: .normal)
             default:
                 break
         }
     }
     
     func handleOnTouchArrowUp(sender: UIButton) {
+        carConnector.stopMoving()
         switch sender {
             case arrowUpButton:
-                arrowUpButton.setImage(UIImage(named: "arrow_up.png"), for: UIControl.State.normal)
+                arrowUpButton.setImage(UIImage(named: "arrow_up.png"), for: .normal)
             case arrowDownButton:
-                arrowDownButton.setImage(UIImage(named: "arrow_down.png"), for: UIControl.State.normal)
+                arrowDownButton.setImage(UIImage(named: "arrow_down.png"), for: .normal)
             case arrowRightButton:
-                arrowRightButton.setImage(UIImage(named: "arrow_right.png"), for: UIControl.State.normal)
+                arrowRightButton.setImage(UIImage(named: "arrow_right.png"), for: .normal)
             case arrowLeftButton:
-                arrowLeftButton.setImage(UIImage(named: "arrow_left.png"), for: UIControl.State.normal)
+                arrowLeftButton.setImage(UIImage(named: "arrow_left.png"), for: .normal)
             default:
                 break
         }

@@ -15,6 +15,7 @@
 		819FB66F235F1BD400236B05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 819FB66E235F1BD400236B05 /* Assets.xcassets */; };
 		819FB672235F1BD400236B05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 819FB670235F1BD400236B05 /* LaunchScreen.storyboard */; };
 		81DAF6BC2368D39300AC6A0E /* ButtonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DAF6BB2368D39300AC6A0E /* ButtonController.swift */; };
+		81DAF6BE2368E25600AC6A0E /* CarConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DAF6BD2368E25600AC6A0E /* CarConnector.swift */; };
 		F71AD216078B7294BC784F66 /* Pods_wificaresp8266.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D30462D12A27E29D1F2DBA24 /* Pods_wificaresp8266.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +31,7 @@
 		819FB671235F1BD400236B05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		819FB673235F1BD400236B05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		81DAF6BB2368D39300AC6A0E /* ButtonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonController.swift; sourceTree = "<group>"; };
+		81DAF6BD2368E25600AC6A0E /* CarConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarConnector.swift; sourceTree = "<group>"; };
 		BE5D017886DD2677135764D7 /* Pods-wificaresp8266.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wificaresp8266.debug.xcconfig"; path = "Target Support Files/Pods-wificaresp8266/Pods-wificaresp8266.debug.xcconfig"; sourceTree = "<group>"; };
 		D30462D12A27E29D1F2DBA24 /* Pods_wificaresp8266.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wificaresp8266.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -74,6 +76,7 @@
 		81986BBA2361C66D0099F8A9 /* Connector */ = {
 			isa = PBXGroup;
 			children = (
+				81DAF6BD2368E25600AC6A0E /* CarConnector.swift */,
 			);
 			path = Connector;
 			sourceTree = "<group>";
@@ -254,6 +257,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				819FB66A235F1BD300236B05 /* WelcomeController.swift in Sources */,
+				81DAF6BE2368E25600AC6A0E /* CarConnector.swift in Sources */,
 				81DAF6BC2368D39300AC6A0E /* ButtonController.swift in Sources */,
 				819FB666235F1BD300236B05 /* AppDelegate.swift in Sources */,
 				819FB668235F1BD300236B05 /* SceneDelegate.swift in Sources */,
