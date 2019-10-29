@@ -38,6 +38,9 @@
                                 <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
                                 <inset key="titleEdgeInsets" minX="40" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Accerometer" image="img_accelerometer"/>
+                                <connections>
+                                    <action selector="onTouchAccelerometerMenu:" destination="BYZ-38-t0r" eventType="touchDown" id="7lN-FG-1sv"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E10-OO-47f" userLabel="voiceButton">
                                 <rect key="frame" x="20" y="394" width="335" height="100"/>
@@ -50,6 +53,9 @@
                                 <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
                                 <inset key="titleEdgeInsets" minX="40" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Voice" image="img_voice"/>
+                                <connections>
+                                    <action selector="onTouchVoiceMenu:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VXl-8p-CQc"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>

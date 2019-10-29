@@ -17,5 +17,4 @@ struct Preferences {
     func getStopValue() -> String { getUserDefaultValue(storage: Keys.MOVE_STOP_STORAGE) }
     func getTurnRightValue() -> String { getUserDefaultValue(storage: Keys.TURN_RIGHT_STORAGE) }
     func getTurnLeftValue() -> String { getUserDefaultValue(storage: Keys.TURN_LEFT_STORAGE) }
-    
 }
