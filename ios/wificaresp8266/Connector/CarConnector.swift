@@ -1,25 +1,22 @@
-//
-//  CarConnector.swift
-//  wificaresp8266
-//
-//  Created by VLA3795 on 29/10/2019.
-//  Copyright © 2019 Vincent Lacour. All rights reserved.
-//
-
 import Alamofire
-import Foundation
 
 struct CarConnector {
-    let apiUrl: String = "http://192.168.0.18:5000"
+    var preferences: Preferences
+    var apiUrl: String
 
-    func moveForward() { sendMoveRequest(dir: "F") }
-    func moveBackward() { sendMoveRequest(dir: "B") }
-    func stopMoving() { sendMoveRequest(dir: "S") }
-    func turnRight() { sendMoveRequest(dir: "R") }
-    func turnLeft() { sendMoveRequest(dir: "L") }
+    init() {
+        preferences = Preferences()
+        apiUrl = "http://\(preferences.getIpAddress()):\(preferences.getPort())"
+    }
+
+    func moveForward() { sendMoveRequest(dir: preferences.getMoveForwardValue()) }
+    func moveBackward() { sendMoveRequest(dir: preferences.getMoveBackwardValue()) }
+    func stopMoving() { sendMoveRequest(dir: preferences.getStopValue()) }
+    func turnRight() { sendMoveRequest(dir: preferences.getTurnRightValue()) }
+    func turnLeft() { sendMoveRequest(dir:preferences.getTurnLeftValue()) }
 
     private func sendMoveRequest(dir: String) {
-        let url = "\(self.apiUrl)/move?dir=\(dir)"
+        let url = "\(apiUrl)/move?dir=\(dir)"
         AF.request(url, method: .get)
             .responseString { response in
                 print(response)
