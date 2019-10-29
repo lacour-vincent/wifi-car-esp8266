@@ -1,4 +1,4 @@
-struct Constants {
+struct Keys {
     static let IP_ADDRESS_ST0RAGE = Storage(key: "ip_address", defaultValue: "192.168.4.1")
     static let PORT_STORAGE = Storage(key: "port", defaultValue: "8080")
 

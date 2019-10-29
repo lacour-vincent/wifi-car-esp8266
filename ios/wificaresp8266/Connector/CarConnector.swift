@@ -1,11 +1,10 @@
 import Alamofire
 
 struct CarConnector {
-    var preferences: Preferences
+    let preferences = Preferences()
     var apiUrl: String
 
     init() {
-        preferences = Preferences()
         apiUrl = "http://\(preferences.getIpAddress()):\(preferences.getPort())"
     }
 
@@ -13,7 +12,7 @@ struct CarConnector {
     func moveBackward() { sendMoveRequest(dir: preferences.getMoveBackwardValue()) }
     func stopMoving() { sendMoveRequest(dir: preferences.getStopValue()) }
     func turnRight() { sendMoveRequest(dir: preferences.getTurnRightValue()) }
-    func turnLeft() { sendMoveRequest(dir:preferences.getTurnLeftValue()) }
+    func turnLeft() { sendMoveRequest(dir: preferences.getTurnLeftValue()) }
 
     private func sendMoveRequest(dir: String) {
         let url = "\(apiUrl)/move?dir=\(dir)"

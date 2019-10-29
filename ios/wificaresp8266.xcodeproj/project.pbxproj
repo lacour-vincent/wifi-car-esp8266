@@ -17,7 +17,7 @@
 		81DAF6BC2368D39300AC6A0E /* ButtonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DAF6BB2368D39300AC6A0E /* ButtonController.swift */; };
 		81DAF6BE2368E25600AC6A0E /* CarConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DAF6BD2368E25600AC6A0E /* CarConnector.swift */; };
 		81DAF6C12368EEEF00AC6A0E /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DAF6C02368EEEF00AC6A0E /* Storage.swift */; };
-		81DAF6C52368EFAA00AC6A0E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DAF6C42368EFAA00AC6A0E /* Constants.swift */; };
+		81DAF6C52368EFAA00AC6A0E /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DAF6C42368EFAA00AC6A0E /* Keys.swift */; };
 		81DAF6C72368F05F00AC6A0E /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DAF6C62368F05F00AC6A0E /* Preferences.swift */; };
 		F71AD216078B7294BC784F66 /* Pods_wificaresp8266.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D30462D12A27E29D1F2DBA24 /* Pods_wificaresp8266.framework */; };
 /* End PBXBuildFile section */
@@ -36,7 +36,7 @@
 		81DAF6BB2368D39300AC6A0E /* ButtonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonController.swift; sourceTree = "<group>"; };
 		81DAF6BD2368E25600AC6A0E /* CarConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarConnector.swift; sourceTree = "<group>"; };
 		81DAF6C02368EEEF00AC6A0E /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
-		81DAF6C42368EFAA00AC6A0E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		81DAF6C42368EFAA00AC6A0E /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		81DAF6C62368F05F00AC6A0E /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		BE5D017886DD2677135764D7 /* Pods-wificaresp8266.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wificaresp8266.debug.xcconfig"; path = "Target Support Files/Pods-wificaresp8266/Pods-wificaresp8266.debug.xcconfig"; sourceTree = "<group>"; };
 		D30462D12A27E29D1F2DBA24 /* Pods_wificaresp8266.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wificaresp8266.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,7 +143,7 @@
 		81DAF6C32368EF9A00AC6A0E /* Constant */ = {
 			isa = PBXGroup;
 			children = (
-				81DAF6C42368EFAA00AC6A0E /* Constants.swift */,
+				81DAF6C42368EFAA00AC6A0E /* Keys.swift */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -281,7 +281,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				81DAF6C52368EFAA00AC6A0E /* Constants.swift in Sources */,
+				81DAF6C52368EFAA00AC6A0E /* Keys.swift in Sources */,
 				819FB66A235F1BD300236B05 /* WelcomeController.swift in Sources */,
 				81DAF6BE2368E25600AC6A0E /* CarConnector.swift in Sources */,
 				81DAF6BC2368D39300AC6A0E /* ButtonController.swift in Sources */,

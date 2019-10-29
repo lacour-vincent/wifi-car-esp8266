@@ -10,11 +10,6 @@ class ButtonController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        arrowUpButton.adjustsImageWhenHighlighted = false
-        arrowRightButton.adjustsImageWhenHighlighted = false
-        arrowDownButton.adjustsImageWhenHighlighted = false
-        arrowLeftButton.adjustsImageWhenHighlighted = false
     }
     
     @IBAction func onTouchArrowDown(_ sender: UIButton) {
