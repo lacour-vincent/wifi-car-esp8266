@@ -38,7 +38,6 @@ class VoiceControl : AppCompatActivity() {
             with(supportActionBar!!) {
                 setDisplayHomeAsUpEnabled(true)
                 setDisplayShowHomeEnabled(true)
-                title = getString(R.string.activity_voice)
             }
         }
 

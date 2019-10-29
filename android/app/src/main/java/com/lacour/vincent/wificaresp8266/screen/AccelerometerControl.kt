@@ -30,7 +30,6 @@ class AccelerometerControl : AppCompatActivity(), SensorEventListener {
             with(supportActionBar!!) {
                 setDisplayHomeAsUpEnabled(true)
                 setDisplayShowHomeEnabled(true)
-                title = getString(R.string.activity_accelerometer)
             }
         }
 

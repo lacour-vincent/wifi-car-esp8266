@@ -19,6 +19,7 @@
 
         <activity
             android:name=".screen.Welcome"
+            android:label="@string/app_name"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,18 +29,22 @@
 
         <activity
             android:name=".screen.Configuration"
+            android:label="@string/activity_configuration"
             android:screenOrientation="portrait" />
 
         <activity
             android:name=".screen.ButtonControl"
+            android:label="@string/activity_button"
             android:screenOrientation="portrait" />
 
         <activity
             android:name=".screen.AccelerometerControl"
+            android:label="@string/activity_accelerometer"
             android:screenOrientation="portrait" />
 
         <activity
             android:name=".screen.VoiceControl"
+            android:label="@string/activity_voice"
             android:screenOrientation="portrait" />
 
     </application>

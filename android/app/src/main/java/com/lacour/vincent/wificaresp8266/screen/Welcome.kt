@@ -18,12 +18,6 @@ class Welcome : AppCompatActivity() {
         setContentView(R.layout.welcome_activity)
         setSupportActionBar(findViewById(R.id.toolbar_welcome))
 
-        if (supportActionBar != null) {
-            with(supportActionBar!!) {
-                title = getString(R.string.app_name)
-            }
-        }
-
         menu_button.setOnClickListener {
             val intent = Intent(this, ButtonControl::class.java)
             startActivity(intent)
