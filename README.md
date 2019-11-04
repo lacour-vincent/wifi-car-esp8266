@@ -65,6 +65,7 @@ GET - http://192.168.4.1:8080/action?type=1 (action 1)
 GET - http://192.168.4.1:8080/action?type=8 (action 8)
 ```
 
+__Android__:
 <p align="center">
   <img width="216px" height="384px" src="img/android_1.png">
   <img width="216px" height="384px" src="img/android_2.png">
@@ -77,7 +78,12 @@ GET - http://192.168.4.1:8080/action?type=8 (action 8)
       height="80">](https://play.google.com/store/apps/details?id=com.lacour.vincent.wificaresp8266)
 
 
-__iOS__: upcoming development
+__iOS__:
+<p align="center">
+  <img width="216px" height="384px" src="img/ios_1.png">
+  <img width="216px" height="384px" src="img/ios_2.png">
+  <img width="216px" height="384px" src="img/ios_3.png">
+</p>
 
 ## Preview
 
