@@ -17,7 +17,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9zN-vS-xzB" userLabel="menuButton">
                                 <rect key="frame" x="20" y="94" width="374" height="100"/>
-                                <color key="backgroundColor" red="0.0" green="0.16862745098039217" blue="0.21176470588235294" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.16862745098039217" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="Yp9-qO-OlP"/>
                                 </constraints>
@@ -34,7 +34,6 @@
                                 <color key="backgroundColor" red="0.0" green="0.16862745098039217" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="MCx-VH-jis"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="opl-Tg-pFk"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
@@ -48,9 +47,7 @@
                                 <rect key="frame" x="20" y="394" width="374" height="100"/>
                                 <color key="backgroundColor" red="0.0" green="0.16862745098039217" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="HJL-Tw-3xh"/>
-                                    <constraint firstAttribute="height" constant="100" id="v44-fh-MWi"/>
-                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="100" id="vJe-l2-Ci8"/>
+                                    <constraint firstAttribute="height" constant="100" id="HJL-Tw-3xh"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
@@ -62,6 +59,7 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.027450980392156862" green="0.21176470588235294" blue="0.25882352941176467" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="bLy-Wj-Jr0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="6ip-Xs-Kkz"/>
                             <constraint firstItem="9zN-vS-xzB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="II1-zK-MFM"/>
