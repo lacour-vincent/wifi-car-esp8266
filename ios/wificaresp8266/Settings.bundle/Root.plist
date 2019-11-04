@@ -13,8 +13,6 @@
 			<string>ip_address</string>
 			<key>DefaultValue</key>
 			<string>192.168.4.1</string>
-            <key>IASKTextAlignment</key>
-            <string>IASKUITextAlignmentCenter</string>
 		</dict>
 		<dict>
 			<key>Type</key>
@@ -23,9 +21,15 @@
 			<string>Port</string>
 			<key>Key</key>
 			<string>port</string>
-            <key>DefaultValue</key>
-            <string>8080</string>
+			<key>DefaultValue</key>
+			<string>8080</string>
 		</dict>
+        <dict>
+            <key>Type</key>
+            <string>PSGroupSpecifier</string>
+            <key>Title</key>
+            <string>Moving parameters</string>
+        </dict>
 		<dict>
 			<key>Type</key>
 			<string>PSTextFieldSpecifier</string>
@@ -33,8 +37,8 @@
 			<string>Forward</string>
 			<key>Key</key>
 			<string>move_forward</string>
-            <key>DefaultValue</key>
-            <string>F</string>
+			<key>DefaultValue</key>
+			<string>F</string>
 		</dict>
 		<dict>
 			<key>Type</key>
@@ -42,9 +46,9 @@
 			<key>Title</key>
 			<string>Backward</string>
 			<key>Key</key>
-            <string>move_backward</string>
-            <key>DefaultValue</key>
-            <string>B</string>
+			<string>move_backward</string>
+			<key>DefaultValue</key>
+			<string>B</string>
 		</dict>
 		<dict>
 			<key>Type</key>
@@ -52,9 +56,9 @@
 			<key>Title</key>
 			<string>Right</string>
 			<key>Key</key>
-            <string>turn_right</string>
-            <key>DefaultValue</key>
-            <string>R</string>
+			<string>turn_right</string>
+			<key>DefaultValue</key>
+			<string>R</string>
 		</dict>
 		<dict>
 			<key>Type</key>
@@ -62,9 +66,9 @@
 			<key>Title</key>
 			<string>Left</string>
 			<key>Key</key>
-            <string>turn_left</string>
-            <key>DefaultValue</key>
-            <string>L</string>
+			<string>turn_left</string>
+			<key>DefaultValue</key>
+			<string>L</string>
 		</dict>
 		<dict>
 			<key>Type</key>
@@ -72,89 +76,95 @@
 			<key>Title</key>
 			<string>Stop</string>
 			<key>Key</key>
-            <string>move_stop</string>
-            <key>DefaultValue</key>
-            <string>S</string>
+			<string>move_stop</string>
+			<key>DefaultValue</key>
+			<string>S</string>
 		</dict>
+        <dict>
+            <key>Type</key>
+            <string>PSGroupSpecifier</string>
+            <key>Title</key>
+            <string>Action parameters</string>
+        </dict>
 		<dict>
 			<key>Type</key>
 			<string>PSTextFieldSpecifier</string>
 			<key>Title</key>
 			<string>Action 1</string>
 			<key>Key</key>
-            <string>action_1</string>
-            <key>DefaultValue</key>
-            <string>1</string>
+			<string>action_1</string>
+			<key>DefaultValue</key>
+			<string>1</string>
 		</dict>
 		<dict>
 			<key>Type</key>
 			<string>PSTextFieldSpecifier</string>
 			<key>Title</key>
 			<string>Action 2</string>
-            <key>Key</key>
+			<key>Key</key>
 			<string>action_2</string>
-            <key>DefaultValue</key>
-            <string>2</string>
+			<key>DefaultValue</key>
+			<string>2</string>
 		</dict>
 		<dict>
 			<key>Type</key>
 			<string>PSTextFieldSpecifier</string>
 			<key>Title</key>
 			<string>Action 3</string>
-            <key>Key</key>
+			<key>Key</key>
 			<string>action_3</string>
-            <key>DefaultValue</key>
-            <string>3</string>
+			<key>DefaultValue</key>
+			<string>3</string>
 		</dict>
 		<dict>
 			<key>Type</key>
 			<string>PSTextFieldSpecifier</string>
 			<key>Title</key>
 			<string>Action 4</string>
-            <key>Key</key>
+			<key>Key</key>
 			<string>action_4</string>
-            <key>DefaultValue</key>
-            <string>4</string>
+			<key>DefaultValue</key>
+			<string>4</string>
 		</dict>
 		<dict>
 			<key>Type</key>
 			<string>PSTextFieldSpecifier</string>
 			<key>Title</key>
 			<string>Action 5</string>
-            <key>Key</key>
+			<key>Key</key>
 			<string>action_5</string>
-            <key>DefaultValue</key>
-            <string>5</string>
+			<key>DefaultValue</key>
+			<string>5</string>
 		</dict>
 		<dict>
 			<key>Type</key>
 			<string>PSTextFieldSpecifier</string>
 			<key>Title</key>
 			<string>Action 6</string>
-            <key>Key</key>
+			<key>Key</key>
 			<string>action_6</string>
-            <key>DefaultValue</key>
-            <string>6</string>
+			<key>DefaultValue</key>
+			<string>6</string>
 		</dict>
 		<dict>
 			<key>Type</key>
 			<string>PSTextFieldSpecifier</string>
 			<key>Title</key>
 			<string>Action 7</string>
-            <key>Key</key>
+			<key>Key</key>
 			<string>action_7</string>
-            <key>DefaultValue</key>
-            <string>7</string>
+			<key>DefaultValue</key>
+			<string>7</string>
 		</dict>
 		<dict>
 			<key>Type</key>
 			<string>PSTextFieldSpecifier</string>
 			<key>Title</key>
 			<string>Action 8</string>
-            <key>Key</key>
+			<key>Key</key>
 			<string>action_8</string>
-            <key>DefaultValue</key>
-            <string>8</string>
+			<key>DefaultValue</key>
+			<string>8</string>
 		</dict>
 	</array>
 </dict>

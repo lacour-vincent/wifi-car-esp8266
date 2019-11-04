@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mAv-ea-1Eg">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -10,17 +10,18 @@
         <!--Welcome-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" userLabel="Welcome" customClass="ViewController" customModule="Wifi_RC_Car_ESP8266" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" userLabel="Welcome" customClass="WelcomeController" customModule="Wifi_RC_Car_ESP8266" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9zN-vS-xzB" userLabel="menuButton">
-                                <rect key="frame" x="20" y="94" width="335" height="100"/>
-                                <color key="backgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9zN-vS-xzB" userLabel="menuButton">
+                                <rect key="frame" x="20" y="94" width="374" height="100"/>
+                                <color key="backgroundColor" red="0.0" green="0.16862745098039217" blue="0.21176470588235294" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="Yp9-qO-OlP"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
                                 <inset key="titleEdgeInsets" minX="40" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Button" image="img_button"/>
@@ -28,31 +29,39 @@
                                     <segue destination="Had-jP-bgw" kind="show" id="tub-Ea-Lz4"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bLy-Wj-Jr0" userLabel="accelerometerButton">
-                                <rect key="frame" x="20" y="244" width="335" height="100"/>
-                                <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bLy-Wj-Jr0" userLabel="accelerometerButton">
+                                <rect key="frame" x="20" y="244" width="374" height="100"/>
+                                <color key="backgroundColor" red="0.0" green="0.16862745098039217" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="MCx-VH-jis"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="opl-Tg-pFk"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
                                 <inset key="titleEdgeInsets" minX="40" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Accerometer" image="img_accelerometer"/>
+                                <connections>
+                                    <action selector="onTouchAccelerometerMenu:" destination="BYZ-38-t0r" eventType="touchDown" id="7lN-FG-1sv"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E10-OO-47f" userLabel="voiceButton">
-                                <rect key="frame" x="20" y="394" width="335" height="100"/>
-                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E10-OO-47f" userLabel="voiceButton">
+                                <rect key="frame" x="20" y="394" width="374" height="100"/>
+                                <color key="backgroundColor" red="0.0" green="0.16862745098039217" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="HJL-Tw-3xh"/>
                                     <constraint firstAttribute="height" constant="100" id="v44-fh-MWi"/>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="100" id="vJe-l2-Ci8"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
                                 <inset key="titleEdgeInsets" minX="40" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Voice" image="img_voice"/>
+                                <connections>
+                                    <action selector="onTouchVoiceMenu:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VXl-8p-CQc"/>
+                                </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.027450980392156862" green="0.21176470588235294" blue="0.25882352941176467" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="bLy-Wj-Jr0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="6ip-Xs-Kkz"/>
                             <constraint firstItem="9zN-vS-xzB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="II1-zK-MFM"/>
@@ -67,11 +76,19 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Wifi RC Car ESP8266" id="Fqn-56-eJm">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="gear" catalog="system" id="QUx-Fi-gHF">
-                            <connections>
-                                <action selector="onSettingsClick:" destination="BYZ-38-t0r" id="gYw-nG-XiP"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Item" image="info.circle" catalog="system" id="EUf-HY-ykP">
+                                <connections>
+                                    <action selector="onClickInformation:" destination="BYZ-38-t0r" id="HYc-Vm-jwg"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Item" image="gear" catalog="system" id="QUx-Fi-gHF">
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="onSettingsClick:" destination="BYZ-38-t0r" id="gYw-nG-XiP"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -81,29 +98,258 @@
         <!--Button View Controller-->
         <scene sceneID="dTZ-Bf-ji9">
             <objects>
-                <viewController id="Had-jP-bgw" userLabel="Button View Controller" sceneMemberID="viewController">
+                <viewController id="Had-jP-bgw" userLabel="Button View Controller" customClass="ButtonController" customModule="Wifi_RC_Car_ESP8266" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="g1Y-O8-Pr7">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LC7-vl-D2o" userLabel="arrowUp">
+                                <rect key="frame" x="157" y="84" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="LC7-vl-D2o" secondAttribute="height" multiplier="1:1" id="Pwq-u5-2nI"/>
+                                    <constraint firstAttribute="width" constant="100" id="SNO-ds-rYg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                                <state key="normal" image="arrow_up">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                </state>
+                                <connections>
+                                    <action selector="onTouchArrowDown:" destination="Had-jP-bgw" eventType="touchDown" id="Cr2-fU-3dS"/>
+                                    <action selector="onTouchArrowUpInside:" destination="Had-jP-bgw" eventType="touchUpInside" id="2wH-oH-MqD"/>
+                                    <action selector="onTouchArrowUpOutside:" destination="Had-jP-bgw" eventType="touchUpOutside" id="XC2-5c-JXc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xTE-Vr-LOt" userLabel="arrowLeft">
+                                <rect key="frame" x="57" y="184" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="ImV-PO-TSB"/>
+                                    <constraint firstAttribute="width" secondItem="xTE-Vr-LOt" secondAttribute="height" multiplier="1:1" id="gGF-fE-7GK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                                <state key="normal" image="arrow_left">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                </state>
+                                <connections>
+                                    <action selector="onTouchArrowDown:" destination="Had-jP-bgw" eventType="touchDown" id="Eye-gE-SeD"/>
+                                    <action selector="onTouchArrowUpInside:" destination="Had-jP-bgw" eventType="touchUpInside" id="Z5T-WV-g9M"/>
+                                    <action selector="onTouchArrowUpOutside:" destination="Had-jP-bgw" eventType="touchUpOutside" id="jME-Cj-ABZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LJn-ej-AJa" userLabel="arrowDown">
+                                <rect key="frame" x="157" y="284" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="3cf-ww-0Bn"/>
+                                    <constraint firstAttribute="width" secondItem="LJn-ej-AJa" secondAttribute="height" multiplier="1:1" id="f5W-T8-9g0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                                <state key="normal" image="arrow_down">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                </state>
+                                <connections>
+                                    <action selector="onTouchArrowDown:" destination="Had-jP-bgw" eventType="touchDown" id="ZhG-ek-hMO"/>
+                                    <action selector="onTouchArrowUpInside:" destination="Had-jP-bgw" eventType="touchUpInside" id="syt-ME-QJ7"/>
+                                    <action selector="onTouchArrowUpOutside:" destination="Had-jP-bgw" eventType="touchUpOutside" id="2zA-cl-tn5"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" semanticContentAttribute="spatial" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="AIO-NA-JkA">
+                                <rect key="frame" x="40" y="569" width="334" height="53.666666666666629"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RrB-Ul-feD" userLabel="actionOne">
+                                        <rect key="frame" x="0.0" y="0.0" width="53.666666666666664" height="53.666666666666664"/>
+                                        <color key="backgroundColor" red="0.0" green="0.16862745098039217" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="RrB-Ul-feD" secondAttribute="height" multiplier="1:1" id="lIa-Un-mE6"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="tintColor" red="0.79607843137254897" green="0.29411764705882354" blue="0.086274509803921567" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="1">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onTouchActionDown:" destination="Had-jP-bgw" eventType="touchDown" id="1qA-jV-f1i"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W1j-pq-Fe4" userLabel="actionTwo">
+                                        <rect key="frame" x="93.666666666666657" y="0.0" width="53.333333333333343" height="53.666666666666664"/>
+                                        <color key="backgroundColor" red="0.0" green="0.16862745098039217" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="W1j-pq-Fe4" secondAttribute="height" multiplier="1:1" id="lcc-SB-Zeq"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="2">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onTouchActionDown:" destination="Had-jP-bgw" eventType="touchUpInside" id="nxC-gJ-bZn"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QTV-lU-xmy" userLabel="actionThree">
+                                        <rect key="frame" x="187" y="0.0" width="53.666666666666657" height="53.666666666666664"/>
+                                        <color key="backgroundColor" red="0.0" green="0.16862745098039217" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="QTV-lU-xmy" secondAttribute="height" multiplier="1:1" id="n5l-uE-r0x"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="3">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onTouchActionDown:" destination="Had-jP-bgw" eventType="touchUpInside" id="cS4-TI-U1j"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EeJ-EQ-KbM" userLabel="actionFour">
+                                        <rect key="frame" x="280.66666666666669" y="0.0" width="53.333333333333314" height="53.666666666666664"/>
+                                        <color key="backgroundColor" red="0.0" green="0.16862745098039217" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="EeJ-EQ-KbM" secondAttribute="height" multiplier="1:1" id="rLK-Nj-4gr"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="4">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onTouchActionDown:" destination="Had-jP-bgw" eventType="touchUpInside" id="OGa-xx-u1G"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" semanticContentAttribute="spatial" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="H2H-gx-wu9">
+                                <rect key="frame" x="40" y="652.66666666666663" width="334" height="53.333333333333371"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wcM-li-9nm" userLabel="actionFive">
+                                        <rect key="frame" x="0.0" y="0.0" width="53.666666666666664" height="53.333333333333336"/>
+                                        <color key="backgroundColor" red="0.0" green="0.16862745098039217" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="wcM-li-9nm" secondAttribute="height" multiplier="1:1" id="5eW-ar-PEm"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="5">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onTouchActionDown:" destination="Had-jP-bgw" eventType="touchUpInside" id="I0s-Rs-HIW"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o8x-v2-4VX" userLabel="actionSix">
+                                        <rect key="frame" x="93.666666666666657" y="0.0" width="53.333333333333343" height="53.333333333333336"/>
+                                        <color key="backgroundColor" red="0.0" green="0.16862745098039217" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="o8x-v2-4VX" secondAttribute="height" multiplier="1:1" id="TKX-fj-xM5"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="6">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onTouchActionDown:" destination="Had-jP-bgw" eventType="touchUpInside" id="Ab9-ha-WmL"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fmp-ka-2Ps" userLabel="actionSeven">
+                                        <rect key="frame" x="187" y="0.0" width="53.666666666666657" height="53.333333333333336"/>
+                                        <color key="backgroundColor" red="0.0" green="0.16862745098039217" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="fmp-ka-2Ps" secondAttribute="height" multiplier="1:1" id="say-2q-dan"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="7">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onTouchActionDown:" destination="Had-jP-bgw" eventType="touchUpInside" id="TWW-Ey-39S"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J6L-JP-g7V" userLabel="actionHeight">
+                                        <rect key="frame" x="280.66666666666669" y="0.0" width="53.333333333333314" height="53.333333333333336"/>
+                                        <color key="backgroundColor" red="0.0" green="0.16862745098039217" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="J6L-JP-g7V" secondAttribute="height" multiplier="1:1" id="fES-b0-LNh"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="8">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onTouchActionDown:" destination="Had-jP-bgw" eventType="touchUpInside" id="Jwv-HN-Qr8"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ijj-na-xqZ" userLabel="arrowRight">
+                                <rect key="frame" x="257" y="184" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ijj-na-xqZ" secondAttribute="height" multiplier="1:1" id="MSs-wu-e1R"/>
+                                    <constraint firstAttribute="width" constant="100" id="W56-Pc-HXr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                                <state key="normal" image="arrow_right">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                </state>
+                                <connections>
+                                    <action selector="onTouchArrowDown:" destination="Had-jP-bgw" eventType="touchDown" id="Yh8-5i-ugo"/>
+                                    <action selector="onTouchArrowUpInside:" destination="Had-jP-bgw" eventType="touchUpInside" id="Qwi-Tn-yVm"/>
+                                    <action selector="onTouchArrowUpOutside:" destination="Had-jP-bgw" eventType="touchUpOutside" id="ERc-Ua-ZPG"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.027450980390000001" green="0.21176470589999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="H2H-gx-wu9" firstAttribute="leading" secondItem="vhx-oF-E8m" secondAttribute="leading" constant="40" id="26D-Ac-1LR"/>
+                            <constraint firstItem="vhx-oF-E8m" firstAttribute="trailing" secondItem="AIO-NA-JkA" secondAttribute="trailing" constant="40" id="3NJ-FJ-xDJ"/>
+                            <constraint firstItem="LC7-vl-D2o" firstAttribute="centerX" secondItem="g1Y-O8-Pr7" secondAttribute="centerX" id="CxK-QC-4KV"/>
+                            <constraint firstItem="vhx-oF-E8m" firstAttribute="trailing" secondItem="H2H-gx-wu9" secondAttribute="trailing" constant="40" id="FCo-KQ-inS"/>
+                            <constraint firstItem="LJn-ej-AJa" firstAttribute="centerX" secondItem="g1Y-O8-Pr7" secondAttribute="centerX" id="G5X-t6-62l"/>
+                            <constraint firstItem="H2H-gx-wu9" firstAttribute="top" secondItem="AIO-NA-JkA" secondAttribute="bottom" constant="30" id="R1q-ph-KyC"/>
+                            <constraint firstItem="LC7-vl-D2o" firstAttribute="leading" secondItem="xTE-Vr-LOt" secondAttribute="trailing" id="TLx-d5-Izk"/>
+                            <constraint firstItem="LJn-ej-AJa" firstAttribute="top" secondItem="xTE-Vr-LOt" secondAttribute="bottom" id="Vfy-D8-D08"/>
+                            <constraint firstItem="ijj-na-xqZ" firstAttribute="top" secondItem="LC7-vl-D2o" secondAttribute="bottom" id="a5c-yj-J43"/>
+                            <constraint firstItem="xTE-Vr-LOt" firstAttribute="top" secondItem="LC7-vl-D2o" secondAttribute="bottom" id="gvg-TG-hPX"/>
+                            <constraint firstItem="AIO-NA-JkA" firstAttribute="leading" secondItem="vhx-oF-E8m" secondAttribute="leading" constant="40" id="hDO-NU-Dkh"/>
+                            <constraint firstItem="ijj-na-xqZ" firstAttribute="leading" secondItem="LC7-vl-D2o" secondAttribute="trailing" id="nU6-o7-V1F"/>
+                            <constraint firstItem="LC7-vl-D2o" firstAttribute="top" secondItem="vhx-oF-E8m" secondAttribute="top" constant="40" id="olo-XZ-amC"/>
+                            <constraint firstItem="vhx-oF-E8m" firstAttribute="bottom" secondItem="H2H-gx-wu9" secondAttribute="bottom" constant="30" id="pvH-Y0-327"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="vhx-oF-E8m"/>
                     </view>
                     <navigationItem key="navigationItem" title="Button" id="eLb-JK-cbN">
-                        <barButtonItem key="rightBarButtonItem" image="info.circle" catalog="system" id="n2j-V4-aAo"/>
+                        <barButtonItem key="rightBarButtonItem" image="info.circle" catalog="system" id="n2j-V4-aAo">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="onClickInformation:" destination="Had-jP-bgw" id="dXZ-6I-6ZW"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="actionFiveButton" destination="wcM-li-9nm" id="sQO-ZT-eb7"/>
+                        <outlet property="actionFourButton" destination="EeJ-EQ-KbM" id="ndm-tU-nKS"/>
+                        <outlet property="actionHeightButton" destination="J6L-JP-g7V" id="FSS-SD-6xe"/>
+                        <outlet property="actionOneButton" destination="RrB-Ul-feD" id="fsW-eA-XPb"/>
+                        <outlet property="actionSevenButton" destination="fmp-ka-2Ps" id="2jd-E3-uMf"/>
+                        <outlet property="actionSixButton" destination="o8x-v2-4VX" id="ruO-Nb-has"/>
+                        <outlet property="actionThreeButton" destination="QTV-lU-xmy" id="ZMm-Hk-wRd"/>
+                        <outlet property="actionTwoButton" destination="W1j-pq-Fe4" id="v85-lw-HTf"/>
+                        <outlet property="arrowDownButton" destination="LJn-ej-AJa" id="dwe-ni-joR"/>
+                        <outlet property="arrowLeftButton" destination="xTE-Vr-LOt" id="j20-Pg-BfM"/>
+                        <outlet property="arrowRightButton" destination="ijj-na-xqZ" id="Pbg-qL-mvb"/>
+                        <outlet property="arrowUpButton" destination="LC7-vl-D2o" id="bbr-dI-QPC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pn2-za-Erh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1892" y="114"/>
+            <point key="canvasLocation" x="1892" y="113.79310344827587"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2Af-pa-hnH">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mAv-ea-1Eg" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kHm-4X-XZ5">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="kHm-4X-XZ5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.0" green="0.16862745098039217" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -116,6 +362,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow_down" width="170.66667175292969" height="170.66667175292969"/>
+        <image name="arrow_left" width="170.66667175292969" height="170.66667175292969"/>
+        <image name="arrow_right" width="170.66667175292969" height="170.66667175292969"/>
+        <image name="arrow_up" width="170.66667175292969" height="170.66667175292969"/>
         <image name="gear" catalog="system" width="64" height="58"/>
         <image name="img_accelerometer" width="64" height="64"/>
         <image name="img_button" width="64" height="64"/>
