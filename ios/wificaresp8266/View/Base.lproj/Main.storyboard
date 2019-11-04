@@ -153,6 +153,9 @@
                                         <state key="normal" title="1">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onTouchActionDown:" destination="Had-jP-bgw" eventType="touchDown" id="1qA-jV-f1i"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W1j-pq-Fe4" userLabel="actionTwo">
                                         <rect key="frame" x="93.666666666666657" y="0.0" width="53.333333333333343" height="53.666666666666664"/>
@@ -164,6 +167,9 @@
                                         <state key="normal" title="2">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onTouchActionDown:" destination="Had-jP-bgw" eventType="touchUpInside" id="nxC-gJ-bZn"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QTV-lU-xmy" userLabel="actionThree">
                                         <rect key="frame" x="187" y="0.0" width="53.666666666666657" height="53.666666666666664"/>
@@ -175,6 +181,9 @@
                                         <state key="normal" title="3">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onTouchActionDown:" destination="Had-jP-bgw" eventType="touchUpInside" id="cS4-TI-U1j"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EeJ-EQ-KbM" userLabel="actionFour">
                                         <rect key="frame" x="280.66666666666669" y="0.0" width="53.333333333333314" height="53.666666666666664"/>
@@ -186,6 +195,9 @@
                                         <state key="normal" title="4">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onTouchActionDown:" destination="Had-jP-bgw" eventType="touchUpInside" id="OGa-xx-u1G"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -202,6 +214,9 @@
                                         <state key="normal" title="5">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onTouchActionDown:" destination="Had-jP-bgw" eventType="touchUpInside" id="I0s-Rs-HIW"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o8x-v2-4VX" userLabel="actionSix">
                                         <rect key="frame" x="93.666666666666657" y="0.0" width="53.333333333333343" height="53.333333333333336"/>
@@ -213,6 +228,9 @@
                                         <state key="normal" title="6">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onTouchActionDown:" destination="Had-jP-bgw" eventType="touchUpInside" id="Ab9-ha-WmL"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fmp-ka-2Ps" userLabel="actionSeven">
                                         <rect key="frame" x="187" y="0.0" width="53.666666666666657" height="53.333333333333336"/>
@@ -224,6 +242,9 @@
                                         <state key="normal" title="7">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onTouchActionDown:" destination="Had-jP-bgw" eventType="touchUpInside" id="TWW-Ey-39S"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J6L-JP-g7V" userLabel="actionHeight">
                                         <rect key="frame" x="280.66666666666669" y="0.0" width="53.333333333333314" height="53.333333333333336"/>
@@ -235,6 +256,9 @@
                                         <state key="normal" title="8">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onTouchActionDown:" destination="Had-jP-bgw" eventType="touchUpInside" id="Jwv-HN-Qr8"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -278,6 +302,14 @@
                         <barButtonItem key="rightBarButtonItem" image="info.circle" catalog="system" id="n2j-V4-aAo"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="actionFiveButton" destination="wcM-li-9nm" id="sQO-ZT-eb7"/>
+                        <outlet property="actionFourButton" destination="EeJ-EQ-KbM" id="ndm-tU-nKS"/>
+                        <outlet property="actionHeightButton" destination="J6L-JP-g7V" id="FSS-SD-6xe"/>
+                        <outlet property="actionOneButton" destination="RrB-Ul-feD" id="fsW-eA-XPb"/>
+                        <outlet property="actionSevenButton" destination="fmp-ka-2Ps" id="2jd-E3-uMf"/>
+                        <outlet property="actionSixButton" destination="o8x-v2-4VX" id="ruO-Nb-has"/>
+                        <outlet property="actionThreeButton" destination="QTV-lU-xmy" id="ZMm-Hk-wRd"/>
+                        <outlet property="actionTwoButton" destination="W1j-pq-Fe4" id="v85-lw-HTf"/>
                         <outlet property="arrowDownButton" destination="LJn-ej-AJa" id="dwe-ni-joR"/>
                         <outlet property="arrowLeftButton" destination="xTE-Vr-LOt" id="j20-Pg-BfM"/>
                         <outlet property="arrowRightButton" destination="ijj-na-xqZ" id="Pbg-qL-mvb"/>

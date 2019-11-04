@@ -7,4 +7,13 @@ struct Keys {
     static let MOVE_STOP_STORAGE = Storage(key: "move_stop", defaultValue: "S")
     static let TURN_RIGHT_STORAGE = Storage(key: "turn_right", defaultValue: "R")
     static let TURN_LEFT_STORAGE = Storage(key: "turn_left", defaultValue: "L")
+
+    static let ACTION_1_STORAGE = Storage(key: "action_1", defaultValue: "1")
+    static let ACTION_2_STORAGE = Storage(key: "action_2", defaultValue: "2")
+    static let ACTION_3_STORAGE = Storage(key: "action_3", defaultValue: "3")
+    static let ACTION_4_STORAGE = Storage(key: "action_4", defaultValue: "4")
+    static let ACTION_5_STORAGE = Storage(key: "action_5", defaultValue: "5")
+    static let ACTION_6_STORAGE = Storage(key: "action_6", defaultValue: "6")
+    static let ACTION_7_STORAGE = Storage(key: "action_7", defaultValue: "7")
+    static let ACTION_8_STORAGE = Storage(key: "action_8", defaultValue: "8")
 }

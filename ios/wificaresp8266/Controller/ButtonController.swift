@@ -8,6 +8,15 @@ class ButtonController: UIViewController {
     @IBOutlet var arrowDownButton: UIButton!
     @IBOutlet var arrowLeftButton: UIButton!
     
+    @IBOutlet var actionOneButton: UIButton!
+    @IBOutlet var actionTwoButton: UIButton!
+    @IBOutlet var actionThreeButton: UIButton!
+    @IBOutlet var actionFourButton: UIButton!
+    @IBOutlet var actionFiveButton: UIButton!
+    @IBOutlet var actionSixButton: UIButton!
+    @IBOutlet var actionSevenButton: UIButton!
+    @IBOutlet var actionHeightButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -22,6 +31,10 @@ class ButtonController: UIViewController {
     
     @IBAction func onTouchArrowUpOutside(_ sender: UIButton) {
         handleOnTouchArrowUp(sender: sender)
+    }
+    
+    @IBAction func onTouchActionDown(_ sender: UIButton) {
+        handleOnTouchActionDown(sender: sender)
     }
     
     func handleOnTouchArrowDown(sender: UIButton) {
@@ -54,6 +67,29 @@ class ButtonController: UIViewController {
                 arrowRightButton.setImage(UIImage(named: "arrow_right.png"), for: .normal)
             case arrowLeftButton:
                 arrowLeftButton.setImage(UIImage(named: "arrow_left.png"), for: .normal)
+            default:
+                break
+        }
+    }
+    
+    func handleOnTouchActionDown(sender: UIButton) {
+        switch sender {
+            case actionOneButton:
+                carConnector.actionOne()
+            case actionTwoButton:
+                carConnector.actionTwo()
+            case actionThreeButton:
+                carConnector.actionThree()
+            case actionFourButton:
+                carConnector.actionFour()
+            case actionFiveButton:
+                carConnector.actionFive()
+            case actionSixButton:
+                carConnector.actionSix()
+            case actionSevenButton:
+                carConnector.actionSeven()
+            case actionHeightButton:
+                carConnector.actionHeight()
             default:
                 break
         }

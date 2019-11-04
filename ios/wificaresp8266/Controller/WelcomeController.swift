@@ -23,7 +23,7 @@ class WelcomeController: UIViewController {
     }
     
     private func showUnavailableAlert() {
-        let alert = UIAlertController(title: "Not available", message: "This feature is not available.", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Not available", message: "", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         present(alert, animated: true)
     }
