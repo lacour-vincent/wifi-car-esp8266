@@ -76,12 +76,19 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Wifi RC Car ESP8266" id="Fqn-56-eJm">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="gear" catalog="system" id="QUx-Fi-gHF">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <connections>
-                                <action selector="onSettingsClick:" destination="BYZ-38-t0r" id="gYw-nG-XiP"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Item" image="info.circle" catalog="system" id="EUf-HY-ykP">
+                                <connections>
+                                    <action selector="onClickInformation:" destination="BYZ-38-t0r" id="HYc-Vm-jwg"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Item" image="gear" catalog="system" id="QUx-Fi-gHF">
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="onSettingsClick:" destination="BYZ-38-t0r" id="gYw-nG-XiP"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -306,6 +313,9 @@
                     <navigationItem key="navigationItem" title="Button" id="eLb-JK-cbN">
                         <barButtonItem key="rightBarButtonItem" image="info.circle" catalog="system" id="n2j-V4-aAo">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="onClickInformation:" destination="Had-jP-bgw" id="dXZ-6I-6ZW"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>

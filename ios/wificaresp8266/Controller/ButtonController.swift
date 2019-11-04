@@ -78,4 +78,20 @@ class ButtonController: UIViewController {
                 break
         }
     }
+    
+    @IBAction func onClickInformation(_ sender: UIBarButtonItem) {
+        showInformationAlert()
+    }
+    
+    private func showInformationAlert() {
+        let title = "Information"
+        let message = """
+        Keep pressing a move button to send the command.
+        The "stop" command is sent when you release the button.
+        The "action" command is sent when you click on the action button.
+        """
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true)
+    }
 }
