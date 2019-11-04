@@ -41,16 +41,12 @@ class ButtonController: UIViewController {
         switch sender {
             case arrowUpButton:
                 carConnector.moveForward()
-                arrowUpButton.setImage(UIImage(named: "arrow_up_pressed.png"), for: .normal)
             case arrowDownButton:
                 carConnector.moveBackward()
-                arrowDownButton.setImage(UIImage(named: "arrow_down_pressed.png"), for: .normal)
             case arrowRightButton:
                 carConnector.turnRight()
-                arrowRightButton.setImage(UIImage(named: "arrow_right_pressed.png"), for: .normal)
             case arrowLeftButton:
                 carConnector.turnLeft()
-                arrowLeftButton.setImage(UIImage(named: "arrow_left_pressed.png"), for: .normal)
             default:
                 break
         }
@@ -58,18 +54,6 @@ class ButtonController: UIViewController {
     
     func handleOnTouchArrowUp(sender: UIButton) {
         carConnector.stopMoving()
-        switch sender {
-            case arrowUpButton:
-                arrowUpButton.setImage(UIImage(named: "arrow_up.png"), for: .normal)
-            case arrowDownButton:
-                arrowDownButton.setImage(UIImage(named: "arrow_down.png"), for: .normal)
-            case arrowRightButton:
-                arrowRightButton.setImage(UIImage(named: "arrow_right.png"), for: .normal)
-            case arrowLeftButton:
-                arrowLeftButton.setImage(UIImage(named: "arrow_left.png"), for: .normal)
-            default:
-                break
-        }
     }
     
     func handleOnTouchActionDown(sender: UIButton) {
