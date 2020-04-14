@@ -1,16 +1,10 @@
 const express = require("express");
 
 const app = express();
-const host = "192.168.0.18"; /* Your IP Address */
-const port = 5000; /* Port */
-
-app.get("/", (req, res) => {
-  res.setHeader("Content-Type", "text/plain");
-  res.sendStatus(404);
-});
+const host = "192.168.4.1"; /* Your IP Address */
+const port = 8080; /* Port */
 
 app.get("/move", (req, res) => {
-  res.setHeader("Content-Type", "text/plain");
   const { dir } = req.query;
   switch (dir) {
     case "F":
@@ -32,11 +26,10 @@ app.get("/move", (req, res) => {
       console.log("Move: undefined");
       break;
   }
-  res.sendStatus(200);
+  res.status(200).send();
 });
 
 app.get("/action", (req, res) => {
-  res.setHeader("Content-Type", "text/plain");
   const { type } = req.query;
   switch (type) {
     case "1":
@@ -66,14 +59,17 @@ app.get("/action", (req, res) => {
     default:
       console.log("Action: undefined");
   }
-  res.sendStatus(200);
+  res.status(200).send();
 });
 
 app.get("/speed", (req, res) => {
-  res.setHeader("Content-Type", "text/plain");
   const { value } = req.query;
   console.log(`Speed : ${value} %`);
-  res.sendStatus(200);
+  res.status(200).send();
+});
+
+app.get("/", (req, res) => {
+  res.status(404).send();
 });
 
 app.listen(port, host, () => {
