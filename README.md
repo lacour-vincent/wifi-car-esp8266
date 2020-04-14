@@ -1,7 +1,7 @@
 # Wifi car with ESP8266
 
 <p align="center">
-<img src="img/wifi_car.png" width="300" >
+<img src="docs/wifi_car.png" width="300" >
 </p>
 
 
@@ -32,7 +32,7 @@ The first step is to build your wifi car. Basically, you have to assemble the ch
 This is the most interesting part because you can customize your car by adding new features. In my case, I have replaced the chassis by a tank chassis.
 
 <p align="center">
-<img src="img/car_kit.png" width="200"  >
+<img src="docs/car_kit.png" width="200"  >
 </p>
 
 You can find a complete kit the build a wifi car at this [link](https://www.banggood.com/Geekcrei-2WD-L293D-WIFI-Smart-Robot-Car-With-NodeMCU-Shield-Kit-For-ESP-12E-Based-On-ESP8266-p-995166.html).
@@ -67,9 +67,9 @@ GET - http://192.168.4.1:8080/action?type=8 (action 8)
 
 __Android__:
 <p align="center">
-  <img width="216px" height="384px" src="img/android_1.png">
-  <img width="216px" height="384px" src="img/android_2.png">
-  <img width="216px" height="384px" src="img/android_3.png">
+  <img width="216px" height="384px" src="docs/android_1.png">
+  <img width="216px" height="384px" src="docs/android_2.png">
+  <img width="216px" height="384px" src="docs/android_3.png">
 </p>
 
 
@@ -80,9 +80,9 @@ __Android__:
 
 __iOS__:
 <p align="center">
-  <img width="216px" height="384px" src="img/ios_1.png">
-  <img width="216px" height="384px" src="img/ios_2.png">
-  <img width="216px" height="384px" src="img/ios_3.png">
+  <img width="216px" height="384px" src="docs/ios_1.png">
+  <img width="216px" height="384px" src="docs/ios_2.png">
+  <img width="216px" height="384px" src="docs/ios_3.png">
 </p>
 
 ## Preview
