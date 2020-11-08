@@ -15,6 +15,7 @@ import android.widget.Toast
 
 import android.app.Activity
 import android.os.Handler
+import android.os.Looper
 import com.lacour.vincent.wificaresp8266.storage.Preferences
 
 
@@ -144,7 +145,7 @@ class VoiceControl : AppCompatActivity() {
     }
 
     private fun stopMovingDelayed() {
-        Handler().postDelayed(
+        Handler(Looper.getMainLooper()).postDelayed(
             {
                 carConnector.stopMoving()
                 action_voice.isEnabled = true
