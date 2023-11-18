@@ -7,14 +7,18 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import com.lacour.vincent.wificaresp8266.fragment.ConfigurationFragment
 import com.lacour.vincent.wificaresp8266.R
+import com.lacour.vincent.wificaresp8266.databinding.ConfigurationActivityBinding
+import com.lacour.vincent.wificaresp8266.fragment.ConfigurationFragment
 
 class Configuration : AppCompatActivity() {
 
+    private lateinit var binding: ConfigurationActivityBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.configuration_activity)
+        binding = ConfigurationActivityBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         setSupportActionBar(findViewById(R.id.toolbar_configuration))
         setTheme(R.style.PreferenceTheme)
 
@@ -54,10 +58,12 @@ class Configuration : AppCompatActivity() {
                 finishActivity()
                 true
             }
+
             R.id.action_information -> {
                 showInformationDialog()
                 true
             }
+
             else -> super.onOptionsItemSelected(item)
         }
 

@@ -1,29 +1,37 @@
 package com.lacour.vincent.wificaresp8266.screen
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.hardware.Sensor
 import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
 import android.hardware.SensorManager
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.*
-
+import android.view.ContextThemeWrapper
+import android.view.KeyEvent
+import android.view.Menu
+import android.view.MenuItem
+import android.view.MotionEvent
+import android.view.View
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.lacour.vincent.wificaresp8266.R
 import com.lacour.vincent.wificaresp8266.connector.CarConnector
-import kotlinx.android.synthetic.main.accelerometer_control_activity.*
+import com.lacour.vincent.wificaresp8266.databinding.AccelerometerControlActivityBinding
 
 class AccelerometerControl : AppCompatActivity(), SensorEventListener {
 
+    private lateinit var binding: AccelerometerControlActivityBinding
     private lateinit var carConnector: CarConnector
     private lateinit var mSensorManager: SensorManager
     private lateinit var accelerometerSensor: Sensor
 
+    @SuppressLint("ClickableViewAccessibility")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.accelerometer_control_activity)
+        binding = AccelerometerControlActivityBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         setSupportActionBar(findViewById(R.id.toolbar_accelerometer_control))
 
         if (supportActionBar != null) {
@@ -39,14 +47,14 @@ class AccelerometerControl : AppCompatActivity(), SensorEventListener {
         accelerometerSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER)
 
 
-        action_button_1.setOnTouchListener { v: View, e: MotionEvent -> onTouchAction(v, e) }
-        action_button_2.setOnTouchListener { v: View, e: MotionEvent -> onTouchAction(v, e) }
-        action_button_3.setOnTouchListener { v: View, e: MotionEvent -> onTouchAction(v, e) }
-        action_button_4.setOnTouchListener { v: View, e: MotionEvent -> onTouchAction(v, e) }
-        action_button_5.setOnTouchListener { v: View, e: MotionEvent -> onTouchAction(v, e) }
-        action_button_6.setOnTouchListener { v: View, e: MotionEvent -> onTouchAction(v, e) }
-        action_button_7.setOnTouchListener { v: View, e: MotionEvent -> onTouchAction(v, e) }
-        action_button_8.setOnTouchListener { v: View, e: MotionEvent -> onTouchAction(v, e) }
+        binding.actionButton1.setOnTouchListener { v: View, e: MotionEvent -> onTouchAction(v, e) }
+        binding.actionButton2.setOnTouchListener { v: View, e: MotionEvent -> onTouchAction(v, e) }
+        binding.actionButton3.setOnTouchListener { v: View, e: MotionEvent -> onTouchAction(v, e) }
+        binding.actionButton4.setOnTouchListener { v: View, e: MotionEvent -> onTouchAction(v, e) }
+        binding.actionButton5.setOnTouchListener { v: View, e: MotionEvent -> onTouchAction(v, e) }
+        binding.actionButton6.setOnTouchListener { v: View, e: MotionEvent -> onTouchAction(v, e) }
+        binding.actionButton7.setOnTouchListener { v: View, e: MotionEvent -> onTouchAction(v, e) }
+        binding.actionButton8.setOnTouchListener { v: View, e: MotionEvent -> onTouchAction(v, e) }
     }
 
     override fun onAccuracyChanged(p0: Sensor?, p1: Int) {
@@ -66,38 +74,42 @@ class AccelerometerControl : AppCompatActivity(), SensorEventListener {
         when {
             isUpOrientation -> {
                 carConnector.moveForward()
-                arrow_up.setBackgroundResource(R.drawable.arrow_up_pressed)
-                arrow_down.setBackgroundResource(R.drawable.arrow_down)
-                arrow_right.setBackgroundResource(R.drawable.arrow_right)
-                arrow_left.setBackgroundResource(R.drawable.arrow_left)
+                binding.arrowUp.setBackgroundResource(R.drawable.arrow_up_pressed)
+                binding.arrowDown.setBackgroundResource(R.drawable.arrow_down)
+                binding.arrowRight.setBackgroundResource(R.drawable.arrow_right)
+                binding.arrowLeft.setBackgroundResource(R.drawable.arrow_left)
             }
+
             isDownOrientation -> {
                 carConnector.moveBackward()
-                arrow_up.setBackgroundResource(R.drawable.arrow_up)
-                arrow_down.setBackgroundResource(R.drawable.arrow_down_pressed)
-                arrow_right.setBackgroundResource(R.drawable.arrow_right)
-                arrow_left.setBackgroundResource(R.drawable.arrow_left)
+                binding.arrowUp.setBackgroundResource(R.drawable.arrow_up)
+                binding.arrowDown.setBackgroundResource(R.drawable.arrow_down_pressed)
+                binding.arrowRight.setBackgroundResource(R.drawable.arrow_right)
+                binding.arrowLeft.setBackgroundResource(R.drawable.arrow_left)
             }
+
             isRightOrientation -> {
                 carConnector.turnRight()
-                arrow_up.setBackgroundResource(R.drawable.arrow_up)
-                arrow_down.setBackgroundResource(R.drawable.arrow_down)
-                arrow_right.setBackgroundResource(R.drawable.arrow_right_pressed)
-                arrow_left.setBackgroundResource(R.drawable.arrow_left)
+                binding.arrowUp.setBackgroundResource(R.drawable.arrow_up)
+                binding.arrowDown.setBackgroundResource(R.drawable.arrow_down)
+                binding.arrowRight.setBackgroundResource(R.drawable.arrow_right_pressed)
+                binding.arrowLeft.setBackgroundResource(R.drawable.arrow_left)
             }
+
             isLeftOrientation -> {
                 carConnector.turnLeft()
-                arrow_up.setBackgroundResource(R.drawable.arrow_up)
-                arrow_down.setBackgroundResource(R.drawable.arrow_down)
-                arrow_right.setBackgroundResource(R.drawable.arrow_right)
-                arrow_left.setBackgroundResource(R.drawable.arrow_left_pressed)
+                binding.arrowUp.setBackgroundResource(R.drawable.arrow_up)
+                binding.arrowDown.setBackgroundResource(R.drawable.arrow_down)
+                binding.arrowRight.setBackgroundResource(R.drawable.arrow_right)
+                binding.arrowLeft.setBackgroundResource(R.drawable.arrow_left_pressed)
             }
+
             else -> {
                 carConnector.stopMoving()
-                arrow_up.setBackgroundResource(R.drawable.arrow_up)
-                arrow_down.setBackgroundResource(R.drawable.arrow_down)
-                arrow_right.setBackgroundResource(R.drawable.arrow_right)
-                arrow_left.setBackgroundResource(R.drawable.arrow_left)
+                binding.arrowUp.setBackgroundResource(R.drawable.arrow_up)
+                binding.arrowDown.setBackgroundResource(R.drawable.arrow_down)
+                binding.arrowRight.setBackgroundResource(R.drawable.arrow_right)
+                binding.arrowLeft.setBackgroundResource(R.drawable.arrow_left)
             }
         }
     }
@@ -111,35 +123,42 @@ class AccelerometerControl : AppCompatActivity(), SensorEventListener {
             when (v.id) {
                 R.id.action_button_1 -> {
                     carConnector.actionOne()
-                    action_button_1.setTextColor(orangeColor)
+                    binding.actionButton1.setTextColor(orangeColor)
                 }
+
                 R.id.action_button_2 -> {
                     carConnector.actionTwo()
-                    action_button_2.setTextColor(orangeColor)
+                    binding.actionButton2.setTextColor(orangeColor)
                 }
+
                 R.id.action_button_3 -> {
                     carConnector.actionThree()
-                    action_button_3.setTextColor(orangeColor)
+                    binding.actionButton3.setTextColor(orangeColor)
                 }
+
                 R.id.action_button_4 -> {
                     carConnector.actionFour()
-                    action_button_4.setTextColor(orangeColor)
+                    binding.actionButton4.setTextColor(orangeColor)
                 }
+
                 R.id.action_button_5 -> {
                     carConnector.actionFive()
-                    action_button_5.setTextColor(orangeColor)
+                    binding.actionButton5.setTextColor(orangeColor)
                 }
+
                 R.id.action_button_6 -> {
                     carConnector.actionSix()
-                    action_button_6.setTextColor(orangeColor)
+                    binding.actionButton6.setTextColor(orangeColor)
                 }
+
                 R.id.action_button_7 -> {
                     carConnector.actionSeven()
-                    action_button_7.setTextColor(orangeColor)
+                    binding.actionButton7.setTextColor(orangeColor)
                 }
+
                 R.id.action_button_8 -> {
                     carConnector.actionHeight()
-                    action_button_8.setTextColor(orangeColor)
+                    binding.actionButton8.setTextColor(orangeColor)
                 }
             }
             return true
@@ -147,14 +166,14 @@ class AccelerometerControl : AppCompatActivity(), SensorEventListener {
         if (isTouchUp) {
             val whiteColor = ContextCompat.getColor(this, R.color.colorWhite)
             when (v.id) {
-                R.id.action_button_1 -> action_button_1.setTextColor(whiteColor)
-                R.id.action_button_2 -> action_button_2.setTextColor(whiteColor)
-                R.id.action_button_3 -> action_button_3.setTextColor(whiteColor)
-                R.id.action_button_4 -> action_button_4.setTextColor(whiteColor)
-                R.id.action_button_5 -> action_button_5.setTextColor(whiteColor)
-                R.id.action_button_6 -> action_button_6.setTextColor(whiteColor)
-                R.id.action_button_7 -> action_button_7.setTextColor(whiteColor)
-                R.id.action_button_8 -> action_button_8.setTextColor(whiteColor)
+                R.id.action_button_1 -> binding.actionButton1.setTextColor(whiteColor)
+                R.id.action_button_2 -> binding.actionButton2.setTextColor(whiteColor)
+                R.id.action_button_3 -> binding.actionButton3.setTextColor(whiteColor)
+                R.id.action_button_4 -> binding.actionButton4.setTextColor(whiteColor)
+                R.id.action_button_5 -> binding.actionButton5.setTextColor(whiteColor)
+                R.id.action_button_6 -> binding.actionButton6.setTextColor(whiteColor)
+                R.id.action_button_7 -> binding.actionButton7.setTextColor(whiteColor)
+                R.id.action_button_8 -> binding.actionButton8.setTextColor(whiteColor)
             }
             return true
         }
@@ -194,10 +213,12 @@ class AccelerometerControl : AppCompatActivity(), SensorEventListener {
                 finishActivity()
                 true
             }
+
             R.id.action_information -> {
                 showInformationDialog()
                 true
             }
+
             else -> super.onOptionsItemSelected(item)
         }
 

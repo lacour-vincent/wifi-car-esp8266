@@ -1,24 +1,26 @@
 package com.lacour.vincent.wificaresp8266.screen
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.Settings
 import android.view.Menu
 import android.view.MenuItem
-
-import android.provider.Settings
+import androidx.appcompat.app.AppCompatActivity
 import com.lacour.vincent.wificaresp8266.R
+import com.lacour.vincent.wificaresp8266.databinding.WelcomeActivityBinding
 
-import kotlinx.android.synthetic.main.welcome_activity.*
 
 class Welcome : AppCompatActivity() {
 
+    private lateinit var binding: WelcomeActivityBinding
+    
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.welcome_activity)
+        binding = WelcomeActivityBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         setSupportActionBar(findViewById(R.id.toolbar_welcome))
 
-        menu_button.setOnClickListener {
+        binding.menuButton.setOnClickListener {
             val intent = Intent(this, ButtonControl::class.java)
             startActivity(intent)
             this@Welcome.overridePendingTransition(
@@ -27,7 +29,7 @@ class Welcome : AppCompatActivity() {
             )
         }
 
-        menu_accelerometer.setOnClickListener {
+        binding.menuAccelerometer.setOnClickListener {
             val intent = Intent(this, AccelerometerControl::class.java)
             startActivity(intent)
             this@Welcome.overridePendingTransition(
@@ -36,7 +38,7 @@ class Welcome : AppCompatActivity() {
             )
         }
 
-        menu_voice.setOnClickListener {
+        binding.menuVoice.setOnClickListener {
             val intent = Intent(this, VoiceControl::class.java)
             startActivity(intent)
             this@Welcome.overridePendingTransition(
@@ -63,6 +65,7 @@ class Welcome : AppCompatActivity() {
                 )
                 true
             }
+
             R.id.action_configuration -> {
                 val intent = Intent(this, Configuration::class.java)
                 startActivity(intent)
@@ -72,6 +75,7 @@ class Welcome : AppCompatActivity() {
                 )
                 true
             }
+
             else -> super.onOptionsItemSelected(item)
         }
 }

@@ -1,23 +1,21 @@
 package com.lacour.vincent.wificaresp8266.screen
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import android.view.*
-
-import androidx.appcompat.app.AlertDialog
-import androidx.core.content.ContextCompat
-import com.lacour.vincent.wificaresp8266.connector.CarConnector
-import kotlinx.android.synthetic.main.voice_control_activity.*
-import com.lacour.vincent.wificaresp8266.R
-import android.speech.RecognizerIntent
-import android.content.Intent
-import android.widget.Toast
-
+import android.annotation.SuppressLint
 import android.app.Activity
+import android.content.Intent
+import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.speech.RecognizerIntent
+import android.view.*
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
+import com.lacour.vincent.wificaresp8266.R
+import com.lacour.vincent.wificaresp8266.connector.CarConnector
+import com.lacour.vincent.wificaresp8266.databinding.VoiceControlActivityBinding
 import com.lacour.vincent.wificaresp8266.storage.Preferences
-
 
 class VoiceControl : AppCompatActivity() {
 
@@ -27,12 +25,15 @@ class VoiceControl : AppCompatActivity() {
         const val DELAY_STOP: Long = 3000
     }
 
+    private lateinit var binding: VoiceControlActivityBinding
     private lateinit var carConnector: CarConnector
     private lateinit var preferences: Preferences
 
+    @SuppressLint("ClickableViewAccessibility")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.voice_control_activity)
+        binding = VoiceControlActivityBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         setSupportActionBar(findViewById(R.id.toolbar_voice_control))
 
         if (supportActionBar != null) {
@@ -46,14 +47,16 @@ class VoiceControl : AppCompatActivity() {
         preferences = Preferences(this@VoiceControl)
 
 
-        val pm = packageManager
         val activities =
-            pm.queryIntentActivities(Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH), 0)
+            packageManager.queryIntentActivities(
+                Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH),
+                0
+            )
         val hasVoiceRecognizer: Boolean = activities.size != 0
         if (hasVoiceRecognizer) {
-            action_voice.setOnClickListener { startVoiceRecognitionIntent() }
+            binding.actionVoice.setOnClickListener { startVoiceRecognitionIntent() }
         } else {
-            action_voice.setOnClickListener {
+            binding.actionVoice.setOnClickListener {
                 Toast.makeText(
                     this,
                     getString(R.string.speech_recognizer_not_found),
@@ -62,14 +65,14 @@ class VoiceControl : AppCompatActivity() {
             }
         }
 
-        action_button_1.setOnTouchListener { v: View, e: MotionEvent -> onTouchAction(v, e) }
-        action_button_2.setOnTouchListener { v: View, e: MotionEvent -> onTouchAction(v, e) }
-        action_button_3.setOnTouchListener { v: View, e: MotionEvent -> onTouchAction(v, e) }
-        action_button_4.setOnTouchListener { v: View, e: MotionEvent -> onTouchAction(v, e) }
-        action_button_5.setOnTouchListener { v: View, e: MotionEvent -> onTouchAction(v, e) }
-        action_button_6.setOnTouchListener { v: View, e: MotionEvent -> onTouchAction(v, e) }
-        action_button_7.setOnTouchListener { v: View, e: MotionEvent -> onTouchAction(v, e) }
-        action_button_8.setOnTouchListener { v: View, e: MotionEvent -> onTouchAction(v, e) }
+        binding.actionButton1.setOnTouchListener { v: View, e: MotionEvent -> onTouchAction(v, e) }
+        binding.actionButton2.setOnTouchListener { v: View, e: MotionEvent -> onTouchAction(v, e) }
+        binding.actionButton3.setOnTouchListener { v: View, e: MotionEvent -> onTouchAction(v, e) }
+        binding.actionButton4.setOnTouchListener { v: View, e: MotionEvent -> onTouchAction(v, e) }
+        binding.actionButton5.setOnTouchListener { v: View, e: MotionEvent -> onTouchAction(v, e) }
+        binding.actionButton6.setOnTouchListener { v: View, e: MotionEvent -> onTouchAction(v, e) }
+        binding.actionButton7.setOnTouchListener { v: View, e: MotionEvent -> onTouchAction(v, e) }
+        binding.actionButton8.setOnTouchListener { v: View, e: MotionEvent -> onTouchAction(v, e) }
     }
 
 
@@ -102,36 +105,40 @@ class VoiceControl : AppCompatActivity() {
         val backwardKeyword: String = preferences.getKeywordBackwardValue()
         val rightKeyword: String = preferences.getKeywordRightValue()
         val leftKeyword: String = preferences.getKeywordLeftValue()
-        action_voice.isEnabled = false
+        binding.actionVoice.isEnabled = false
 
         when {
             isKeywordRecognized(matches, forwardKeyword) -> {
                 carConnector.moveForward()
-                arrow_up.setBackgroundResource(R.drawable.arrow_up_pressed)
+                binding.arrowUp.setBackgroundResource(R.drawable.arrow_up_pressed)
                 stopMovingDelayed()
             }
+
             isKeywordRecognized(matches, backwardKeyword) -> {
                 carConnector.moveBackward()
-                arrow_down.setBackgroundResource(R.drawable.arrow_down_pressed)
+                binding.arrowDown.setBackgroundResource(R.drawable.arrow_down_pressed)
                 stopMovingDelayed()
             }
+
             isKeywordRecognized(matches, rightKeyword) -> {
                 carConnector.turnRight()
-                arrow_right.setBackgroundResource(R.drawable.arrow_right_pressed)
+                binding.arrowRight.setBackgroundResource(R.drawable.arrow_right_pressed)
                 stopMovingDelayed()
             }
+
             isKeywordRecognized(matches, leftKeyword) -> {
                 carConnector.turnLeft()
-                arrow_left.setBackgroundResource(R.drawable.arrow_left_pressed)
+                binding.arrowLeft.setBackgroundResource(R.drawable.arrow_left_pressed)
                 stopMovingDelayed()
             }
+
             else -> {
                 Toast.makeText(
                     this,
                     getString(R.string.speech_recognizer_no_matches),
                     Toast.LENGTH_LONG
                 ).show()
-                action_voice.isEnabled = true
+                binding.actionVoice.isEnabled = true
             }
         }
     }
@@ -148,11 +155,11 @@ class VoiceControl : AppCompatActivity() {
         Handler(Looper.getMainLooper()).postDelayed(
             {
                 carConnector.stopMoving()
-                action_voice.isEnabled = true
-                arrow_up.setBackgroundResource(R.drawable.arrow_up)
-                arrow_down.setBackgroundResource(R.drawable.arrow_down)
-                arrow_right.setBackgroundResource(R.drawable.arrow_right)
-                arrow_left.setBackgroundResource(R.drawable.arrow_left)
+                binding.actionVoice.isEnabled = true
+                binding.arrowUp.setBackgroundResource(R.drawable.arrow_up)
+                binding.arrowDown.setBackgroundResource(R.drawable.arrow_down)
+                binding.arrowRight.setBackgroundResource(R.drawable.arrow_right)
+                binding.arrowLeft.setBackgroundResource(R.drawable.arrow_left)
             },
             DELAY_STOP
         )
@@ -167,35 +174,42 @@ class VoiceControl : AppCompatActivity() {
             when (v.id) {
                 R.id.action_button_1 -> {
                     carConnector.actionOne()
-                    action_button_1.setTextColor(orangeColor)
+                    binding.actionButton1.setTextColor(orangeColor)
                 }
+
                 R.id.action_button_2 -> {
                     carConnector.actionTwo()
-                    action_button_2.setTextColor(orangeColor)
+                    binding.actionButton2.setTextColor(orangeColor)
                 }
+
                 R.id.action_button_3 -> {
                     carConnector.actionThree()
-                    action_button_3.setTextColor(orangeColor)
+                    binding.actionButton3.setTextColor(orangeColor)
                 }
+
                 R.id.action_button_4 -> {
                     carConnector.actionFour()
-                    action_button_4.setTextColor(orangeColor)
+                    binding.actionButton4.setTextColor(orangeColor)
                 }
+
                 R.id.action_button_5 -> {
                     carConnector.actionFive()
-                    action_button_5.setTextColor(orangeColor)
+                    binding.actionButton5.setTextColor(orangeColor)
                 }
+
                 R.id.action_button_6 -> {
                     carConnector.actionSix()
-                    action_button_6.setTextColor(orangeColor)
+                    binding.actionButton6.setTextColor(orangeColor)
                 }
+
                 R.id.action_button_7 -> {
                     carConnector.actionSeven()
-                    action_button_7.setTextColor(orangeColor)
+                    binding.actionButton7.setTextColor(orangeColor)
                 }
+
                 R.id.action_button_8 -> {
                     carConnector.actionHeight()
-                    action_button_8.setTextColor(orangeColor)
+                    binding.actionButton8.setTextColor(orangeColor)
                 }
             }
             return true
@@ -203,14 +217,14 @@ class VoiceControl : AppCompatActivity() {
         if (isTouchUp) {
             val whiteColor = ContextCompat.getColor(this, R.color.colorWhite)
             when (v.id) {
-                R.id.action_button_1 -> action_button_1.setTextColor(whiteColor)
-                R.id.action_button_2 -> action_button_2.setTextColor(whiteColor)
-                R.id.action_button_3 -> action_button_3.setTextColor(whiteColor)
-                R.id.action_button_4 -> action_button_4.setTextColor(whiteColor)
-                R.id.action_button_5 -> action_button_5.setTextColor(whiteColor)
-                R.id.action_button_6 -> action_button_6.setTextColor(whiteColor)
-                R.id.action_button_7 -> action_button_7.setTextColor(whiteColor)
-                R.id.action_button_8 -> action_button_8.setTextColor(whiteColor)
+                R.id.action_button_1 -> binding.actionButton1.setTextColor(whiteColor)
+                R.id.action_button_2 -> binding.actionButton2.setTextColor(whiteColor)
+                R.id.action_button_3 -> binding.actionButton3.setTextColor(whiteColor)
+                R.id.action_button_4 -> binding.actionButton4.setTextColor(whiteColor)
+                R.id.action_button_5 -> binding.actionButton5.setTextColor(whiteColor)
+                R.id.action_button_6 -> binding.actionButton6.setTextColor(whiteColor)
+                R.id.action_button_7 -> binding.actionButton7.setTextColor(whiteColor)
+                R.id.action_button_8 -> binding.actionButton8.setTextColor(whiteColor)
             }
             return true
         }
@@ -237,10 +251,12 @@ class VoiceControl : AppCompatActivity() {
                 finishActivity()
                 true
             }
+
             R.id.action_information -> {
                 showInformationDialog()
                 true
             }
+
             else -> super.onOptionsItemSelected(item)
         }
 
