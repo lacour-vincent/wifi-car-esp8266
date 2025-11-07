@@ -2021,10 +2021,10 @@
   dependencies:
     undici-types "~7.16.0"
 
-"@types/react@19.1.0":
-  version "19.1.0"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-19.1.0.tgz#73c43ad9bc43496ca8184332b111e2aef63fc9da"
-  integrity sha512-UaicktuQI+9UKyA4njtDOGBD/67t8YEBt2xdfqu8+gP9hqPUPsiXlNPcpS2gVdjmis5GKPG3fCxbQLVgxsQZ8w==
+"@types/react@19.1.10":
+  version "19.1.10"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-19.1.10.tgz#a05015952ef328e1b85579c839a71304b07d21d9"
+  integrity sha512-EhBeSYX0Y6ye8pNebpKrwFJq7BoQ8J5SO6NlvNwwHjSj6adXJViPQrKlsyPw7hLBLvckEMO1yxeGdR82YBBlDg==
   dependencies:
     csstype "^3.0.2"
 
@@ -3643,6 +3643,11 @@ expo-constants@18.0.10, expo-constants@~18.0.10, expo-constants@~18.0.8, expo-co
   dependencies:
     "@expo/config" "~12.0.10"
     "@expo/env" "~2.0.7"
+
+expo-doctor@1.17.11:
+  version "1.17.11"
+  resolved "https://registry.yarnpkg.com/expo-doctor/-/expo-doctor-1.17.11.tgz#28e3b15971f7330b19c387f4cc8a729e49885013"
+  integrity sha512-4eYZPJm4op2aRQWvd6RA6dZt1mVQQe79n7iqqFi6P927K8w2ld8kZ2D7m/4ahjj9/HBW9NS98m4qGomKJFDuPg==
 
 expo-file-system@~19.0.17:
   version "19.0.17"
