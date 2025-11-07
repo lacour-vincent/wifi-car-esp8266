@@ -15,7 +15,8 @@
     "prebuild:android": "expo prebuild --platform android --clean",
     "ios": "expo run:ios",
     "android": "expo run:android",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "format-check": "prettier --check \"**/src/**/*.{ts,tsx}\" --log-level=warn"
   },
   "dependencies": {
     "expo": "54.0.22",
@@ -33,7 +34,10 @@
     "react-native-screens": "4.16.0"
   },
   "devDependencies": {
+    "@babel/core": "7.28.5",
+    "@trivago/prettier-plugin-sort-imports": "6.0.0",
     "@types/react": "19.1.0",
+    "prettier": "3.6.2",
     "typescript": "5.9.2"
   }
 }
