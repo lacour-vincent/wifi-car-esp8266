@@ -1,0 +1,38 @@
+{
+  "name": "wifi-car-esp8266",
+  "version": "2.0.0-SNAPSHOT",
+  "description": "Remote control application for ESP8266 WiFi car.",
+  "author": "lacour-vincent",
+  "license": "SEE LICENSE IN LICENSE",
+  "engines": {
+    "node": ">=22.15.x",
+    "yarn": "^1.22.x"
+  },
+  "main": "expo-router/entry",
+  "scripts": {
+    "start": "expo start",
+    "prebuild:ios": "expo prebuild --platform ios --clean",
+    "prebuild:android": "expo prebuild --platform android --clean",
+    "ios": "expo run:ios",
+    "android": "expo run:android"
+  },
+  "dependencies": {
+    "expo": "54.0.22",
+    "expo-build-properties": "1.0.9",
+    "expo-constants": "18.0.10",
+    "expo-font": "14.0.9",
+    "expo-image": "3.0.10",
+    "expo-linking": "8.0.8",
+    "expo-router": "6.0.14",
+    "expo-splash-screen": "31.0.10",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "react-native": "0.81.5",
+    "react-native-safe-area-context": "5.6.0",
+    "react-native-screens": "4.16.0"
+  },
+  "devDependencies": {
+    "@types/react": "19.1.0",
+    "typescript": "5.9.2"
+  }
+}
