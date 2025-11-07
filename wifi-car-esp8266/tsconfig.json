@@ -1,12 +1,44 @@
 {
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
-    "strict": true,
+    /* PROJECT OPTIONS */
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"],
       "@ui/*": ["src/components/ui/*"]
-    }
+    },
+
+    /* LANGUAGE COMPILATION OPTIONS */
+    "target": "ESNext",
+    "lib": ["DOM", "ESNext"],
+    "module": "preserve",
+    "moduleDetection": "force",
+    "moduleResolution": "bundler",
+    "jsx": "react-native",
+    "resolveJsonModule": true,
+    "incremental": true,
+    "allowJs": true,
+
+    /* EMIT RULES */
+    "noEmit": true,
+
+    /* TYPE CHECKING RULES */
+    "strict": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "useUnknownInCatchVariables": true,
+
+    /* OTHER OPTIONS */
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "useDefineForClassFields": true
   },
-  "include": ["**/*.ts", "**/*.tsx"]
+  "exclude": ["node_modules"]
 }

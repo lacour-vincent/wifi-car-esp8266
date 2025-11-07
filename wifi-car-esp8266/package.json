@@ -14,7 +14,8 @@
     "prebuild:ios": "expo prebuild --platform ios --clean",
     "prebuild:android": "expo prebuild --platform android --clean",
     "ios": "expo run:ios",
-    "android": "expo run:android"
+    "android": "expo run:android",
+    "type-check": "tsc --noEmit"
   },
   "dependencies": {
     "expo": "54.0.22",
