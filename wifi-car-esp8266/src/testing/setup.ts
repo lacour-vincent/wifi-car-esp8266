@@ -15,3 +15,5 @@ jest.mock("expo-image", () => {
   const { Image } = require("react-native");
   return { Image };
 });
+
+jest.mock("@expo/vector-icons/MaterialCommunityIcons", () => "FakeIcon");

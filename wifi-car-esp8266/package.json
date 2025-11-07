@@ -19,9 +19,12 @@
     "format-check": "prettier --check \"**/src/**/*.{ts,tsx}\" --log-level=warn",
     "lint-check": "eslint \"**/src/**/*.{ts,tsx}\"",
     "doctor": "yarn expo-doctor",
-    "test:unit": "jest --config=jest.unit.config.mjs"
+    "test:unit": "jest --config=jest.unit.config.mjs",
+    "test:integration": "jest --config=jest.integration.config.mjs",
+    "test": "yarn run test:unit && yarn run test:integration"
   },
   "dependencies": {
+    "@expo/vector-icons": "15.0.3",
     "expo": "54.0.22",
     "expo-build-properties": "1.0.9",
     "expo-constants": "18.0.10",
@@ -40,6 +43,7 @@
   "devDependencies": {
     "@babel/core": "7.28.5",
     "@eslint/js": "9.39.1",
+    "@testing-library/react-native": "13.3.3",
     "@trivago/prettier-plugin-sort-imports": "6.0.0",
     "@types/jest": "29.5.14",
     "@types/react": "19.1.10",
