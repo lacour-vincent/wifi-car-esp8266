@@ -1,26 +1,26 @@
-import type { RequestAction } from "@/store/actions";
+import type { AsyncAction } from "@/store/actions";
 import type { State } from "@/store/reducers";
 
-export const createRequestSelector = (actions: RequestAction[]) => (state: State) => {
-  return actions.some((action: RequestAction) => {
-    const key = action.toString();
+export const createPendingActionsSelector = (actions: AsyncAction[]) => (state: State) => {
+  return actions.some((action: AsyncAction) => {
+    const key = action.typePrefix;
     const value = state.actions[key];
-    return value?.request;
+    return value?.pending;
   });
 };
 
-export const createSuccessSelector = (actions: RequestAction[]) => (state: State) => {
-  return actions.some((action: RequestAction) => {
-    const key = action.toString();
+export const createFulfilledActionsSelector = (actions: AsyncAction[]) => (state: State) => {
+  return actions.some((action: AsyncAction) => {
+    const key = action.typePrefix;
     const value = state.actions[key];
-    return value?.success;
+    return value?.fulfilled;
   });
 };
 
-export const createFailureSelector = (actions: RequestAction[]) => (state: State) => {
-  return actions.some((action: RequestAction) => {
-    const key = action.toString();
+export const createRejectedActionsSelector = (actions: AsyncAction[]) => (state: State) => {
+  return actions.some((action: AsyncAction) => {
+    const key = action.typePrefix;
     const value = state.actions[key];
-    return value?.failure;
+    return value?.rejected;
   });
 };

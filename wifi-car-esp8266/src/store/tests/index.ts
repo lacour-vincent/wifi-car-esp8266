@@ -1,6 +1,7 @@
 import {
+  type AsyncThunkAction,
+  type AsyncThunkConfig,
   type Middleware,
-  Tuple,
   type UnknownAction,
   configureStore as configureStoreFn,
   type createAction,
@@ -22,7 +23,10 @@ class StoreTester {
     const testingMiddleware = this.createTestingMiddleware();
     const middlewares = [testingMiddleware];
     const reducers = createRootReducer();
-    const store = configureStoreFn({ reducer: reducers, middleware: () => new Tuple(...middlewares) });
+    const store = configureStoreFn({
+      reducer: reducers,
+      middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(middlewares),
+    });
     return store;
   }
 
@@ -39,7 +43,7 @@ class StoreTester {
     };
   }
 
-  dispatch(action: UnknownAction) {
+  dispatch(action: UnknownAction | AsyncThunkAction<void, void, AsyncThunkConfig>) {
     return this.store.dispatch(action);
   }
 

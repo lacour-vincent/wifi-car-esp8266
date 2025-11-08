@@ -2,37 +2,37 @@ import { type UnknownAction, createReducer } from "@reduxjs/toolkit";
 
 import { Suffix } from "@/store/actions";
 
-export type ActionsState = Record<string, { request: boolean; success: boolean; failure: boolean }>;
+export type ActionsState = Record<string, { pending: boolean; fulfilled: boolean; rejected: boolean }>;
 
 export const initialState: ActionsState = {};
 
-const isRequestAction = (action: UnknownAction): boolean => {
-  return action.type.endsWith(Suffix.REQUEST);
+const isPendingAction = (action: UnknownAction): boolean => {
+  return action.type.endsWith(Suffix.PENDING);
 };
 
-const isSuccessAction = (action: UnknownAction): boolean => {
-  return action.type.endsWith(Suffix.SUCCESS);
+const isFulfilledAction = (action: UnknownAction): boolean => {
+  return action.type.endsWith(Suffix.FULFILLED);
 };
 
-const isFailureAction = (action: UnknownAction): boolean => {
-  return action.type.endsWith(Suffix.FAILURE);
+const isRejectedAction = (action: UnknownAction): boolean => {
+  return action.type.endsWith(Suffix.REJECTED);
 };
 
 export default createReducer(initialState, (builder) => {
   return builder
-    .addMatcher(isRequestAction, (state, action) => {
-      const key = action.type.replace(`_${Suffix.REQUEST}`, "");
-      state[key] = { request: true, success: false, failure: false };
+    .addMatcher(isPendingAction, (state, action) => {
+      const key = action.type.replace(Suffix.PENDING, "");
+      state[key] = { pending: true, fulfilled: false, rejected: false };
       return state;
     })
-    .addMatcher(isSuccessAction, (state, action) => {
-      const key = action.type.replace(`_${Suffix.SUCCESS}`, "");
-      state[key] = { request: false, success: true, failure: false };
+    .addMatcher(isFulfilledAction, (state, action) => {
+      const key = action.type.replace(Suffix.FULFILLED, "");
+      state[key] = { pending: false, fulfilled: true, rejected: false };
       return state;
     })
-    .addMatcher(isFailureAction, (state, action) => {
-      const key = action.type.replace(`_${Suffix.FAILURE}`, "");
-      state[key] = { request: false, success: false, failure: true };
+    .addMatcher(isRejectedAction, (state, action) => {
+      const key = action.type.replace(Suffix.REJECTED, "");
+      state[key] = { pending: false, fulfilled: false, rejected: true };
       return state;
     });
 });

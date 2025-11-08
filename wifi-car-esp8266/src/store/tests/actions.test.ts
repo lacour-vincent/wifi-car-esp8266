@@ -1,14 +1,16 @@
-import { type RequestAction, createRequestAction } from "@/store/actions";
-import { createFailureSelector, createRequestSelector, createSuccessSelector } from "@/store/selectors/actions";
+import { type AsyncAction, createAsyncAction } from "@/store/actions";
+import {
+  createFulfilledActionsSelector,
+  createPendingActionsSelector,
+  createRejectedActionsSelector,
+} from "@/store/selectors/actions";
 import StoreTester from "@/store/tests";
 
-const action: RequestAction = createRequestAction("ANY_ACTION");
-
-const createActionsSelector = (actions: RequestAction[]) => {
+const createActionsSelector = (actions: AsyncAction[]) => {
   return {
-    request: createRequestSelector(actions),
-    success: createSuccessSelector(actions),
-    failure: createFailureSelector(actions),
+    pending: createPendingActionsSelector(actions),
+    fulfilled: createFulfilledActionsSelector(actions),
+    rejected: createRejectedActionsSelector(actions),
   };
 };
 
@@ -19,36 +21,41 @@ describe("Store - actions", () => {
     store = new StoreTester();
   });
 
-  it("should listen request action", () => {
-    const { request, success, failure } = createActionsSelector([action]);
-    expect(request(store.getState())).toBe(false);
-    expect(success(store.getState())).toBe(false);
-    expect(failure(store.getState())).toBe(false);
-    store.dispatch(action.request());
-    expect(request(store.getState())).toBe(true);
-    expect(success(store.getState())).toBe(false);
-    expect(failure(store.getState())).toBe(false);
+  it("should listen pending actions", () => {
+    const action = createAsyncAction<void, void>("ANY_ACTION", () => Promise.resolve());
+    const { pending, fulfilled, rejected } = createActionsSelector([action]);
+    expect(pending(store.getState())).toBe(false);
+    expect(fulfilled(store.getState())).toBe(false);
+    expect(rejected(store.getState())).toBe(false);
+    store.dispatch(action());
+    expect(pending(store.getState())).toBe(true);
+    expect(fulfilled(store.getState())).toBe(false);
+    expect(rejected(store.getState())).toBe(false);
   });
 
-  it("should listen success action", () => {
-    const { request, success, failure } = createActionsSelector([action]);
-    expect(request(store.getState())).toBe(false);
-    expect(success(store.getState())).toBe(false);
-    expect(failure(store.getState())).toBe(false);
-    store.dispatch(action.success({}));
-    expect(request(store.getState())).toBe(false);
-    expect(success(store.getState())).toBe(true);
-    expect(failure(store.getState())).toBe(false);
+  it("should listen fulfilled actions", async () => {
+    const action = createAsyncAction<void, void>("ANY_ACTION", () => Promise.resolve());
+    const { pending, fulfilled, rejected } = createActionsSelector([action]);
+    expect(pending(store.getState())).toBe(false);
+    expect(fulfilled(store.getState())).toBe(false);
+    expect(rejected(store.getState())).toBe(false);
+    store.dispatch(action());
+    await store.waitFor(action.fulfilled);
+    expect(pending(store.getState())).toBe(false);
+    expect(fulfilled(store.getState())).toBe(true);
+    expect(rejected(store.getState())).toBe(false);
   });
 
-  it("should listen failure action", () => {
-    const { request, success, failure } = createActionsSelector([action]);
-    expect(request(store.getState())).toBe(false);
-    expect(success(store.getState())).toBe(false);
-    expect(failure(store.getState())).toBe(false);
-    store.dispatch(action.failure({ err: new Error("failure") }));
-    expect(request(store.getState())).toBe(false);
-    expect(success(store.getState())).toBe(false);
-    expect(failure(store.getState())).toBe(true);
+  it("should listen rejected actions", async () => {
+    const action = createAsyncAction<void, void>("ANY_ACTION", () => Promise.reject());
+    const { pending, fulfilled, rejected } = createActionsSelector([action]);
+    expect(pending(store.getState())).toBe(false);
+    expect(fulfilled(store.getState())).toBe(false);
+    expect(rejected(store.getState())).toBe(false);
+    store.dispatch(action());
+    await store.waitFor(action.rejected);
+    expect(pending(store.getState())).toBe(false);
+    expect(fulfilled(store.getState())).toBe(false);
+    expect(rejected(store.getState())).toBe(true);
   });
 });
