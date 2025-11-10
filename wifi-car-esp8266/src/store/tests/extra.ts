@@ -1,7 +1,9 @@
+import car from "@/services/car";
+
 import type { Extra } from "@/store/extra";
 
 const services: Extra["services"] = {
-  car: null,
+  car: car.fake,
 };
 
 const router: Extra["router"] = {

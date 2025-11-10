@@ -1,16 +1,18 @@
 import { router as expoRouter } from "expo-router";
 
+import car, { type CarService } from "@/services/car";
+
 export interface Extra {
   services: Services;
   router: Router;
 }
 
 interface Services {
-  car: unknown;
+  car: CarService;
 }
 
 const services: Services = {
-  car: null,
+  car: car.impl,
 };
 
 interface Router {
