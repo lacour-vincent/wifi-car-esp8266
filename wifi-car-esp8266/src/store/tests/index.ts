@@ -8,6 +8,8 @@ import {
 } from "@reduxjs/toolkit";
 
 import createRootReducer, { type State } from "@/store/reducers";
+import extra from "@/store/tests/extra";
+import listener from "@/store/tests/listener";
 
 interface LookUpAction extends UnknownAction {
   type: string;
@@ -25,7 +27,10 @@ class StoreTester {
     const reducers = createRootReducer();
     const store = configureStoreFn({
       reducer: reducers,
-      middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(middlewares),
+      middleware: (getDefaultMiddleware) =>
+        getDefaultMiddleware({ thunk: { extraArgument: extra } })
+          .prepend(listener.middleware)
+          .concat(middlewares),
     });
     return store;
   }
